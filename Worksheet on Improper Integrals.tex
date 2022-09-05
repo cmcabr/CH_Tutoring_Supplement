@@ -1,0 +1,182 @@
+\documentclass[10pt, letterpaper]{report}
+\usepackage[letterpaper]{geometry}
+  \geometry{top=1in, bottom=1in, left=1in, right=1in}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp, gensymb, mathtools , amssymb , amsthm, graphicx}
+  \graphicspath{ {/home/lowebang/Pictures/} }
+\usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \lhead{}
+  \chead{}
+  \rhead{Cabrera \thepage}
+  \lfoot{}
+  \cfoot{}
+  \rfoot{\LaTeX}
+  \renewcommand{\headrulewidth}{1pt}
+  \renewcommand{\footrulewidth}{1pt}
+  \setlength\headsep{0.333in}
+
+\title{Calculus BC - Worksheet on Improper Integrals}
+\author{Craig Cabrera}
+\date{10 February 2022}
+
+\begin{document}
+\maketitle
+\begin{center}
+  \textbf{\underline{Relevant Formulas:}}
+\end{center}
+
+$$ \int_{a}^{\infty}{f(x)}\,dx=\lim_{b\to\infty}\int_{a}^{b}{f(x)}\,dx$$ \\
+
+$$ \int_{-\infty}^{b}{f(x)}\,dx=\lim_{a\to\infty}\int_{a}^{b}{f(x)}\,dx$$ \\
+
+$$ \int_{-\infty}^{\infty}{f(x)}\,dx=\int_{-\infty}^{c}{f(x)}\,dx+\int_{c}^{\infty}{f(x)}\,dx=\lim_{a\to\-\infty}\int_{a}^{c}{f(x)}\,dx+\lim_{b\to\infty}\int_{c}^{b}{f(x)}\,dx $$
+\pagebreak
+
+Work the following on \textbf{\underline{notebook paper}}. No calculator.
+\begin{enumerate}
+  \item{$\int_{0}^{\infty}{\frac{2x}{\left(x^{2}+1\right)^{2}}}\,dx$ \\}
+  
+    $\int_{0}^{\infty}{\frac{2x}{\left(x^{2}+1\right)^{2}}}\,dx=
+    \lim_{b\to\infty}\int_{0}^{b}{\frac{2x}{\left(x^{2}+1\right)^{2}}}\,dx$ \\
+    
+    Let $u=x^{2}+1\therefore du=2xdx$ \\
+    
+    $\lim_{b\to\infty}\int_{1}^{b^{2}+1}{\frac{2x}{\left(x^{2}+1\right)^{2}}}\,dx=
+    \lim_{b\to\infty}\int_{1}^{b^{2}+1}{\frac{du}{u^{2}}}=
+    \lim_{b\to\infty}[\frac{-1}{u}]_{1}^{b^{2}+1}=
+    \lim_{b\to\infty}(-\frac{1}{b^{2}+1}+\frac{1}{1})=
+    (\frac{1}{1}-0)=1$ \\
+    
+    $\therefore \int_{0}^{\infty}{\frac{2x}{\left(x^{2}+1\right)^{2}}}\,dx$ converges to $1$ \\
+    
+  \item{$\int_{2}^{\infty}{\frac{3}{x^{2}-x}}\,dx$ \\}
+    
+    $\int_{2}^{\infty}{\frac{3}{x^{2}-x}}\,dx=
+    \lim_{b\to\infty}3\int_{2}^{b}{\frac{dx}{x^{2}-x}}=
+    \lim_{b\to\infty}3\int_{2}^{b}{\frac{dx}{x(x-1)}}=
+    \lim_{b\to\infty}3\left(\int_{2}^{b}{\frac{A}{x}}\,dx+\int_{2}^{b}{\frac{B}{x-1}}\,dx\right)=$ \\
+    
+    $\lim_{b\to\infty}3\left(\int_{2}^{b}{\frac{A(x-1)+Bx}{x(x-1)}}\,dx\right)$ \\
+    
+    $x(x-1)=0\rightarrow x=0,1$ \\
+    
+    $1=A(x-1)+Bx$ \\
+    
+    $1=A(1-1)+B(1)\therefore B=1$ \\
+    
+    $1=A(0-1)+B(0)\therefore A=-1$ \\
+    
+    $\therefore \lim_{b\to\infty}3\left(\int_{2}^{b}{\frac{A}{x}}\,dx+\int_{2}^{b}{\frac{B}{x-1}}\,dx\right)=
+    \lim_{b\to\infty}3\left(\int_{2}^{b}{\frac{dx}{x-1}}-\int_{2}^{b}{\frac{dx}{x}}\right)=
+    \lim_{b\to\infty}3\left(\left[\ln{\left(\frac{x-1}{x}\right)}\right]_{2}^{b}\right)=$ \\
+    
+    $\lim_{b\to\infty}3\left(\ln{\left(\frac{\frac{b}{b}-\frac{1}{b}}{\frac{b}{b}}\right)}-\ln{\left(\frac{2-1}{2}\right)}\right)=
+    3\ln{\left(\frac{1}{\frac{1}{2}}\right)}=3\ln{2}$ \\
+    
+    $\therefore \int_{2}^{\infty}{\frac{3}{x^{2}-x}}\,dx$ converges to $3\ln{2}\approx 2.079$ \\
+    
+  \item{$\int_{0}^{1}{\frac{dx}{\sqrt{1-x^{2}}}}$ \\}
+  
+    $\int_{0}^{1}{\frac{dx}{\sqrt{1-x^{2}}}}=
+    [\arcsin{x}]_{0}^{1}=
+    \frac{\pi}{2}-0=\frac{\pi}{2}$ \\
+    
+    $\therefore \int_{0}^{1}{\frac{dx}{\sqrt{1-x^{2}}}}$ converges to $\frac{\pi}{2}\approx 1.571$ \\
+    \pagebreak 
+    
+  \item{$\int_{0}^{2}{\frac{x+1}{\sqrt{4-x^{2}}}}\,dx$ \\}
+  
+    $\int_{0}^{2}{\frac{x+1}{\sqrt{4-x^{2}}}}\,dx=
+    \int_{0}^{2}{\frac{x}{\sqrt{4-x^{2}}}}\,dx+\int_{0}^{2}{\frac{dx}{\sqrt{4-x^{2}}}}$ \\
+    
+    Let $u=4-x^{2}\therefore du=-2xdx$ \\
+    
+    $\int_{0}^{2}{\frac{x}{\sqrt{4-x^{2}}}}\,dx+\int_{0}^{2}{\frac{dx}{\sqrt{4-x^{2}}}}=
+    \int_{0}^{2}{\frac{dx}{\sqrt{4-x^{2}}}}-\frac{1}{2}\int_{4}^{0}{\frac{du}{\sqrt{u}}}=
+    \int_{0}^{2}{\frac{dx}{\sqrt{4-x^{2}}}}+\frac{1}{2}\int_{0}^{4}{\frac{du}{\sqrt{u}}}=
+    [\arcsin{\left(\frac{x}{2}\right)}]_{0}^{2}+\frac{1}{2}[2\sqrt{u}]_{0}^{4}=$ \\
+    
+    $[\arcsin{1}-\arcsin{0}]+\frac{1}{2}[2\sqrt{4}-0]=
+    \frac{\pi}{2}+2$ \\
+    
+    $\therefore \int_{0}^{2}{\frac{x+1}{\sqrt{4-x^{2}}}}\,dx$ converges to $\frac{\pi}{2}+2\approx 3.571$ \\
+    
+  \item{$\int_{0}^{\ln{2}}{\frac{e^{\frac{1}{x}}}{x^{2}}}\,dx$ \\}
+  
+    Let $u=\frac{1}{x} \therefore du=-\frac{1}{x^{2}}$ \\
+    
+    Use the limits identity: $\lim_{\x\to 0^{+}}\frac{1}{x}=+\infty$ \\
+    
+    $\int_{0}^{\ln{2}}{\frac{e^{\frac{1}{x}}}{x^{2}}}\,dx=
+    \lim_{a\to 0^{+}}-\int_{\frac{1}{a}}^{\frac{1}{\ln{2}}}{e^{u}}\,du=
+    \lim_{a\to\infty}-\int_{a}^{\frac{1}{\ln{2}}}{e^{u}}\,du=
+    \lim_{a\to\infty}\int_{\frac{1}{\ln{2}}}^{a}{e^{u}}\,du=
+    \lim_{a\to\infty}[e^{u}]_{\frac{1}{\ln{2}}}^{a}=$ \\
+    
+    $e^{\infty}-e^{\frac{1}{\ln{2}}}=\infty $ \\
+    
+    $\therefore \int_{0}^{\ln{2}}{\frac{e^{\frac{1}{x}}}{x^{2}}}\,dx$ diverges to $\infty$ \\
+    
+  \item{$\int_{-1}^{\infty}{\frac{dx}{x^{2}+5x+6}}$ \\}
+  
+    $\int_{-1}^{\infty}{\frac{dx}{x^{2}+5x+6}}=
+    \lim_{b\to\infty}\int_{-1}^{b}{\frac{dx}{x^{2}+5x+6}}=
+    \lim_{b\to\infty}\int_{-1}^{b}{\frac{dx}{(x+2)(x+3}}=
+    \lim_{b\to\infty}\left(\int_{-1}^{b}{\frac{\alpha}{x+2}}\,dx+\int_{-1}^{b}{\frac{\beta}{x+3}}\,dx\right)$ \\
+  
+    $\frac{\alpha}{(x+3)}+\frac{\beta}{(x+2)}=\frac{\beta(x+3)}{(x+2)(x+3)}+\frac{\alpha(x+2)}{(x+2)(x+3)}$ \\
+    
+    $1=\alpha(x+2)+\beta(x+3)\rightarrow 1=\alpha(-2+2)+\beta(-2+3)\rightarrow 1=\beta$ \\
+    
+    $1=\alpha(-3+2)+\beta(-3+3)\rightarrow 1=-\alpha$ \\
+    
+    $\therefore \frac{1}{(x+2)(x+3)}=\frac{\alpha}{(x+3)}+\frac{\beta}{(x+2)}=\frac{1}{(x+2)}-\frac{1}{(x+3)}$ \\
+    
+    $\lim_{b\to\infty}\int_{-1}^{b}{\frac{dx}{x^{2}+5x+6}}=
+    \lim_{b\to\infty}\int_{-1}^{b}{\frac{dx}{x+2}}-\lim_{b\to\infty}\int_{-1}^{b}{\frac{dx}{x+3}}=
+    \lim_{b\to\infty}\left[\ln{\left|\frac{x+2}{x+3}\right|}\right]_{-1}^{b}=$ \\
+    
+    $\lim_{b\to\infty}\left[\ln{\left|\frac{b+2}{b+3}\right|}-\ln{\left|\frac{2-1}{3-1}\right|}\right]=
+    \lim_{b\to\infty}\left[\ln{\left|\frac{\frac{b}{b}+\frac{2}{b}}{\frac{b}{b}+\frac{3}{b}}\right|}-\ln{\frac{1}{2}}\right]=
+    \lim_{b\to\infty}\ln{\left(2\left(\left|\frac{1+\frac{2}{b}}{1+\frac{3}{b}}\right|\right)\right)}=
+    \ln{2}$ \\
+    
+    $\therefore \int_{-1}^{\infty}{\frac{dx}{x^{2}+5x+6}}$ converges to $\ln{2}\approx 0.693$ \\
+    \pagebreak 
+    
+  \item{$\int_{-8}^{1}{\frac{dx}{\sqrt[3]{x}}}$ \\}
+  
+    $\int_{-8}^{1}{\frac{dx}{\sqrt[3]{x}}}=
+    \int_{-8}^{1}[\frac{3}{2}x^{\frac{2}{3}}]_{-8}^{1}=
+    \left[\frac{3}{2}\left(1^{\frac{2}{3}}-(-8)^{\frac{2}{3}}\right)\right]=
+    \frac{3}{2}\left(1-4\right)=-\frac{9}{2}=-4.5$ \\
+    
+    $\therefore \int_{-8}^{1}{\frac{dx}{\sqrt[3]{x}}}$ converges to $-4.5$ \\ 
+    
+  \item{$\int_{-\infty}^{0}{xe^{x}}\,dx$ \\}
+  
+    $\int_{-\infty}^{0}{xe^{x}}\,dx=
+    \lim_{a\to-\infty}\int_{a}^{0}{xe^{x}}\,dx$ \\
+    
+    Let $u=x\therefore du=dx$ and let $v=e^{x}\therefore dv=e^{x}\,dx$ \\
+    
+    $\lim_{a\to-\infty}\int_{a}^{0}{xe^{x}}\,dx=
+    \lim_{a\to-\infty}\left([xe^{x}]_{a}^{0}-[e^{x}]_{a}^{0}\right)=
+    [0-(-\infty)e^{-\infty}]-[1-e^{-\infty}]=-1$ \\
+    
+    $\therefore \int_{-\infty}^{0}{xe^{x}}\,dx$ converges to $-1$ \\ 
+    
+  \item{$\int_{-\infty}^{2}{\frac{2}{x^{2}+4}}\,dx$ \\}
+  
+    $\int_{-\infty}^{2}{\frac{2}{x^{2}+4}}\,dx=
+    \lim_{a\to-\infty}2\int_{a}^{2}{\frac{2}{x^{2}+4}}\,dx=
+    \lim_{a\to-\infty}\left[\arctan{\left(\frac{x}{2}\right)}\right]_{a}^{2}=
+    \left[\arctan{\left(\frac{2}{2}\right)}-\arctan{\left(\frac{-\infty}{2}\right)}\right]=$ \\
+    
+    $\frac{\pi}{4}+\frac{\pi}{2}=\frac{3\pi}{4}$ \\
+    
+    $\therefore \int_{-\infty}^{2}{\frac{2}{x^{2}+4}}\,dx$ converges to $\frac{3\pi}{4}$ \\ 
+    
+\end{enumerate}
+\end{document}

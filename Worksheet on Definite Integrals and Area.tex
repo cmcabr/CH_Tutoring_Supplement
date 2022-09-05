@@ -1,0 +1,192 @@
+\documentclass[10pt, letterpaper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{gensymb}
+\usepackage[letterpaper]{geometry}
+  \geometry{top=1in, bottom=1in, left=1in, right=1in}
+\usepackage{graphicx}
+\graphicspath{ {/home/lowebang/Pictures/} }
+\usepackage{mathtools , amssymb , amsthm}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{Cabrera \thepage}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{\LaTeX}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\setlength\headsep{0.333in}
+
+\title{Calculus BC - Worksheet on Definite Integrals and Area}
+\author{Craig Cabrera}
+\date{21 December 2021}
+
+\begin{document}
+\maketitle
+Work the following on \textbf{\underline{notebook paper}}. Do not use your calculator except on problem 15.
+\par Evaluate.
+\begin{enumerate}
+  \item{$\int_{0}^{1}x(x^2+1)^3dx$} \\
+
+    $\int_{0}^{1}x^7dx+3\int_{0}^{1}x^5dx+3\int_{0}^{1}x^3dx+\int_{0}^{1}xdx=
+    [\frac{x^8}{8}]_{0}^{1}+3[\frac{x^6}{6}]_{0}^{1}+3[\frac{x^4}{4}]_{0}^{1}+[\frac{x^2}{2}]_{0}^{1}=
+    \frac{1}{8}+\frac{1}{2}+\frac{3}{4}+\frac{1}{2}=\frac{15}{8}=1.875$ \\
+
+  \item{$\int_{0}^{1}x^2\sqrt{x^3+1}dx$} \\
+
+    Let $u=x^3+1 \therefore du=3x^2dx \rightarrow dx=\frac{du}{3x^2}$ \\
+
+    $\int_{0}^{1}\frac{x^2\sqrt{u}}{3x^2}du=
+    \frac{1}{3}\int_{0}^1\sqrt{u}du=
+    \frac{1}{3}[\frac{2}{3}u^{\frac{3}{2}}]_{0}^{1}=
+    \frac{2}{9}[(x^3+1)^\frac{3}{2}]_{0}^{1}=
+    \frac{2}{9}(2)^{\frac{3}{2}}-\frac{2}{9}(1)=
+    \frac{4\sqrt{2}-2}{9}=
+    \frac{5.657-2}{9}=0.406$ \\
+
+  \item{$\int_{-2}^{-1}\frac{x}{(x^2+2)^3}dx$} \\
+
+    Let $u=x^2+2\therefore du=2xdx\rightarrow dx=\frac{du}{2x}$ \\
+
+    $\int_{6}^{3}\frac{du}{2u^3}=
+    -\frac{1}{2}\int_{3}^{6}\frac{du}{u^3}=
+    -\frac{1}{2}[\frac{u^{-2}}{-2}]_{3}^{6}=
+    \frac{1}{4}[\frac{1}{u^2}]_{3}^{6}=
+    \frac{1}{4}(\frac{1}{36}-\frac{1}{9})=
+    \frac{-3}{144}\approx -0.021$ \\
+
+  \item{$\int_{-1}^{4}|2x-1|dx$} \\
+
+    Let $u=2x-1\therefore du=2dx\rightarrow dx=\frac{du}{2}$ \\
+
+    $\frac{1}{2}\int_{-3}^{7}|u|dx=
+    \frac{1}{2}[\frac{u|u|}{2}]_{-3}^{7}=
+    \frac{1}{4}[u|u|]_{-3}^{7}=
+    \frac{1}{4}(49+9)=\frac{29}{2}=14.5$ \\
+
+  \item{$\int_{0}^{5}\sqrt{25-x^2}dx$} \\
+
+    Formula for a Circle: \[ x^2+y^2=r^2 \] \\
+
+    Area for a Circle: \[ A=\pi r^2 \] \\
+
+    (We will use 1/4 of a circle due to the layout of the graph.) \\
+
+    $x^2+y^2=5^2\rightarrow y^2=25-x^2\rightarrow y=\sqrt{25-x^2}$ \\
+
+    $A=\frac{1}{4}(25\pi)=\frac{25\pi}{4}\approx 19.635$ \\
+
+  \item{$\int_{0}^{4}\frac{x}{\sqrt{9+x^2}}dx$} \\
+
+    Let $u=9+x^2\therefore du=2xdx\rightarrow dx=\frac{du}{2x}$ \\
+
+    $\int_{9}^{25}\frac{1}{2\sqrt{u}}du=
+    \frac{1}{2}\int_{9}^{25}u^{-\frac{1}{2}}du=
+    \frac{1}{2}[\frac{\sqrt{u}}{\frac{1}{2}}]_{9}^{25}=
+    [\sqrt{u}]_{9}^{25}=(5-3)=2$ \\
+
+  \item{$\int_{0}^{\frac{\pi}{6}}\cos(3x)dx$} \\
+
+    Let $u=3x\therefore du=3dx \rightarrow dx=\frac{du}{3}$ \\
+
+    $\int_{0}^{\frac{\pi}{2}}\frac{\cos{u}}{3}du=
+    \frac{1}{3}[\sin{u}]_{0}^{\frac{\pi}{2}}=
+    \frac{1}{3}[1-0]=\frac{1}{3}\approx 0.333$ \\
+
+  \item{$\int_{-\frac{\pi}{12}}^{\frac{\pi}{6}}\sin{(2x)}dx$} \\
+
+    Let $u=2x\therefore du=2dx\rightarrow dx=\frac{du}{2}$ \\
+
+    $\frac{1}{2}\int_{-\frac{\pi}{6}}^{\frac{\pi}{3}}\sin{(u)}du=
+    -\frac{1}{2}[\cos{u}]_{-\frac{\pi}{6}}^{\frac{\pi}{3}}=
+    -\frac{1}{2}(\frac{1}{2}-\frac{\sqrt{3}}{2})=
+    \frac{\sqrt{3}-1}{4}\approx 0.183$ \\
+  \item{$\int_{0}^{\frac{\pi}{2}}\cos{(\frac{2x}{3})}dx$} \\
+
+    Let $u=\frac{2x}{3}\therefore du=\frac{2}{3}dx\rightarrow dx=\frac{3du}{2}$ \\
+
+    $\frac{3}{2}\int_{0}^{\frac{\pi}{3}}\cos{u}du=
+    \frac{3}{2}[\sin{u}]_{0}^{\frac{\pi}{3}}
+    \frac{3}{2}(\frac{\sqrt{3}}{2})=
+    \frac{3\sqrt{3}}{4}\approx1.299$ \\
+
+  \item{$\int_{\frac{\pi}{6}}^{\frac{\pi}{2}}\sin^{3}{x}\cos{x}\,dx$} \\
+
+    Let $u=\sin{x}\therefore du=\cos{x}dx\rightarrow dx=\frac{du}{\cos{x}}$ \\
+
+    $\int_{\frac{1}{2}}^{1}u^{3}du=
+    [\frac{u^4}{4}]_{\frac{1}{2}}^{1}=
+    \frac{1}{4}-\frac{1}{64}=\frac{15}{64}\approx 0.234$ \\
+
+  \item{$\int_{0}^{\frac{\pi}{4}}\sqrt{\tan{x}}\sec^{2}{x}\,dx$} \\
+
+    Let $u=\tan{x}\therefore du=\sec^{2}{x}dx\rightarrow dx=\frac{du}{\sec^{2}{x}}$ \\
+
+    $\int_{0}^{1}\sqrt{u}du=
+    [\frac{u^{3/2}}{3/2}]_{0}^{1}=
+    [\frac{2}{3}u^{\frac{3}{2}}]_{0}^{1}=
+    \frac{2}{3}(1)-\frac{2}{3}(0)=\frac{2}{3}\approx 0.667$ \\
+
+  \item{$\int_{0}^{\frac{\pi}{6}}\sec{(2x)}\tan{(2x)}\,dx$} \\
+
+    Let $u=2x\therefore du=2dx \rightarrow dx=\frac{du}{2}$ \\
+
+    $\frac{1}{2}\int_{0}^{\frac{\pi}{3}}\sec{u}\tan{u}\,du=
+    \frac{1}{2}[\sec{u}]_{0}^{\frac{\pi}{3}}=
+    \frac{1}{2}[\frac{1}{\cos{u}}]_{0}^{\frac{\pi}{3}}=
+    \frac{1}{2}(\frac{1}{\frac{1}{2}}-\frac{1}{1})=
+    \frac{1}{2}(2-1)=\frac{1}{2}=0.5$ \\
+\hline
+  \item{Find the area bounded by the graph of $f(x)=2\sin{x}+\sin{(2x)}$ and the $x$-axis on the interval $[0,\pi]$.} \\
+
+    $\int_{0}^{\pi}2\sin{x}+\sin{(2x)}\,dx=
+    2\int_{0}^{\pi}\sin{x}\,dx+\int_{0}^{\pi}\sin{2x}\,dx=
+    -2[\cos{x}]_{0}^{\pi}-[\cos{2x}]_{0}^{\pi}=
+    -2(-1-1)-(1-1)=4$ \\
+\pagebreak
+  \item{Find the area bounded by the graph of $f(x)=\sec^{2}{(\frac{x}{2})}$ and the $x$-axis on the interval $[\frac{\pi}{2},\frac{2\pi}{3}]$.} \\
+
+    Let $u=\frac{x}{2}\therefore du=\frac{dx}{2}\rightarrow dx=2du$ \\
+
+    $2\int_{\frac{\pi}{4}}^{\frac{\pi}{3}}\sec^{2}{u}du=
+    2[\tan{u}]_{\frac{\pi}{4}}^{\frac{\pi}{3}}=
+    2[\frac{\sin{u}}{\cos{u}}]_{\frac{\pi}{4}}^{\frac{\pi}{3}}=
+    2[\sqrt{3}-1]\approx1.464$ \\
+
+\hline
+  \par Use your calculator on problem 15.
+  \item{The rate at which water is being pumped into a tank is given by the function $R(t)$. A table of selected values of $R(t)$, for the time interval $0\leq t\leq 20$, is shown below.
+    \begin{center}
+      \begin{tabular}{| c | c | c | c | c | c |}
+        \hline
+        $t$ (min.) & 0 & 4 & 9 & 17 & 20 \\
+        \hline
+        $R(t)$ (gal/min) & 25 & 28 & 33 & 42 & 46 \\
+        \hline
+      \end{tabular}
+    \end{center}}
+    \begin{enumerate}
+      \item{Use data from the table and four subintervals to find a \textbr{left} Riemann sum to approximate the value of $\int_{0}^{20}R(t)dt$.} \\
+
+        $\sum_{n=1}^{4}R(t)\Delta x=4(25)+5(28)+8(33)+3(42)=100+140+264+126=630$  gallons \\
+
+      \item{Use data from the table and four subintervals to find a \textbr{right} Riemann sum to approximate the value of $\int_{0}^{20}R(t)dt$.} \\
+
+        $\sum_{n=1}^{4}R(t)\Delta x=4(28)+5(33)+8(42)+3(46)=112+165+336+138=751$ gallons \\
+
+      \item{A model for the rate at which water is being pumped into the tank is given by the function $W(t)=25e^{0.03t}$, where $t$ is measured in minutes and $W(t)$ is measured in gallons per minute. \\
+
+      Use the model to find the value of $\int_{0}^{20}W(t)dt$} \\
+
+        $\int_{0}^{20}W(t)dt=
+        25\int_{0}^{20}e^{0.03t}dt=
+        25[\frac{1}{0.03}e^{0.03t}]_{0}^{20}=
+        \frac{2500}{3}(e^{0.6}-1)\approx
+        \frac{2500(0.822)}{3}=
+        \frac{2055}{3}=685$ gallons \\
+
+    \end{enumerate}
+\end{enumerate}
+\end{document}

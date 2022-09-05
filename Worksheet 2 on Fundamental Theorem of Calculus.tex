@@ -1,0 +1,323 @@
+\documentclass[10pt, letterpaper]{report}
+\usepackage[letterpaper]{geometry}
+  \geometry{top=1in, bottom=1in, left=1in, right=1in}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp, gensymb, mathtools , amssymb , amsthm, graphicx}
+  \graphicspath{ {/home/lowebang/Pictures/} }
+\usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \lhead{}
+  \chead{}
+  \rhead{Cabrera \thepage}
+  \lfoot{}
+  \cfoot{}
+  \rfoot{\LaTeX}
+  \renewcommand{\headrulewidth}{1pt}
+  \renewcommand{\footrulewidth}{1pt}
+  \setlength\headsep{0.333in}
+
+\title{Calculus BC - Worksheet 2 on Fundamental Theorem of Calculus}
+\author{Craig Cabrera}
+\date{6 January 2022}
+
+\begin{document}
+\maketitle
+Work the following on \textbf{\underline{notebook paper}}. Use your calculator on problems 3, 8, and 13.
+\begin{enumerate}
+	\item{If $f(1)=12$, $f'$ is continuous, and $\int_{1}^{4}{f'(x)}\,dx=17$, what is the value of $f(4)$? \\}
+
+		$f'(x)$ is continuous on $[1,4] \therefore f(x)$ is continuous on $[1,4]$ and differentiable on $(1,4)$ (Fundamental Theorem of Calculus holds.) \\
+
+		$\int_{1}^{4}{f'(x)}\,dx=
+		f(4)-f(1)=17\rightarrow
+		f(4)=17+f(1)=17+12=29 \\$
+
+	\item{If $\int_{2}^{5}{2f(x)+3}\,dx=17$, find $\int_{2}^{5}{f(x)}\,dx$. \\}
+
+    No test of differentiablity is used as all integrals are either simplified into variables or are integrals of continuous constants. \\
+
+		Let $F=\int_{2}^{5}{f(x)}\,dx \\$
+
+		$2F+3\int_{2}^{5}\,dx=
+		2F+3[x]_{2}^{5}=
+		2F+3[3]=17\rightarrow
+		2F=8\rightarrow F=\int_{2}^{5}{f(x)}\,dx=4$ \\
+
+	\item{Water is pumped out of a holding tank at a rate of $5-5e^{-0.12t}$ litres/minute, where $t$ is in minutes since the pump is started. If the holding tank contains 1000 litres of water when the pump is started, how much water does it hold one hour later? \\}
+
+		Test of Differentiability:
+		$\lim_{t\to 0}r(t)=r(0)=0,
+		\lim_{t\to 60}r(t)=r(60)\approx4.996 \\$
+		$\therefore R(t)$ is continuous on $[0,60]$ and differentiable on $(0,60)$ (Fundamental Theorem of Calculus holds.) \\
+
+		$5\int_{0}^{60}\,dt-5\int_{0}^{60}{e^{-0.12t}}\,dt=
+		5[x]_{0}^{60}-5[-\frac{1}{0.12}e^{-0.12t}]_{0}^{60}\approx
+		5[60]-5[-0.006+8.333]=300-41.635=258.365$ litres pumped out of a tank in one hour. \\
+
+		$1000-258.364=741.636$ litres in the tank one hour later. \\
+	\item{Given the values of the derivative $f'(x)$ in the table and that $f(0)=100$, estimate $f(x)$ for $x=2,4,6$. Use a right Riemann sum.
+		\begin{center}
+			\begin{tabular}{| c | c | c | c | c |}
+				\hline
+					$x$ & 0 & 2 & 4 & 6 \\
+				\hline
+					$f'(x)$ & 10 & 18 & 23 & 25 \\
+				\hline
+			\end{tabular}
+		\end{center}}
+
+    $f'(x)$ is continuous on $[0,6] \therefore f(x)$ is continuous on $[0,6]$ and differentiable on $(0,6)$ (Fundamental Theorem of Calculus holds.) \\
+
+    \begin{itemize}
+      \item{$\sum_{i=1}^{2}{f(x_{i}^{*})}=2(18)=36 \\$
+
+        $\int_{0}^{2}{f'(x)}\,dx=
+        f(2)-f(0)=36\rightarrow
+        f(2)=36+f(0)=36+100=136$}
+      \item{$\sum_{i=1}^{2}{f(x_{i}^{*})}=2(23)=46 \\$
+
+        $\int_{2}^{4}{f'(x)}\,dx=
+        f(4)-f(2)=46\rightarrow
+        f(4)=136+f(2)=136+46=182$}
+      \item{$\sum_{i=1}^{2}{f(x_{i}^{*})}=2(25)=50 \\$
+
+        $\int_{4}^{6}{f'(x)}\,dx=
+        f(6)-f(4)=50\rightarrow
+        f(6)=50+f(4)=50+182=232$}
+    \end{itemize}
+\pagebreak
+	\item{Consider the function $f$ that is continuous on the interval $[-5,5]$ and for which $\int_{0}^{5}{f(x)}\,dx=4$. \\ Evaluate:\\}
+
+    $f'(x)$ is continuous on $[-5,5] \therefore f(x)$ is continuous on $[-5,5]$ and differentiable on $(-5,5)$ for all \\ situations (Fundamental Theorem of Calculus holds.) \\
+
+		\begin{enumerate}
+			\item{$\int_{0}^{5}{f(x)+2}\,dx=$\\}
+
+				$\int_{0}^{5}{f(x)}\,dx+2\int_{0}^{5}\,dx=
+        \int_{0}^{5}{f(x)}+2[x]_{0}^{5}=
+        4+10=14\\$
+
+			\item{$\int_{-2}^{3}{f(x+2)}\,dx=$} \\
+
+				Let $u=x+2\therefore du=dx$ \\
+
+        $\int_{0}^{5}{f(x)}\,dx=4$ \\
+
+			\item{$\int_{-5}^{5}{f(x)}\,dx$ ($f$ is even)$=$} \\
+
+				Because an even function has reflection symmetry about the y-axis,
+        $\int_{-5}^{0}{f(x)}\,dx=
+        \int_{0}^{5}{f(x)}\,dx$ \\
+
+        $\int_{-5}^{5}{f(x)}\,dx=
+        \int_{-5}^{0}{f(x)}\,dx+\int_{0}^{5}{f(x)}\,dx=
+        4+4=8$ \\
+
+			\item{$\int_{-5}^{5}{f(x)}\,dx$ ($f$ is odd)$=$} \\
+
+				Because an odd function has rotational symmetry about the origin,
+        $\int_{-5}^{0}{f(x)}\,dx=
+        -\int_{0}^{5}{f(x)}\,dx$ \\
+
+        $\int_{-5}^{5}{f(x)}\,dx=
+        \int_{-5}^{0}{f(x)}\,dx+\int_{0}^{5}{f(x)}\,dx=
+        4+(-4)=0$ \\
+
+		\end{enumerate}
+	\item{Use the figure on the first page and the fact that $P(0)=2$ to find values of $P$ when $t=1,2,3,4,$ and 5. \\}
+
+    $\frac{dP}{dt}$ is continuous on $[0,5] \therefore P(t)$ is continuous on $[0,5]$ and differentiable on $(0,5)$ (Fundamental Theorem of Calculus holds. ) \\
+
+		\begin{itemize}
+      \item{$\int_{0}^{1}{\frac{dP}{dt}}\,dt\approx
+        bh=(1)(-1)=
+        P(1)-P(0)=-1\rightarrow
+        P(1)=-1+P(0)=-1+2=1$ \\}
+      \item{$\int_{1}^{2}{\frac{dP}{dt}}\,dt\approx
+        bh=(1)(-1)=
+        P(2)-P(1)=-1\rightarrow
+        P(2)=-1+P(1)=-1+1=0$ \\}
+      \item{$\int_{2}^{3}{\frac{dP}{dt}}\,dt\approx
+        \frac{bh}{2}=\frac{(1)(-1)}{2}=
+        P(3)-P(2)=-\frac{1}{2}\rightarrow
+        P(3)=P(2)-\frac{1}{2}=-\frac{1}{2}$ \\}
+      \item{$\int_{3}^{4}{\frac{dP}{dt}}\,dt\approx
+        \frac{bh}{2}=\frac{1*1}{2}=
+        P(4)-P(3)=-\frac{1}{2}\rightarrow
+        P(4)=P(3)-\frac{1}{2}=\frac{1-1}{2}=0$ \\}
+      \item{$\int_{4}^{5}{\frac{dP}{dt}}\,dt\approx
+        bh=(1)(1)=
+        P(5)-P(4)=1\rightarrow
+        P(5)=1-P(4)=1$ \\}
+    \end{itemize}
+\pagebreak
+	\item{In the figure on the first page, the graph of $g$ is given. Let $G(t)$ be the antiderivative of $g(t)$.\\}
+
+    $g(t)$ is continuous on $[0,5] \therefore G(t)$ is continuous on $[0,5]$ and differentiable on $(0,5)$ (Fundamental Theorem of Calculus holds.) \\
+		\begin{enumerate}
+			\item{Given $G(0)=5$, find $G(2)$, $G(4)$, and $G(5)$\\}
+				\begin{itemize}
+          \item{$\int_{0}^{2}{g(t)}\,dt=
+            G(2)-G(0)=16\rightarrow
+            G(2)=16+G(0)=16+5=21$\\}
+          \item{$\int_{2}^{4}{g(t)}\,dt=
+            G(4)-G(2)=-8\rightarrow
+            G(4)=G(2)-8=21-8=13$\\}
+          \item{$\int_{4}^{5}{g(t)}\,dt=
+            G(5)-G(4)=2\rightarrow
+            G(5)=2+G(4)=2+13=15$\\}
+        \end{itemize}
+			\item{Find the intervals where the graph of $G$ is increasing and decreasing. Justify your answer.\\}
+				\begin{itemize}
+          \item{$g(t)$ is positive on $0<t<2\cup4<t<5\therefore G(t)$ is increasing on $0<t<2\cup4<t<5$. \\}
+          \item{$g(t)$ is negative on $2\leq t\leq 4\therefore G(t)$ is decreasing on $2\leq t\leq 4$.\\}
+        \end{itemize}
+			\item{Find the intervals where the graph of $G$ is concave up and concave down. Justify your answer.\\}
+				\begin{itemize}
+          \item{$g(t)$ is increasing on $0<t<\frac{2}{3}\cup 3<x<\frac{9}{2}\therefore G(t)$ is concave up on $0<t<\frac{2}{3}\cup 3<x<\frac{9}{2}$. \\}
+          \item{$g(t)$ is decreasing on $\frac{2}{3}<t<3\cup4.5<t<5\therefore G(t)$ is concave down on $\frac{2}{3}<t<3\cup4.5<t<5$.\\}
+        \end{itemize}
+			\item{Sketch a graph of an antiderivate $G(t)$. Label each critical point of $G(t)$ with its coordinates.\\}
+
+        Graph on next page. \\
+
+		\end{enumerate}
+	\item{Find the value of $F(1)$, where $F'(1)=e^{-x^{2}}$ and $F(0)=2$.\\}
+
+    Test of Differentiability:
+    $\lim_{x \to 0}F'(x)=F'(0)=1,
+     \lim_{x \to 1}F'(x)=F'(1)\approx0.368\\$
+     $\therefore F(x)$ is continuous on $[0,1]$ and differentiable on $(0,1)$ (Fundamental Theorem of Calculus holds.) \\
+
+
+		$\int_{0}^{1}{F'(x)}\,dx=
+      F(1)-F(0)\approx0.747\rightarrow
+      F(1)=0.747+F(0)=2.747$
+
+	\item{Given $f(x)=$$\begin{cases}
+		2x, x\leq 1 \\
+		2, x>1
+		\end{cases}$. Evaluate $\int_{\frac{1}{2}}^{5}{f(x)}\,dx$.\\}
+
+    $f(x)$ is continuous on $[\frac{1}{2},5] \therefore F(x)$ is continuous on $[\frac{1}{2},5]$ and differentiable on $(\frac{1}{2},5)$ (Fundamental Theorem of Calculus holds.) \\
+
+		$\int_{\frac{1}{2}}^{5}{f(x)}\,dx=
+    [2x]_{x=5}-[x^{2}]_{x=\frac{1}{2}}=
+    10-\frac{1}{4}=\frac{35}{4}=8.75 \\$
+\pagebreak
+	\item{A bowl of soup is placed on a kitchen counter to cool. The temperature of the soup is given in the table below.
+		\begin{center}
+			\begin{tabular}{| c | c | c | c | c |}
+				\hline
+					Time $t$ (minutes) & 0 & 5 & 8 & 12 \\
+				\hline
+					Temperature $T(x)$ (\degree F) & 105 & 99 & 97 & 93 \\
+				\hline
+			\end{tabular}
+		\end{center}}
+
+    Test of Differentiability:
+    No $x$ or $y$-value are the same $\therefore \forall\, x \exists\, T'(x) \neq0$ \\
+    $\therefore T(x)$ is continuous on $[0.12]$ and differentiable on $(0,12)$ (Fundamental Theorem of Calculus holds.) \\
+
+		\begin{enumerate}
+			\item{Find $\int_{0}^{12}{T'(x)}\,dx$.} \\
+
+				$\int_{0}^{12}{T'(x)}\,dx=
+        [T(x)]_{0}^{12}=
+        T(12)-T(0)=93-105=-12$\degree F \\
+
+			\item{Find the average rate of change of $T(x)$ over the time interval $t=5$ to $t=8$ minutes.} \\
+
+        Average Value Function:
+        \[ \Delta x=\frac{b-a}{n}\rightarrow
+        n=\frac{b-a}{\Delta x}\]
+
+        \[f_{avg}={\frac{\lim_{n\to \infty}\sum_{i=1}^{n}f(x_{i}^{*})}{n}}=
+        {\frac{\lim_{n\to \infty}\sum_{i=1}^{n}f(x_{i}^{*})\Delta x}{b-a}=
+         \frac{\int_{a}^{b}{f(x)}\,dx}{b-a}} \]
+
+				$T_{avg}=\frac{\int_{5}^{8}{T'(x)}\,dx}{8-5}=
+        \frac{T(8)-T(5)}{8-5}=
+        \frac{97-99}{8-5}=-\frac{2}{3}$ \degree F/minute.
+
+		\end{enumerate}
+	\item{The graph of $f'$ which consists of a line segment and a semicircle, is shown on the second page. Given that $f(1)=4$, find:\\}
+
+    $f'(x)$ is continuous on $[-2,5]\therefore f(x)$ is continuous on $[-2,5]$ and differentiable on $(-2,5)$ (Fundamental Theorem of Calculus holds.) \\
+
+		\begin{enumerate}
+			\item{$f(-2)$\\}
+
+				$\int_{-2}^{1}{f'(x)}\,dx\approx
+        \sum_{i=1}^{2}f(x)\Delta x=
+        \frac{-4*2}{2}+\frac{1*2}{2}=
+        1-4=-3\\$
+
+        $f(1)-f(-2)=-3\rightarrow
+        f(-2)=3+f(1)=3+4=7\\$
+
+			\item{$f(5)$\\}
+
+				$\int_{1}^{5}{f'(x)}\,dx\approx
+        \sum_{i=1}^{2}f(x)\Delta x=
+        bh-\frac{\pi*r^2}{2}=
+        (4*2)-\frac{4\pi}{2}=
+        8-2\pi\approx1.717\\$
+
+        $f(5)-f(1)=8-2\pi\rightarrow
+        f(5)=f(1)+8-2\pi=12-2\pi\approx5.717\\$
+
+		\end{enumerate}
+\pagebreak
+	\item{(Multiple Choice) If $f$ and $g$ are continuous functions such that $g'(x)=f(x)$ for all $x$, then $\int_{2}^{3}{f(x)}\,dx=$\\}
+		\begin{enumerate}
+			\item{$g'(2)-g'(3)$}
+			\item{$g'(3)-g'(2)$}
+			\item{$g(3)-g(2)$}
+			\item{$f(3)-f(2)$}
+			\item{$f'(3)-f'(2)$\\}
+		\end{enumerate}
+
+    $f$ and $g$ are continuous functions such that $g'(x)=f(x)$ for all $x\therefore F(x)=g(x)$ is continuous and differentiable on $(-\infty, \infty)$ (Fundamental Theorem of Calculus holds.) \\
+
+    $\int_{2}^{3}{f(x)}\,dx=
+    F(3)-F(2)=g(3)-g(2)\\$
+	\item{(Multiple Choice) If the function $f(x)$ is defined by $f(x)=\sqrt{x^{3}+2}$ and $g$ is an antiderivate of $f$ such that $g(3)=5$, then $g(1)=$\\}
+		\begin{enumerate}
+			\item{$-3.268$}
+			\item{$-1.585$}
+			\item{$1.732$}
+			\item{$6.585$}
+			\item{$11.585$\\}
+		\end{enumerate}
+
+    Test of Differentiability:
+    $\lim_{x\to 1}f(x)=f(1)=\sqrt{3}\approx1.732,
+    \lim_{x\to 3}f(x)=f(3)=\sqrt{29}\approx5.385$\\
+    $\therefore g(x)$ is continuous on $[1,3]$ and differentiable on $(1,3)$ (Fundamental Theorem of Calculus holds.) \\
+
+    $\int_{1}^{3}{\sqrt{x^{3}+2}}\,dx\approx6.585\\$
+
+    $g(3)-g(1)=5-g(1)=6.585\rightarrow
+    g(1)=5-6.585=-1.585\\$
+
+	\item{(Multiple Choice) The graph of $f$ is shown in the figure on the second page. If $\int_{1}^{3}{f(x)}\,dx=2.3$ and $F'(x)=f(x)$, then $F(3)-F(0)=$} \\
+		\begin{enumerate}
+			\item{$0.3$}
+			\item{$1.3$}
+			\item{$3.3$}
+			\item{$4.3$}
+			\item{$5.3$\\}
+		\end{enumerate}
+
+    $f(x)$ is continuous on $[1,3]\therefore F(x)$ is continuous on $[1,3]$ and differentiable on $(1,3)$ (Fundamental Theorem of Calculus holds.) \\
+
+		$F(3)-F(0)=
+    \int_{0}^{3}{f(x)}\,dx=
+    \int_{0}^{1}{f(x)}\,dx+\int_{1}^{3}{f(x)}\,dx=
+    bh+2.3=
+    (2*1)+2.3=4.3\\$
+
+\end{enumerate}
+\end{document}

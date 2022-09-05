@@ -1,0 +1,201 @@
+\documentclass[10pt, letterpaper]{report}
+\usepackage[letterpaper]{geometry}
+  \geometry{top=1in, bottom=1in, left=1in, right=1in}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp, gensymb, mathtools , amssymb , amsthm, graphicx}
+  \graphicspath{ {/home/lowebang/Pictures/} }
+\usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \lhead{}
+  \chead{}
+  \rhead{Cabrera \thepage}
+  \lfoot{}
+  \cfoot{}
+  \rfoot{\LaTeX}
+  \renewcommand{\headrulewidth}{1pt}
+  \renewcommand{\footrulewidth}{1pt}
+  \setlength\headsep{0.333in}
+
+
+\title{Calculus BC - Worksheet on Algebraic \& U-Substitution}
+\author{Craig Cabrera}
+\date{4 January 2022}
+
+\begin{document}
+\maketitle
+Work the following on \textbf{\underline{notebook paper}}. Do not use your calculator.
+
+Evaluate.
+\begin{enumerate}
+  \item{$\int{x\sqrt{x+2}}\,dx$} \\
+
+    Let $u=x+2\rightarrow x=u-2 \therefore du=dx$ \\
+
+    $\int (u-2)\sqrt{u}\,du=
+    \int u\sqrt{u}-2\sqrt{u}\,du=
+    \int u^{\frac{3}{2}}\,du-2\int u^{\frac{1}{2}}\,du=
+    [\frac{2}{5}u^{\frac{5}{2}}]-2[\frac{2}{3}u^{\frac{3}{2}}]+C=
+    \frac{2}{5}(x+2)^{\frac{5}{2}}-\frac{4}{3}(x+2)^{\frac{3}{2}}+C$ \\
+
+  \item{$\int{x\sqrt{x^{2}+2}}\,dx$} \\
+
+    Let $u=x^{2}+2\therefore du=2xdx\rightarrow dx=\frac{du}{2x}$ \\
+
+    $\int{\frac{\sqrt{u}}{2}}\,du=
+    \frac{1}{2}\int{\sqrt{u}}\,du=
+    \frac{1}{2}[\frac{2}{3}u^{\frac{3}{2}}]=
+    \frac{1}{3}(x^{2}+2)^{\frac{3}{2}}+C$ \\
+
+  \item{$\int{x^{2}\sqrt{1-x}}\,dx$} \\
+
+    Let $u=1-x\rightarrow x=1-u\therefore dx=-du$ \\
+
+    $\int{-(1-u)^{2}\sqrt{u}}\,du=
+    \int{-(u^{2}-2u+1)\sqrt{u}}\,du=
+    -\int{u^{\frac{5}{2}}}\,du+2\int{u^{\frac{3}{2}}}\,du-\int{\sqrt{u}}\,du=$ \\
+    $-\frac{2}{7}(1-x)^{\frac{7}{2}}+\frac{4}{5}(1-x)^{\frac{5}{2}}-\frac{2}{3}(1-x)^{\frac{3}{2}}+C$ \\
+
+  \item{$\int{\frac{x}{\sqrt{x+4}}}\,dx$} \\
+
+    Let $u=x+4\rightarrow x=u-4\therefore du=dx$ \\
+
+    $\int{\frac{u-4}{\sqrt{u}}}\,du=
+    \int{\sqrt{u}}\,du-4\int{u^{-\frac{1}{2}}}\,du=
+    \frac{2}{3}(x+4)^{\frac{3}{2}}-8\sqrt{x+4}+C$ \\
+
+  \item{$\int{\frac{2x}{\sqrt{x^{2}+4}}}\,dx$} \\
+
+    Let $u=x^{2}+4\therefore du=2xdx\rightarrow dx=\frac{du}{2x}$ \\
+
+    $\int{\frac{1}{\sqrt{u}}}\,du=
+    \int{u^{-\frac{1}{2}}}\,du=
+    [2u^{\frac{1}{2}}]+C=
+    2\sqrt{x^{2}+4}+C$ \\
+
+  \item{$\int_{-1}^{7}{x\sqrt[3]{x+1}}\,dx$} \\
+
+    Let $u=x+1\rightarrow x=u-1\therefore du=dx$ \\
+
+    $\int_{0}^{8}{(u-1)\sqrt[3]{u}}\,du=
+    \int_{0}^{8}{u^{\frac{4}{3}}}\,du-\int_{0}^{8}{\sqrt[3]{u}}\,du=
+    [\frac{3}{7}(u)^{\frac{7}{3}}]_{0}^{8}-[\frac{3}{4}(u)^{\frac{4}{3}}]_{0}^{8}=
+    \frac{384}{7}-\frac{36}{3}=\frac{300}{7}\approx42.857$ \\
+
+  \item{$\int_{-1}^{1}{x(x^{2}+1)^{3}}\,dx$} \\
+
+    Let $u=x^{2}+1\rightarrow x=\sqrt{u-1}\therefore du=2xdx\rightarrow dx=\frac{du}{2x}$ \\
+
+    $\frac{1}{2}\int_{2}^{2}{u^{3}}\,du=0$ because the upper and lower bounds of the domain are equal. $(a=b\therefore\int_{a}^{b}f(x)\,dx=0)$ \\
+
+  \item{$\int_{1}^{5}{\frac{x}{\sqrt{2x-1}}}\,dx$} \\
+
+    Let $u=2x-1\rightarrow x=\frac{u+1}{2}\therefore du=2dx\rightarrow dx=\frac{du}{2}$ \\
+
+    $\int_{1}^{9}{\frac{\frac{u+1}{2}}{2\sqrt{u}}}\,du=
+    \int_{1}^{9}{\frac{u+1}{4\sqrt{u}}}\,du=
+    \frac{1}{4}(\int_{1}^{9}\sqrt{u}\,du-\int_{1}^{9}{u^{-\frac{1}{2}}}\,du)=
+    \frac{[2u^{\frac{3}{2}}]_{1}^{9}+[6\sqrt{u}]_{1}^{9}}{4}=
+    \frac{54-2+18-6}{12}=\frac{16}{3}\approx5.333$ \\
+
+  \item{$\int_{1}^{2}{2x^{2}\sqrt{x^{3}+1}}\,dx$} \\
+
+    Let $u=x^{3}+1\rightarrow x=\sqrt[3]{u-1}\therefore du=3x^{2}dx\rightarrow dx=\frac{du}{3x^2}$ \\
+
+    $\frac{2}{3}\int_{2}^{9}{\sqrt{u}}\,du=
+    \frac{2}{3}[\frac{2}{3}u^{\frac{3}{2}}]_{2}^{9}=
+    \frac{4}{9}[27-2\sqrt{2}]\approx10.742$ \\
+
+  \item{$\int_{0}^{4}\frac{1}{\sqrt{2x+1}}\,dx$} \\
+
+    Let $u=2x+1\rightarrow x=\frac{u-1}{2}\therefore du=2dx\rightarrow dx=\frac{du}{2}$ \\
+    $\frac{1}{2}\int_{1}^{9}{u^{-\frac{1}{2}}}\,du=
+    \frac{1}{2}[2\sqrt{u}]_{1}^{9}=
+    \frac{4}{2}=2$ \\
+
+  \item{$\int_{-4}^{3}{\frac{x}{\sqrt[3]{x+5}}}\,dx$} \\
+
+    Let $u=x+5\rightarrow x=u-5\therefore du=dx$ \\
+
+    $\int_{1}^{8}{u^{\frac{2}{3}}}\,du-5\int_{1}^{8}{u^{-\frac{1}{3}}}\,du=
+    [\frac{3}{5}u^{\frac{5}{3}}]_{1}^{8}-5[\frac{3}{2}u^{\frac{2}{3}}]_{1}^{8}=
+    \frac{93}{5}-\frac{45}{2}=\frac{186-225}{10}=-\frac{39}{10}=-3.9$ \\
+
+\hline
+  \item{Find the area bounded by the graph of $y=x\sqrt[3]{x+1}$ and the $x$-axis on the interval $[0,7]$.} \\
+
+    Let $u=x+1\rightarrow x=u-1\therefore dx=du$ \\
+
+    $\int_{1}^{8}{(u-1)\sqrt[3]{u}}\,du=
+    \int_{1}^{8}{u^{\frac{4}{3}}}\,du-\int_{1}^{8}{\sqrt[3]{u}}\,du=
+    [\frac{3}{7}u^{\frac{7}{3}}]_{1}^{8}-[\frac{3}{4}u^{\frac{4}{3}}]_{1}^{8}=
+    \frac{384-3}{7}-\frac{48-3}{4}=\frac{1524-315}{28}=\frac{1209}{28}\approx43.179$ \\
+
+  \item{Find the area bounded by the graph of $y=x+\cos{x}$ and the $x$-axis on the interval $[\frac{\pi}{3},\frac{\pi}{2}]$.} \\
+
+    $\int_{\frac{\pi}{3}}^{\frac{\pi}{2}}{x}\,dx+\int_{\frac{\pi}{3}}^{\frac{\pi}{2}}{\cos{x}}\,dx=
+    [\frac{1}{2}x^{2}]_{\frac{\pi}{3}}^{\frac{\pi}{2}}+[\sin{x}]_{\frac{\pi}{3}}^{\frac{\pi}{2}}=
+    \frac{1}{2}[\frac{\pi^{2}}{4}-\frac{\pi^{2}}{9}]+[\frac{2-\sqrt{3}}{2}]=
+    \frac{5\pi^{2}+72-36\sqrt{3}}{72}\approx0.819$ \\
+
+\hline
+  \item{Solve: $\frac{dy}{dx}=-\frac{48}{(3x+5)^{3}}$ given that $(-1,3)$ is a point on the solution curve.} \\
+
+    Let $u=3x+5\rightarrow x=\frac{u-5}{3}\therefore du=3dx\rightarrow dx=\frac{du}{3}$ \\
+
+    $-16\int{u^{-3}}\,du=
+    -16[-\frac{1}{2}u^{-2}]+C=
+    \frac{8}{(3x+5)^{2}}+C$ \\
+
+    $\frac{8}{(3(-1)+5)^{2}}+C=\frac{8}{4}+C=3\rightarrow 2+C=3\rightarrow C=1\therefore f(x)=\frac{8}{(3x+5)^{2}}+1$ \\
+
+\hline
+  \par Given that $f(x)$ is an even function and that $\int_{0}^{2}{f(x)}\,dx=\frac{8}{3}$, find:
+  \item{$\int_{-2}^{0}{f(x)}\,dx$} \\
+
+    Because an even function has reflection symmetry about the y-axis,
+    $\int_{0}^{2}{f(x)}\,dx=\int_{-2}^{0}{f(x)}\,dx=\frac{8}{3}$ \\
+
+  \item{$\int_{-2}^{2}{f(x)}\,dx$} \\
+
+    $\int_{-2}^{2}{f(x)}\,dx=\int_{0}^{2}{f(x)}\,dx+\int_{-2}^{0}{f(x)}\,dx=\frac{16}{3}$ \\
+
+  \item{$\int_{-2}^{0}{3f(x)}\,dx$} \\
+
+    $\int_{-2}^{0}{3f(x)}\,dx=3\int_{-2}^{0}{f(x)}\,dx=\frac{24}{3}=8$ \\
+
+\hline
+  \par Given that $f(x)$ is an odd function and that $\int_{0}^{2}{f(x)}\,dx=\frac{8}{3}$, find:
+  \item{$\int_{-2}^{0}{f(x)}\,dx$} \\
+
+    Because an odd function has rotational symmetry about the origin,
+    $\int_{-2}^{0}{f(x)}\,dx=-\int_{0}^{2}{f(x)}\,dx=-\frac{8}{3}$ \\
+
+  \item{$\int_{-2}^{2}{f(x)}\,dx$} \\
+
+    $\int_{-2}^{2}{f(x)}\,dx=\int_{0}^{2}{f(x)}\,dx+\int_{-2}^{0}{f(x)}\,dx=0$ \\
+
+  \item{$\int_{-2}^{0}{3f(x)}\,dx$} \\
+
+    $\int_{-2}^{0}{3f(x)}\,dx=3\int_{-2}^{0}{f(x)}\,dx=-\frac{24}{3}=-8$ \\
+
+\hline
+  \item{Write $\lim_{n\to\infty}\frac{1}{n}[(\frac{1}{n})^{3}+(\frac{2}{n})^{3}+...+(\frac{5n}{n})^{3}]$ as a definite integral, given that $n$ is a positive integer.} \\
+
+    \par Definite Integral as the Limit of a Riemann Sum: \\
+
+    \[ \lim_{n\to\infty}\sum_{i=1}^{n}f(a+i\Delta x)\Delta x=\lim_{n\to\infty}\sum_{i=1}^{n}f(x_{k})\Delta x=\int_{a}^{b}f(x)dx \] \\
+
+    $\lim_{n\to\infty}\frac{1}{n}[(\frac{1}{n})^{3}+(\frac{2}{n})^{3}+...+(\frac{5n}{n})^{3}]
+    =\lim_{\frac{n}{5}\to\infty}\sum_{i=1}^{n}f(0+\frac{5i}{n})\frac{5}{n}=
+    \int_{0}^{5}{x^{3}}\,dx=
+    [\frac{1}{4}x^{4}]_{0}^{5}=\frac{625}{4}=156.25$ \\
+
+  \item{The closed interval $[c,d]$ is partitioned into $n$ equal subintervals, each of width $\Delta x$, by the numbers $c=x_{0}, x_{1}, ..., x_{n}$ where $x_{0}<x_{1}<x_{2}<...<x_{n-1}=d$. Write $\lim_{n\to\infty}\sum_{i=1}^{n}(x_{k})^{2}\Delta x$ as a definite integral.} \\
+
+    Definite Integral as the Limit of a Riemann Sum: \\
+    \[ \lim_{n\to\infty}\sum_{i=1}^{n}f(a+i\Delta x)\Delta x=\lim_{n\to\infty}\sum_{i=1}^{n}f(x_{k})\Delta x=\int_{a}^{b}f(x)dx \] \\
+
+    $\lim_{n\to\infty}\sum_{i=1}^{n}(x_{k})^{2}\Delta x=\int_{c}^{d}{x^{2}}\,dx=
+    \frac{1}{3}[d^{3}-c^{3}]$
+\end{enumerate}
+\end{document}

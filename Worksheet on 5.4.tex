@@ -1,0 +1,201 @@
+\documentclass[10pt, letterpaper]{report}
+\usepackage[letterpaper]{geometry}
+  \geometry{top=1in, bottom=1in, left=1in, right=1in}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp, gensymb, mathtools , amssymb , amsthm, graphicx}
+  \graphicspath{ {/home/lowebang/Pictures/} }
+\usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \lhead{}
+  \chead{}
+  \rhead{Cabrera \thepage}
+  \lfoot{}
+  \cfoot{}
+  \rfoot{\LaTeX}
+  \renewcommand{\headrulewidth}{1pt}
+  \renewcommand{\footrulewidth}{1pt}
+  \setlength\headsep{0.333in}
+
+\title{Calculus BC - Worksheet on 5.4}
+\author{Craig Cabrera}
+\date{26 January 2022}
+
+\begin{document}
+\maketitle
+\noindent Work the following on \textbf{\underline{notebook paper}} No calculator.
+\noindent Evaluate.
+\begin{enumerate}
+  \item{$\int{\frac{e^{x}+e^{-x}}{e^{x}-e^{-x}}}\,dx$} \\
+
+    Let $u=e^{x}-e^{-x}\therefore du=e^{x}+e^{-x}dx$ \\
+
+    $-\int{\frac{1}{u}}\,du=\ln{|u|}+C=\ln{|e^{x}-e^{-x}|}+C$ \\
+
+  \item{$\int{\frac{5-e^{x}}{e^{2x}}}\,dx$} \\
+
+    Let $u=e^{x}\therefore du=e^{x}dx$ \\
+
+    $\int{\frac{5-u}{u^{3}}}\,du=5\int{u^{-3}}\,du-\int{\frac{1}{u^{2}}}\,du=
+    \frac{1}{u}-\frac{5}{2u^{2}}+C=\frac{1}{e^{x}}-\frac{5}{2e^{2x}}+C$ \\
+
+  \item{$\int{e^{-x}\tan{(e^{-x})}}$} \\
+
+    Let $\theta = e^{-x}\therefore d\theta=-e^{-x}dx$ \\
+
+    $-\int{\tan{\theta}}\,d\theta=-\int{\frac{\sin{\theta}}{\cos{\theta}}}\,d\theta$ \\
+
+    Let $u=\cos{\theta}\therefore du=-\sin{\theta}d\theta$ \\
+
+    $\int{\frac{1}{u}}\,du=\ln{|u|}=\ln{|\cos{\theta}|}+C=\ln{|\cos{e^{-x}}|}+C$ \\
+
+  \item{$\int_{0}^{1}{e^{-2x}}\,dx$} \\
+
+    Let $u=-2x\therefore du=-2dx$ \\
+
+    $-\frac{1}{2}\int_{0}^{-2}{e^{u}}\,du=\frac{1}{2}\int_{-2}^{0}{e^{u}}\,du=
+    [\frac{1}{2}e^{u}]_{-2}^{0}=\frac{1}{2}(1-e^{-2})=\frac{e^{2}-1}{2e^{2}}$ \\
+
+  \item{$\int_{0}^{1}{xe^{-x^{2}}}\,dx$} \\
+
+    Let $u=-x^{2}\therefore du=-2xdx$ \\
+
+    $-\frac{1}{2}\int_{0}^{-1}{e^{u}}\,du=\frac{1}{2}\int_{-1}^{0}{e^{u}}\,du=
+    [\frac{e^{u}}{2}]_{-1}^{0}=\frac{1}{2}\left(\frac{1}{e}-1\right)=\frac{e-1}{2e}$
+
+  \item{$\int_{1}^{3}{\frac{e^{\frac{3}{x}}}{x^{2}}}\,dx$} \\
+
+    Let $u=\frac{3}{x}\therefore du=-\frac{3}{x^{2}}dx$ \\
+
+    $-\frac{1}{3}\int_{3}^{1}{e^{u}}\,du=\frac{1}{3}\int_{1}^{3}{e^{u}}\,du=
+    \frac{1}{3}[e^{u}]_{1}^{3}=\frac{e^{3}-e}{3}$ \\
+\pagebreak
+  \item{$\int_{0}^{3}{\frac{2e^{2x}}{1+e^{2x}}}\,dx$} \\
+
+    Let $u=1+e^{2x}\therefore du=2e^{2x}dx$ \\
+
+    $\int_{1}^{e^{6}}{\frac{1}{u}}\,du$ \\
+
+    $\int_{2}^{e^{6}+1}{\frac{1}{u}}\,du=[\ln{|u|}]_{2}^{e^{6}+1}=\ln{\left(\frac{e^{6}+1}{2}\right)}$ \\
+
+  \item{$\int_{0}^{\frac{\pi}{2}}{e^{\sin{(\pi x)}}\cos{(\pi x)}}\,dx$} \\
+
+    Let $\theta = \pi x\therefore d\theta = \pi dx$ \\
+
+    $\frac{1}{\pi}\int_{0}^{\frac{\pi^{2}}{2}}{e^{\sin{\theta}}\cos{\theta}\,d\theta}$ \\
+
+    Let $u=\sin{\theta}\therefore du=\cos{\theta}d\theta$ \\
+
+    $\frac{1}{\pi}\int_{0}^{-1}{e^{u}}=-\frac{1}{\pi}\int_{-1}^{0}{e^{u}}=
+    -\frac{1}{\pi}[e^{u}]_{-1}^{0}=-\frac{1}{\pi}(1-e^{u})=-\frac{1}{\pi}\left(1-e^{\sin{\frac{\pi^{2}}{2}}}\right)$ \\
+    \hline
+  \item{Solve: $\frac{dy}{dx}=xe^{ax^{2}}$ ($a$ is a parameter)} \\
+
+    $y=\int{xe^{ax^{2}}}$ \\
+
+    Let $u=ax^{2}\therefore du=2axdx$ \\
+
+    $y=\frac{1}{2a}\int{e^{u}}=\frac{e^{u}}{2a}+C=\frac{1}{2a}e^{ax^{2}}+C$ \\
+
+  \item{Solve for $f'(x)$ and $f(x)$, given $f''(x)=\frac{1}{2}(e^{x}+e^{-x})$, $f'(0)=0$, $f(0)=1$} \\
+
+    $f'(x)=\int{\frac{1}{2}(e^{x}+e^{-x})}\,dx=\frac{1}{2}\int{e^{x}}\,dx+\frac{1}{2}\int{e^{-x}}\,dx=
+    \frac{1}{2}e^{x}-\frac{1}{2e^{x}}+C=\frac{1}{2}(e^{x}-e^{-x})+C$ \\
+
+    $f'(0)=\frac{1}{2}(e^{x}-e^{-x})+C=\frac{1}{2}(1-1)+C=0+C\rightarrow C=0\therefore f'(x)=\frac{1}{2}(e^{x}-e^{-x})$ \\
+
+    $f(x)=\int{\frac{1}{2}(e^{x}-e^{-x})}=\frac{1}{2}\int{e^{x}}\,dx-\frac{1}{2}{e^{-x}}\,dx=
+    \frac{1}{2}(e^{x}+e^{-x})+C$ \\
+
+    $f(0)=\frac{1}{2}(1+1)+C=1\rightarrow C=0\therefore f(x)=\frac{1}{2}(e^{x}+e^{-x})$
+\pagebreak
+  \par \noindent Multiple Choice. All work must be shown.
+  \item{If $x^{3}+3xy+2y^{3}=17$, then in terms of $x$ and $y$, $\frac{dy}{dx}=$} \\
+    \begin{enumerate}
+      \item{$-\frac{x^{2}+y}{x+2y^{2}}$}
+      \item{$-\frac{x^{2}+y}{x+y^{2}}$}
+      \item{$-\frac{x^{2}+y}{x+2y}$}
+      \item{$-\frac{x^{2}+y}{2y^{2}}$}
+      \item{$\frac{-x^{2}}{1+2y^{2}}$} \\
+
+      $\frac{d}{dx}\left( x^{3}+3xy+2y^{3}=17 \right)\rightarrow 3x^{2}+3x\frac{dy}{dx}+6y^{2}\frac{dy}{dx}+3y=0$ \\
+
+      $3(x^{2}+y)=3x^{2}+3y=-3x\frac{dy}{dx}-6y^{2}\frac{dy}{dx}=-3\frac{dy}{dx}(-2y^{2}-x)$ \\
+
+      $\frac{x^{2}+y}{2y^{2}+x}=-\frac{dy}{dx}$ \\
+
+      $-\frac{x^{2}+y}{2y^{2}+x}=\frac{dy}{dx}$ \\
+      \hline
+    \end{enumerate}
+  \item{$\int{\frac{3x^{2}}{\sqrt{x^{3}+1}}}\,dx=$}
+    \begin{enumerate}
+      \item{$2\sqrt{x^{3}+1}+C$}
+      \item{$\frac{3}{2}\sqrt{x^{3}+1}+C$}
+      \item{$\sqrt{x^{3}+1}+C$}
+      \item{$\ln{\sqrt{x^{3}+1}}+C$}
+      \item{$\ln{(x^{3}+1)}+C$} \\
+
+      Let $u=x^{3}+1\therefore du=3x^{2}dx$ \\
+
+      $\int{\frac{1}{\sqrt{u}}}\,du=2\sqrt{u}+C=2\sqrt{x^{3}+1}+C$
+    \end{enumerate}
+    \pagebreak
+  \item{For what value of $x$ does the function $f(x)=(x-2)(x-3)^{2}$ have a relative maximum?}
+    \begin{enumerate}
+      \item{-3}
+      \item{$-\frac{7}{3}$}
+      \item{$-\frac{5}{2}$}
+      \item{$\frac{7}{3}$}
+      \item{$\frac{5}{2}$} \\
+
+      Let us conduct an intervals test for the following function. We will first solve for our critical points (the values in which $f'(x)=0$.) \\
+
+      $f'(x)=\frac{d}{dx}f(x)=3x^{2}-16x+21$ \\
+
+      $\frac{16\pm\sqrt{256-252}}{6}=\frac{16\pm2}{6}=\frac{7}{3}$ and $3$\\
+
+      Now that we have our critical points, let us solve for the values in between. \\
+
+      \begin{center}
+        \begin{tabular}{| c | c | c | c | c | c |}
+          \hline
+          Interval: & $\left(-\infty, \frac{7}{3}\right)$ & $x=\frac{7}{3}$ & $\left(\frac{7}{3},3 \right)$ & $x=3$ & $(3, \infty)$ \\
+          \hline
+          Direction: & + & 0 & - & 0 & + \\
+          \hline
+        \end{tabular}
+      \end{center}
+
+      Because $f'(x)$ changes from positive to negative values on the $x$ value of $\frac{7}{3}$, we can conclude that $f(x)$ has a relative maximum at $x=\frac{7}{3}$. \\
+    \end{enumerate}
+    \hline
+    \item{If $f(x)=(x-1)^{2}\sin{x}$, then $f'(0)=$}
+    \begin{enumerate}
+      \item{-2}
+      \item{-1}
+      \item{0}
+      \item{1}
+      \item{2}
+
+      $f'(x)=\frac{d}{dx}f(x)=2(x-1)\sin{x}+(x-1)^{2}\cos{x}$ \\
+
+      $f'(0)=2(0-1)\sin{0}+(-1)^{2}\cos{0}=0+1\cos{0}=1$ \\
+    \end{enumerate}
+    \hline
+    \item{The acceleration of a particle moving along the $x$-axis at time $t$ is given by $a(t)=6t-2$. If the velocity is 25 when $t=3$ and the position is 10 when $t=1$, then the position $x(t)=$}
+    \begin{enumerate}
+      \item{$9t^{2}+1$}
+      \item{$3t^{2}-2t+4$}
+      \item{$t^{3}-t^{2}+4t+6$}
+      \item{$t^{3}-t^{2}+9t-20$}
+      \item{$36t^{3}-4t^{2}-77t+55$} \\
+
+      $v(t)=\int{a(t)}\,dt=3t^{2}-2t+C$ \\
+
+      $v(3) = 27 - 6 + C = 25 \rightarrow C = 4\therefore v(t)=3t^{2}-2t+4$ \\
+
+      $x(t)=\int{v(t)}\,dt=t^{3}-t^{2}+4t+C$ \\
+
+      $x(1)=1-1+4+C=10\rightarrow C=6\therefor x(t)=t^{3}-t^{2}+4t+6$
+    \end{enumerate}
+\end{enumerate}
+\end{document}

@@ -1,0 +1,298 @@
+\documentclass[10pt, letterpaper]{report}
+\usepackage[letterpaper]{geometry}
+  \geometry{top=1in, bottom=1in, left=1in, right=1in}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp, gensymb, mathtools , amssymb , amsthm, graphicx}
+  \graphicspath{ {/home/lowebang/Pictures/} }
+\usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \lhead{}
+  \chead{}
+  \rhead{Cabrera \thepage}
+  \lfoot{}
+  \cfoot{}
+  \rfoot{\LaTeX}
+  \renewcommand{\headrulewidth}{1pt}
+  \renewcommand{\footrulewidth}{1pt}
+  \setlength\headsep{0.333in}
+  
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arccsc}{arccsc}
+
+\title{Calculus BC - Worksheet on 8.1 -- 8.5}
+\author{Craig Cabrera}
+\date{8 February 2022}
+
+\begin{document}
+\maketitle
+\begin{center}
+  \textbf{\underline{Relevant Formulas:}}
+\end{center}
+
+For integrals using $\sqrt{a^{2}-u^{2}}$: \\
+$$\sin{\theta}=\frac{u}{a}\rightarrow u=a\sin{\theta}$$ 
+
+$$\cos{\theta}=\frac{\sqrt{a^{2}-u^{2}}}{a}\rightarrow \sqrt{a^{2}-u^{2}}=a\cos{\theta}$$ \\
+
+For integrals using $\sqrt{a^{2}+u^{2}}$: \\
+$$\tan{\theta}=\frac{u}{a}\rightarrow u=a\tan{\theta}$$
+
+$$\sec{\theta}=\frac{\sqrt{a^{2}+u^{2}}}{a}\rightarrow \sqrt{a^{2}+u^{2}}=a\sec{\theta}$$ \\ 
+
+For integrals using $\sqrt{u^{2}-a^{2}}$: \\
+$$\sec{\theta}=\frac{u}{a}\rightarrow u=a\sec{\theta}$$
+
+$$\tan{\theta}=\frac{\sqrt{u^{2}-a^{2}}}{a}\rightarrow \sqrt{u^{2}-a^{2}}=a\tan{\theta}$$ \\ 
+
+\par . \\
+\noindent Volume of solid rotated around the $x$-axis: 
+
+$$ V=\pi\int_{a}^{b}{f^{2}(x)}\,dx\therefore \int_{a}^{b}{f(x)}\,dx=r$$
+\pagebreak
+
+Work the following on \textbf{\underline{notebook paper}}.
+\begin{enumerate}
+  \item{$\int_{2}^{5}{\frac{dx}{x^{2}-1}}$} \\
+  
+    $\int_{2}^{5}{\frac{dx}{x^{2}-1}}=
+    \int_{2}^{5}{\frac{dx}{(x+1)(x-1)}}=
+    \int_{2}^{5}{\frac{A}{x+1}}\,dx+\int_{2}^{5}{\frac{B}{x-1}}\,dx=
+    \int_{2}^{5}{\frac{A(x-1)+B(x+1)}{x^{2}-1}}\,dx$ \\
+    
+    $x^{2}-1=0\rightarrow x=\pm 1$ \\
+    
+    $1 = A(x-1)+B(x+1)$ \\
+    
+    $1 = A(1-1)+B(1+1) = 2B\therefore B=\frac{1}{2}$ \\
+    
+    $1= A(-1-1)+B(-1+1) = -2A\therefore A=-\frac{1}{2}$ \\
+    
+    $\therefore \int_{2}^{5}{\frac{A}{x+1}}\,dx+\int_{2}^{5}{\frac{B}{x-1}}\,dx=
+    \int_{2}^{5}{\frac{dx}{2x-2}}-\int_{2}^{5}{\frac{dx}{2x+2}}=
+    \left[\ln{\left|\frac{2x-2}{2x+2}\right|}\right]_{2}^{5}=
+    \left[\ln{\left|\frac{2}{3}\right|}-\ln{\left|\frac{1}{3}\right|}\right]=
+    \ln{\left(\frac{\frac{2}{3}}{\frac{1}{3}}\right)}=
+    \ln{2}$
+    
+  \item{$\int{\frac{5-x}{2x^{2}+x-1}}\,dx$} \\
+  
+    $\int{\frac{5-x}{2x^{2}+x-1}}\,dx=
+    \int{\frac{A}{2x-1}}\,dx+\int{\frac{B}{x+1}}\,dx=
+    \int{\frac{A(x+1)+B(2x-1)}{2x^{2}+x-1}}\,dx$ \\
+    
+    $2x^{2}+x-1=(2x-1)(x+1)=0$ at $x=-1, x=\frac{1}{2}$ \\
+    
+    $5-x=A(x+1)+B(2x-1)$ \\
+    
+    $5-(-1)=6=A(-1+1)+B(2(-1)-1)=-3B\therefore B=-2$ \\
+    
+    $5-\frac{1}{2}=\frac{9}{2}=A\left(\frac{1}{2}+1\right)+B\left(2\left(\frac{1}{2}\right)-1\right)=\frac{3}{2}A\therefore 3=A$ \\ 
+    
+    Let $u=2x-1\therefore du=2dx$ \\
+    
+    $\therefore \int{\frac{A}{2x-1}}\,dx+\int{\frac{B}{x+1}}\,dx=
+    3\int{\frac{dx}{2x-1}}-2\int{\frac{dx}{x+1}}=
+    \frac{3}{2}\int{\frac{du}{u}}\,dx-2\int{\frac{dx}{x+1}}=
+    \frac{3}{2}\ln{|u|}-2\ln{|x+1|}+C=$ \\
+    
+    $\frac{3}{2}\ln{|2x-1|}-2\ln{|x+1|}+C$ \\
+    
+  \item{$\int_{0}^{\frac{\sqrt{3}}{2}}{\frac{x^{2}}{\left(1-x^{2}\right)^{\frac{3}{2}}}}\,dx$} \\
+  
+    $\cos{\theta}=\frac{\sqrt{a^{2}-u^{2}}}{a}=\frac{\sqrt{1-x^{2}}}{1}=\sqrt{1-x^{2}}\therefore \cos^{3}{\theta}=\left(1-x^{2}\right)^{\frac{3}{2}}$ \\
+    
+    $\sin{\theta}=\frac{u}{a}=x\rightarrow \theta=\arcsin{x}\therefore dx=\cos{\theta}d\theta$ \\
+    
+    $\int_{0}^{\frac{\sqrt{3}}{2}}{\frac{x^{2}}{\left(1-x^{2}\right)^{\frac{3}{2}}}}\,dx=
+    \int_{0}^{\frac{\pi}{3}}{\frac{\sin^{2}{\theta}}{\cos^{3}{\theta}}\cos{\theta}}\,d\theta=
+    \int_{0}^{\frac{\pi}{3}}{\tan^{2}{\theta}}\,d\theta=
+    \int_{0}^{\frac{\pi}{3}}{\sec^{2}{\theta}}\,d\theta-\int_{0}^{\frac{\pi}{3}}{}\,d\theta=
+    [\tan{\theta}-\theta]_{0}^{\frac{\pi}{3}}=
+    \sqrt{3}-\frac{\pi}{3}$ \\
+    \pagebreak 
+    
+  \item{$\int{\sin^{3}{(6x)}}\,dx$} \\
+  
+    Let $\theta=6x\therefore d\theta=6dx$ \\
+    
+    $\int{\sin^{3}{(6x)}}\,dx=
+    \frac{1}{6}\int{\sin^{3}{\theta}}\,d\theta=
+    \frac{1}{6}\int{\sin^{2}{\theta}\sin{\theta}}\,d\theta=
+    \frac{1}{6}\int{\sin{\theta}\left(1-\cos^{2}{\theta}\right)}\,d\theta=
+    \frac{1}{6}\left(\int{\sin{\theta}}\,d\theta-\int{\cos^{2}{\theta}\sin{\theta}\,d\theta}\right)$ \\
+    
+    Let $u=\cos{\theta}\therefore d\theta=-\sin{\theta}d\theta$ \\
+    
+    $\frac{1}{6}\left(\int{\sin{\theta}}\,d\theta-\int{\cos^{2}{\theta}\sin{\theta}\,d\theta}\right)=
+    \frac{1}{6}\left(\int{u^{2}}\,du-\cos{\theta}\right)=
+    \frac{1}{18}u^{3}-\frac{1}{6}\cos{\theta}+C=
+    \frac{1}{18}\cos^{3}{(6x)}-\frac{1}{6}\cos{(6x)}+C$ \\
+    
+  \item{$\int{\frac{7x^{2}-16x+5}{x^{3}-2x^{2}+x}}\,dx$} \\
+  
+    $\int{\frac{7x^{2}-16x+5}{x^{3}-2x^{2}+x}}\,dx=
+    \int{\frac{7x^{2}-16x+5}{x(x-1)^{2}}}\,dx=
+    \int{\frac{A}{x}}\,dx+\int{\frac{B}{x-1}}\,dx+\int{\frac{C}{\left(x-1\right)^{2}}}\,dx=
+    \int{\frac{A\left(x-1\right)^{2}+Bx(x-1)+Cx}{x^{3}-2x^{2}+x}}$ \\
+    
+    $x^{3}-2x^{2}+x=0\rightarrow x=0, 1$ \\
+    
+    $7x^{2}-16x+5=A\left(x-1\right)^{2}+Bx(x-1)+Cx$ \\
+    
+    $7(0)^{2}-16(0)+5=5=A\left(0-1\right)^{2}+B(0)((0)-1)+C(0)=-A\therefore A=5$ \\
+    
+    $7(1)^{2}-16(1)+5=-4=A\left(1-1\right)^{2}+B(1)(1-1)+C(1)=C\therefore C=-4$ \\
+    
+    $7(2)^{2}-16(2)+5=1=5\left(2-1\right)^{2}+B(2)(2-1)-4(2)=2B-3\therefore B=2 $ \\
+    
+    $\therefore \int{\frac{A}{x}}\,dx+\int{\frac{B}{x-1}}\,dx+\int{\frac{C}{\left(x-1\right)^{2}}}\,dx=
+    5\int{\frac{dx}{x}}+2\int{\frac{dx}{x-1}}-4\int{\frac{dx}{\left(x-1\right)^{2}}}=
+    5\ln{\left|x\right|}+2\ln{\left|x-1\right|}+\frac{4}{x-1}+C$
+    
+  \item{$\int{\frac{1}{\left(x^{2}+3\right)^{\frac{3}{2}}}}\,dx$} \\  
+  
+    $\tan{\theta}=\frac{u}{a}=\frac{x}{\sqrt{3}}\rightarrow x=\sqrt{3}\tan{\theta}\therefore dx=\sqrt{3}\sec^{2}{\theta}d\theta$ \\
+    
+    $\sec{\theta}=\frac{\sqrt{u^{2}+a^{2}}}{a}=\frac{\sqrt{x^{2}+3}{\sqrt{3}}}\rightarrow (x^{2}+3)^{\frac{3}{2}}=3\sqrt{3}\sec^{3}{\theta}$ \\
+    
+    $\int{\frac{1}{\left(x^{2}+3\right)^{\frac{3}{2}}}}\,dx=
+    \int{\frac{\sqrt{3}\sec^{2}{\theta}}{3\sqrt{3}\sec^{3}{\theta}}}\,d\theta=
+    \frac{1}{3}\int{\cos{\theta}}\,d\theta=
+    \frac{1}{3}\sin{\theta}+C=
+    \frac{x}{3\sqrt{x^{2}+3}}+C$ \\
+    
+  \item{$\int{\arctan{(5x)}}\,dx$} \\
+  
+    Let $u=\arctan{(5x)} \therefore du=\frac{5}{1+25x^{2}}$ and let $v=x\therefore dv=dx$ \\
+    
+    $\int{\arctan{(5x)}}\,dx=
+    \int{u}\,dv=
+    x\arctan{(5x)}-\int{\frac{5x}{1+25x^{2}}}\,dx=
+    x\arctan{(5x)}-\frac{1}{10}\int{\frac{du}{u}}=$ \\
+    
+    $x\arctan{(5x)}-\frac{1}{10}\ln{\left|1+25x^{2}\right|}+C$ \\
+    \pagebreak 
+    
+  \item{$\int_{1}^{2}{\frac{x+1}{x(x^{2}+1)}}\,dx$} \\
+  
+    $\int_{1}^{2}{\frac{x+1}{x(x^{2}+1)}}\,dx=\int_{1}^{2}{\frac{A}{x}}\,dx+\int_{1}^{2}{\frac{Bx+C}{x^{2}+1}}$ \\
+    
+    $x(x^{2}+1)=0\rightarrow x=0$ \\
+    
+    $x+1=A(x^{2}+1)+Bx^{2}+Cx$ \\
+    
+    $0+1=1=A(0^{2}+1)+B(0)^{2}+C(0)=A\therefore 1=A$ \\
+    
+    $(-1)+1=0=1((-1)^{2}+1)+B(-1)^{2}+C(-1)=2+B-C\therefore C=2+B$ \\
+    
+    $1+1=2=1(1^{2}+1)+B(1)^{2}+(2+B)(1)=4+2B\therefore 2=4+2B\rightarrow B=-1\therefore C=1$ \\
+    
+    $\therefore \int_{1}^{2}{\frac{A}{x}}\,dx+\int_{1}^{2}{\frac{Bx+C}{x^{2}+1}}=
+    \int_{1}^{2}{\frac{1}{x}}\,dx+\int_{1}^{2}{\frac{-x+1}{x^{2}+1}}\,dx=
+    \int_{1}^{2}{\frac{1}{x}}\,dx-\int_{1}^{2}{\frac{x}{x^{2}+1}}\,dx+\int_{1}^{2}{\frac{dx}{x^{2}+1}}=$ \\
+    
+    $[\ln{x}]_{1}^{2}-\frac{1}{2}[\ln{|x^{2}+1|}]_{1}^{2}+[\arctan{x}]_{1}^{2}=
+    (\ln{2})-\frac{1}{2}(\ln{5}-\ln{2})+(\arctan{2}-\arctan{1})=$ \\
+    
+    
+    $-\frac{1}{2}\ln{5}+\frac{3}{2}\ln{2}+\arctan{2}-\frac{\pi}{4}$ \\ 
+    
+  \item{$\int{e^{x}\cos{(2x)}}\,dx$} \\
+  
+    Let $u=\cos{(2x)}\therefore du=-2\sin{(2x)}dx$ and let $v=e^{x}\therefore du=e^{x}dx$ and let $\alpha=\sin{(2x)}\therefore d\alpha=2\cos{(2x)}dx$ \\
+    
+    $\int{e^{x}\cos{(2x)}}\,dx=
+    \int{u}\,dv=
+    2\int{e^{x}\sin{(2x)}}\,dx-2e^{x}\cos{(2x)}=
+    2\int{\alpha}\,dv-2e^{x}\cos{(2x)}=
+    2\left(e^{x}\sin{(2x)}-2\int{e^{x}\cos{(2x)}}\,dx\right)-2e^{x}\cos{(2x)}$ \\
+    
+    Let $\beta=\int{e^{x}\cos{(2x)}}\,dx$ \\
+    
+    $\beta=2e^{x}\sin{(2x)}-4\beta-2e^{x}\cos{(2x)}\rightarrow
+    5\beta=2e^{x}\sin{(2x)}-2e^{x}\cos{(2x)}\rightarrow
+    \beta=\frac{2}{5}e^{x}\sin{(2x)}-\frac{2}{5}e^{x}\cos{(2x)}$ \\
+    
+  \hrule
+  \item{Given the region bounded by the graphs of $y=\cos{\left(\frac{x}{2}\right)}$, $y=0$, $x=0$, and $x=\pi$, Find the volume of the solid generated by revolving the region about the $x$-axis.} \\
+  
+    $V=\pi\int_{0}^{\pi}{\cos^{2}{\left(\frac{x}{2}\right)}}\,dx=
+    \frac{\pi}{2}\int_{0}^{\pi}\,dx+\frac{\pi}{2}\int_{0}^{\pi}{\cos{x}}\,dx=
+    \frac{\pi}{2}[x+\sin{x}]_{0}^{\pi}=
+    \frac{\pi}{2}\left[\left(\pi - \sin{\pi}\right)-\left(0-\sin{0}\right)\right]=$ \\
+    
+    $\frac{\pi}{2}\left(\pi\right)=\frac{\pi^{2}}{2}$ \\
+    \hrule
+    
+  \noindent Find the derivative. 
+  \item{$f(x)=\arcsin{(3x)}$} \\
+  
+    $\frac{d}{dx}\left(\arcsin{(3x)}\right)=
+    \frac{(3x)'}{\sqrt{1-(3x)^{2}}}=
+    \frac{3}{\sqrt{1-9x^{2}}}$ \\
+    \pagebreak 
+    
+  \item{$y=\cos^{-1}{(5x^{2})}$} \\
+  
+    $\frac{d}{dx}\left(\arccos{(5x^{2})}\right)=
+    -\frac{\left(5x^{2}\right)'}{\sqrt{1-(5x^{2})^2}}=
+    -\frac{10x}{\sqrt{1-25x^{4}}}$ \\
+    
+  \item{$y=\arctan{(e^{x})}$} \\
+  
+    $\frac{d}{dx}\left(\arctan{\left(e^{x}\right)}\right)=
+    \frac{\left(e^{x}\right)'}{1^{2}+\left(e^{x}\right)^{2}}=
+    \frac{e^{x}}{1+e^{2x}}$ \\
+    
+  \item{$f(x)=\sin{\left(\arccos{(2x)}\right)}$} \\
+  
+    $\frac{d}{dx}\left(\sin\left(\arccos{(2x)}\right)\right)=
+    \frac{d}{dx}\left(\sqrt{1-4x^{2}}\right)=
+    \frac{\left(1-4x^{2}\right)}{2\sqrt{1-4x^{2}}}=
+    -\frac{4x}{\sqrt{1-4x^{2}}}$ \\
+    
+  \hrule
+  \noindent Multiple Choice. All work must be shown. \\
+  \item{An antiderivtive for $\frac{1}{x^{2}-2x+2}$ is} 
+  \begin{enumerate}
+    \item{$-\left(x^{2}-2x+2\right)^{-2}$}
+    \item{$\ln{(x^{2}-2x+2)}$}
+    \item{$\ln{|\frac{x-2}{x+1}|}$}
+    \item{$\arcsec{(x-1)}$}
+    \item{$\arctan{(x-1)}$} \\
+  \end{enumerate}
+  
+    $\int{\frac{1}{x^{2}-2x+2}}\,dx=
+    \int{\frac{1}{\left(x-1\right)^{2}+1}}\,dx=
+    \frac{1}{1}\arctan{\left(\frac{x-1}{1}\right)}+C=
+    \arctan{\left(x-1\right)}$ \\
+    
+  \hrule
+  \item{The region enclosed by the $x$-axis, the line $x=3$, and the curve $y=\sqrt{x}$ is rotated about the $x$-axis. What is the volume of the solid generated? }
+  \begin{enumerate}
+    \item{$3\pi$}
+    \item{$3\sqrt{3}\pi$}
+    \item{$\frac{9}{2}\pi$}
+    \item{$9\pi$}
+    \item{$\frac{36\sqrt{3}}{5}\pi$}
+  \end{enumerate}
+  
+    $V=\pi\int_{0}^{3}{\left(\sqrt{x}\right)^{2}}\,dx=
+    \frac{\pi}{2}[x^{2}]_{0}^{3}=\frac{9\pi}{2}$ \\
+    
+  \hrule
+  \item{$\int_{0}^{\sqrt{3}}{\frac{dx}{\sqrt{4-x^{2}}}}=$}
+  \begin{enumerate}
+    \item{$\frac{\pi}{3}$}
+    \item{$\frac{\pi}{4}$}
+    \item{$\frac{\pi}{6}$}
+    \item{$\frac{1}{2}\ln{2}$}
+    \item{$-\ln{2}$} \\
+  \end{enumerate}
+  
+    $\int_{0}^{\sqrt{3}}{\frac{dx}{\sqrt{4-x^{2}}}}=
+    [\arcsin{\left(\frac{x}{2}\right)}]_{0}^{\sqrt{3}}=
+    \frac{\pi}{3}-0=\frac{\pi}{3}$ \\
+\end{enumerate}
+\end{document}

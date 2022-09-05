@@ -1,0 +1,273 @@
+\documentclass[10pt, letterpaper]{report}
+\usepackage[letterpaper]{geometry}
+  \geometry{top=1in, bottom=1in, left=1in, right=1in}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp, gensymb, mathtools , amssymb , amsthm, graphicx}
+  \graphicspath{ {/home/lowebang/Pictures/} }
+\usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \lhead{}
+  \chead{}
+  \rhead{Cabrera \thepage}
+  \lfoot{}
+  \cfoot{}
+  \rfoot{\LaTeX}
+  \renewcommand{\headrulewidth}{1pt}
+  \renewcommand{\footrulewidth}{1pt}
+  \setlength\headsep{0.333in}
+
+\title{Calculus BC - Worksheet on 8.1--8.2}
+\author{Craig Cabrera}
+\date{30 January 2022}
+
+\begin{document}
+\maketitle
+Work the following on \textbf{\underline{notebook paper}}. \textbf{\underline{No calculator.}}
+\begin{enumerate}
+  \item{$\int{\frac{2x}{x-4}}\,dx$} \\
+
+    Let $u=x-4\rightarrow x=u+4\therefore du=dx$ \\
+
+    $\int{\frac{2x}{x-4}}\,dx=2\int{\frac{u+4}{u}}\,du=
+    2\left(\int\,du+4\int{\frac{1}{u}}\,du\right)=
+    2u+4\ln{|u|}+C=2x-8+4\ln{|x-4|}+C$ \\
+
+  \item{$\int{\frac{x+1}{x^{2}+2x-4}}\,dx$} \\
+
+    Let $u=x^{2}+2x-4\therefore du=(2x+2)dx$ \\
+
+    $\int{\frac{x+1}{x^{2}+2x-4}}\,dx=\int{\frac{du}{u}}*\frac{x+1}{2(x+1)}=\int{\frac{du}{2u}}=
+    \frac{1}{2}\ln{|u|}+C=\frac{1}{2}\ln{|x^{2}+2x-4|}+C$ \\
+
+  \item{$\int{xe^{-3x}}\,dx$} \\
+
+    Let $u=x\therefore du=dx$ and let $v=-\frac{1}{3e^{3x}}\therefore dv=\frac{1}{e^{3x}}dx$ \\
+
+    $\int{\frac{x}{e^{3x}}}\,dx=\int{u}\,dv=
+    \frac{1}{3}\int{\frac{1}{e^{3x}}}\,dx-\frac{x}{3e^{3x}}=
+    -\frac{1}{9e^{3x}}-\frac{x}{3e^{3x}}+C=
+    -\frac{1}{3e^{3x}}\left(\frac{1}{3}+x\right)+C$ \\
+
+  \item{$\int{\sec{(4x)}}\,dx$} \\
+
+    Let $\alpha=4x\therefore d\alpha=4dx$ \\
+
+    $\int{\sec{(4x)}}\,dx=\frac{1}{4}\int{\sec{\alpha}}\,d\alpha=
+    \frac{1}{4}\int{\sec{\alpha}\left(\frac{\sec{\alpha}+\tan{\alpha}}{\sec{\alpha}+\tan{\alpha}}\right)}\,d\alpha=
+    \frac{1}{4}\int{\frac{\sec^{2}{\alpha}+\sec{\alpha}\tan{\alpha}}{\sec{\alpha}+\tan{\alpha}}}\,d\alpha$ \\
+
+    Let $u=\sec{\alpha}+\tan{\alpha}\therefore du=\sec^{2}{\alpha}+\sec{\alpha}\tan{\alpha}$ \\
+
+    $\frac{1}{4}\int{\frac{\sec^{2}{\alpha}+\sec{\alpha}\tan{\alpha}}{\sec{\alpha}+\tan{\alpha}}}\,d\alpha=\frac{1}{4}\int{\frac{du}{u}}=
+    \frac{1}{4}\ln{|u|}+C=
+    \frac{1}{4}\ln{|\sec{\alpha}+\tan{\alpha}|}+C=
+    \frac{1}{4}\ln{|\sec{4x}+\tan{4x}|}+C$ \\
+
+  \item{$\int{\frac{\ln{x}}{x^{2}}}\,dx$} \\
+
+    Let $u=\ln{x}\therefore du=\frac{dx}{x}$ and let $v=-\frac{1}{x}\therefore dv=\frac{dx}{x^{2}}$ \\
+
+    $\int{\frac{\ln{x}}{x^{2}}}\,dx=\int{u}\,dv=
+    \int{\frac{dx}{x^{2}}}-\frac{\ln{x}}{x}=
+    -\frac{1}{x}-\frac{\ln{x}}{x}+C=
+    -\frac{1}{x}\left(1+\ln{x}\right)+C$ \\
+
+  \item{$\int{\frac{\sin{x}}{\sqrt{\cos{x}}}}\,dx$} \\
+
+    Let $u=\cos{x}\therefore du=-\sin{x}dx$ \\
+
+    $\int{\frac{\sin{x}}{\sqrt{\cos{x}}}}\,dx=-\int{\frac{1}{\sqrt{u}}}\,du=
+    -2\sqrt{u}+C=-2\sqrt{\cos{x}}+C$ \\
+    \pagebreak
+
+  \item{$\int_{0}^{\pi}{x\sin{(2x)}}\,dx$} \\
+
+    Let $u=x\therefore du=dx$ and let $v=-\frac{1}{2}\cos{2x}\therefore dv=\sin{2x}dx$ \\
+
+    $\int_{0}^{\pi}{x\sin{(2x)}}\,dx=\int_{0}^{\pi}{u}\,dv=
+    \frac{1}{2}\int_{0}^{\pi}{\cos{2x}}\,dx-[\frac{1}{2}x\cos{2x}]_{0}^{\pi}=
+    [\frac{1}{2}\sin{2x}]_{0}^{\pi}-[\frac{1}{2}x\cos{2x}]_{0}^{\pi}=$ \\
+
+    $\frac{1}{2}(0-0)-\frac{1}{2}(\pi-0)=-\frac{\pi}{2}$ \\
+
+  \item{$\int{\frac{1}{\sqrt{2-2x-x^2}}}\,dx$} \\
+
+    $\int{\frac{dx}{\sqrt{2-2x-x^2}}}=\int{\frac{dx}{\sqrt{3-(x+1)^{2}}}}=
+    \arcsin{\left(\frac{x+1}{\sqrt{3}}\right)}+C$ \\
+
+  \item{$\int{\arctan{(3x)}}\,dx$} \\
+
+    Let $u=\arctan{2x}\therefore du=\frac{3}{9x^{2}+1}dx$ and let $v=x\therefore dv=dx$ \\
+
+    $\int{\arctan{(3x)}}\,dx=\int{u}\,dv=x\arctan{(3x)}-\int{\frac{3x}{9x^{2}+1}}\,dx$ \\
+
+    Let $\alpha=9x^2+1\therefore d\alpha=18xdx$ \\
+
+    $x\arctan{(3x)}-\int{\frac{3x}{9x^{2}+1}}\,dx=x\arctan{(3x)}-\int{\frac{du}{6u}}=
+    x\arctan{(3x)}-\frac{1}{6}\int{\frac{du}{u}}=x\arctan{(3x)}-\frac{1}{6}\ln{|u|}+C=$ \\
+
+    $x\arctan{(3x)}-\frac{1}{6}\ln{|9x^2+1|}+C$ \\
+
+  \item{$\int_{0}^{1}{e^{x}\sin{x}}\,dx$} \\
+
+    Let $u=e^{x}\therefore du=e^{x}dx$ and let $v=-\cos{x}\therefore du=\sin{x}dx$ \\
+
+    $\int_{0}^{1}{e^{x}\sin{x}}\,dx=\int_{0}^{1}{u}\,dv=
+    \int_{0}^{1}{e^{x}\cos{x}}\,dx-[e^{x}\cos{x}]_{0}^{1}$ \\
+
+    Let $\alpha=\sin{x}\therefore d\alpha=\cos{x}dx$ \\
+
+    $\int_{0}^{1}{e^{x}\cos{x}}\,dx-[e^{x}\cos{x}]_{0}^{1}=
+    \int_{0}^{1}{u}\,d\alpha-[e^{x}\cos{x}]_{0}^{1}=
+    \left([e^{x}\sin{x}]_{0}^{1}-\int_{0}^{1}{e^{x}\sin{x}}\,dx\right)-[e^{x}\cos{x}]_{0}^{1}$ \\
+
+    Let $\beta=\int_{0}^{1}{e^{x}\sin{x}}\,dx$ \\
+
+    $\beta=[e^{x}\sin{x}]_{0}^{1}-\beta-[e^{x}\cos{x}]_{0}^{1} \rightarrow 2\beta=[e^{x}\sin{x}-e^{x}\cos{x}]_{0}^{1}=e\sin{1}-e\cos{1}+1$ \\
+
+    $\beta=\frac{e\sin{1}-e\cos{1}+1}{2}$ \\
+    \pagebreak
+
+  \item{$\int{\frac{2x-5}{x^{2}+2x+2}}\,dx$} \\
+
+    $\int{\frac{2x-5}{x^{2}+2x+2}}\,dx=\int{\frac{2x-5}{(x+1)^{2}+1}}\,dx$ \\
+
+    Let $u=x+1\rightarrow x=u-1\therefore du=dx$ \\
+
+    $\int{\frac{2x-5}{(x+1)^{2}+1}}\,dx=\int{\frac{2u-7}{u^{2}+1}}\,du=
+    \int{\frac{2u}{u^{2}+1}}\,du-7\int{\frac{du}{u^{2}+1}}$ \\
+
+    Let $v=u^{2}+1\therefore dv=2udu$ \\
+
+    $\int{\frac{2u}{u^{2}+1}}\,du-7\int{\frac{du}{u^{2}+1}}=
+    \int{\frac{dv}{v}}-7\int{\frac{du}{u^{2}+1}}=
+    \ln{|v|}-7\arctan{u}+C=\ln{|x^{2}+2x+2|}-7\arctan{(x+1)}+C$ \\
+
+  \item{$\int{\arcsin{(5x)}}\,dx$} \\
+
+    Let $u=\arcsin{5x}\therefore du=\frac{5}{1-25x^{2}}dx$ and let $v=x\therefore dv=dx$ \\
+
+    $\int{\arcsin{(5x)}}\,dx=\int{u}\,dv=x\arcsin{5x}-\int{\frac{5x}{\sqrt{1-25x^{2}}}}\,dx$ \\
+
+    Let $\alpha=1-25x^{2}\therefore d\alpha=-50xdx$ \\
+
+    $x\arcsin{5x}-\int{\frac{5x}{\sqrt{1-25x^{2}}}}\,dx=
+    x\arcsin{5x}-\int{\frac{d\alpha}{10\sqrt{u}}}=
+    x\arcsin{5x}-\frac{1}{10}\int{\frac{d\alpha}{\sqrt{\alpha}}}=
+    x\arcsin{5x}-\frac{\sqrt{\alpha}}{5}+C=$ \\
+
+    $x\arcsin{5x}-\frac{\sqrt{1-25x^{2}}}{5}+C$ \\
+
+  \item{$\int{\frac{x^{3}}{x^{2}+4}}\,dx$} \\
+
+    Let $u=x^{2}+4\rightarrow x=\sqrt{u-4}\therefore du=2xdx$ \\
+
+    $\int{\frac{x^{3}}{x^{2}+4}}\,dx=\frac{1}{2}\int{\frac{u-4}{u}}\,du=
+    \frac{1}{2}\left(\int{}\,du-4\int{\frac{du}{u}}\right)=
+    \frac{1}{2}\left(u-4\ln{|u|}\right)+C=
+    \frac{1}{2}u-2\ln{|u|}+C=$ \\
+
+    $\frac{x^{2}+4}{2}-2\ln{|x^{2}+4|}+C$ \\
+
+  \item{$\int_{0}^{1}{x^{2}e^{x}}\,dx$} \\
+
+    Let $u=x^{2}\therefore du=2xdx$ and let $v=e^{x}\therefore du=e^{x}dx$ \\
+
+    $\int_{0}^{1}{x^{2}e^{x}}\,dx=\int_{0}^{1}{u}\,dv=
+    [x^{2}e^{x}]_{0}^{1}-2\int_{0}^{1}{xe^{x}}\,dx$ \\
+
+    Let $\alpha=x\therefore d\alpha=dx$ \\
+
+    $[x^{2}e^{x}]_{0}^{1}-2\int_{0}^{1}{xe^{x}}\,dx=
+    [x^{2}e^{x}]_{0}^{1}-2\int_{0}^{1}{v}\,d\alpha=
+    [x^{2}e^{x}]_{0}^{1}-2\left([xe^{x}]_{0}^{1}-[e^{x}]_{0}^{1}\right)=
+    [x^{2}e^{x}-2xe^{x}+2e^{x}]_{0}^{1}=e-2$ \\
+
+  \pagebreak
+  Multiple Choice. All work must be shown.
+  \item{If $f(x)=\sin{\left(\frac{x}{2}\right)}$, then there exists a number $c$ in the interval $\frac{\pi}{2}<x<\frac{3\pi}{2}$ that satisfies the conclusion of the Mean Value Theorem. Which of the following could be $c$?}
+    \begin{enumerate}
+      \item{$\frac{2\pi}{3}$}
+      \item{$\frac{3\pi}{4}$}
+      \item{$\frac{5\pi}{6}$}
+      \item{$\pi$}
+      \item{$\frac{3\pi}{2}$} \\
+    \end{enumerate}
+
+    Let us first check the conditions of the Mean Value Theorem:
+    \begin{itemize}
+      \item{$f(x)$ is continuous on $[\frac{\pi}{2}, \frac{3\pi}{2}]$.}
+      \item{$f(x)$ is differentiable on $(\frac{\pi}{2}, \frac{3\pi}{2})$.}
+    \end{itemize}
+    The conditions are met. Let us solve for our value of $c$. \\
+
+    $f'(c)=\frac{f(b)-f(a)}{b-a}$ \\
+
+    $\frac{1}{2}\cos{\left(\frac{x}{2}\right)}=\frac{\frac{\sqrt{2}}{2}-\frac{\sqrt{2}}{2}}{\frac{\pi}{2}-\frac{3\pi}{2}}=0\,\,@\,\,x=\pi+2\pi n$ \\
+
+    The value of $c$ listed that satisfies the conclusion of the Mean Value Theorem is $\pi$. \\
+
+    \hline
+  \item{If $f(x)=(x-1)^{2}\sin{x}$, then $f'(0)=$}
+    \begin{enumerate}
+      \item{$-2$}
+      \item{$-1$}
+      \item{$0$}
+      \item{$1$}
+      \item{$2$} \\
+    \end{enumerate}
+
+    Apply the Product Rule:
+
+    $$ \frac{d}{dx}(gh)=hg'+gh' $$ \\
+
+    \begin{itemize}
+      \item{$g(x)=(x-1)^{2}=x^{2}-2x+1$}
+      \item{$g'(x)=2x-2$}
+      \item{$h(x)=\sin{x}$}
+      \item{$h'(x)=\cos{x}$}
+    \end{itemize}
+
+    $f'(x)=hg'+gh'=(2x-2)\sin{x}+(x-1)^{2}\cos{x}$ \\
+
+    $f'(0)=(-2)\sin{0}+(-1)^{2}\cos{0}=(-2)(0)+(1)(1)=1$
+
+  \pagebreak
+  \item{The acceleration of a particle moving along the $x$-axis at time $t$ is given by $a(t)=6t-2$. If the velocity is 25 when $t=3$ and the position is 10 when $t=1$, then the position $x(t)=$}
+    \begin{enumerate}
+      \item{$9t^{2}+1$}
+      \item{$3t^{2}-2t+4$}
+      \item{$t^{3}-t^{2}+4t+6$}
+      \item{$t^{3}-t^{2}+9t-20$}
+      \item{$36t^{3}-4t^{2}-77t+55$} \\
+    \end{enumerate}
+
+    Note the relation between acceleration, velocity, and time.
+
+    $$ a(t)=\frac{dv}{dt}=\frac{d^{2}x}{dt^{2}} $$ \\
+
+    $v_{x}(3)=v_{0x}+\int_{0}^{3}{a_{x}}\,dt=[3t^{2}-2t+v_{0x}]_{0}^{3}=21+v_{0x}=25\rightarrow v_{0x}=4$ \\
+
+    $x(1)=x_{0}+\int_{0}^{1}{v_{x}}\,dt=[t^{3}-t^{2}+4t+x_{0}]_{0}^{1}=
+    4+x_{0}=10\rightarrow x_{0}=6$ \\
+
+    $\therefore x(t)=t^{3}-t^{2}+4t+6$ \\
+
+    \hline
+  \item{$\frac{d}{dx}\int_{0}^{x}{\cos{(2\pi u)}}\,du$ is}
+    \begin{enumerate}
+      \item{$0$}
+      \item{$\frac{1}{2\pi}\sin{x}$}
+      \item{$\frac{1}{2\pi}\cos{(2\pi x)}$}
+      \item{$\cos{(2\pi x)}$}
+      \item{$2\pi\cos{(2\pi x)}$} \\
+    \end{enumerate}
+
+    Apply the Second Fundamental Theorem of Calculus:
+
+    $$ \frac{d}{dx}\int_{a}^{x}{f(t)}\,dt=f(x) $$ \\
+
+    $\frac{d}{dx}\int_{0}^{x}{\cos{(2\pi u)}}\,du=\cos{(2\pi x)}$ \\
+
+\end{enumerate}
+\end{document}

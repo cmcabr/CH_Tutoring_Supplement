@@ -1,0 +1,311 @@
+\documentclass[10pt, letterpaper]{report}
+\usepackage[letterpaper]{geometry}
+  \geometry{top=1in, bottom=1in, left=1in, right=1in}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp, gensymb, mathtools , amssymb , amsthm, graphicx}
+  \graphicspath{ {/home/lowebang/Pictures/} }
+\usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \lhead{}
+  \chead{}
+  \rhead{Cabrera \thepage}
+  \lfoot{}
+  \cfoot{}
+  \rfoot{\LaTeX}
+  \renewcommand{\headrulewidth}{1pt}
+  \renewcommand{\footrulewidth}{1pt}
+  \setlength\headsep{0.333in}
+
+\title{Calculus BC - Worksheet 1 on 8.1 -- 8.3}
+\author{Craig Cabrera}
+\date{4 February 2022}
+
+\begin{document}
+\maketitle
+\begin{center}
+  \textbf{\underline{Relevant Formulas:}} \\
+  \includegraphics[scale=0.5]{Triangle.png}
+  \includegraphics[scale=0.4]{trigo_functions.png} \\
+\end{center}
+\hline
+
+$$ \sin^{2}{\theta}+\cos^{2}{\theta}=x^{2}+y^{2}=1$$ \\
+$$ \frac{\sin^{2}{\theta}+\cos^{2}{\theta}}{\cos^{2}{\theta}}=\frac{1}{\cos^{2}{\theta}}\rightarrow
+   \tan^{2}{\theta}+1=\sec^{2}{\theta}$$ \\
+$$ \frac{\sin^{2}{\theta}+\cos^{2}{\theta}}{\sin^{2}{\theta}}=\frac{1}{\sin^{2}{\theta}}\rightarrow
+   1+\cot^{2}{\theta}=\csc^{2}{\theta}$$ \\
+\hline
+$$ \cos{\left(\alpha\pm\beta\right)}=\cos{\alpha}\cos{\beta}\mp\sin{\alpha}\sin{\beta}\rightarrow
+   \cos{\left(2\theta\right)}=\cos^{2}{\theta}-\sin^{2}{\theta}=
+   \left(1-\sin^{2}{\theta}\right)-\sin^{2}{\theta}=
+   \cos^{2}{\theta}-\left(1-\cos^{2}{\theta}\right)$$ \\
+
+$$ \frac{1}{2}\left(\cos{\left(\alpha-\beta\right)}+\cos{\left(\alpha+\beta\right)}\right)=
+   \frac{1}{2}\left(\left(\cos{\alpha}\cos{\beta}+\sin{\alpha}\sin{\beta}\right) +
+   \left(\cos{\alpha}\cos{\beta}-\sin{\alpha}\sin{\beta}\right)\right)=
+   \frac{2}{2}\left(\cos{\alpha}\cos{\beta}\right)$$ \\
+$$ \frac{1}{2}\left(\cos{\left(\alpha-\beta\right)}-\cos{\left(\alpha+\beta\right)}\right)=
+   \frac{1}{2}\left(\left(\cos{\alpha}\cos{\beta}+\sin{\alpha}\sin{\beta}\right) -
+   \left(\cos{\alpha}\cos{\beta}-\sin{\alpha}\sin{\beta}\right)\right)=
+   \frac{2}{2}\left(\sin{\alpha}\sin{\beta}\right)$$ \\
+$$ \cos{\left(2\theta\right)}=\left(1-\sin^{2}{\theta}\right)-\sin^{2}{\theta}=
+   1-2\sin^{2}{\theta}\therefore \sin^{2}{\theta}=\frac{1-\cos{\left(2x\right)}}{2}$$ \\
+$$ \cos{\left(2\theta\right)}=\cos^{2}{\theta}-\left(1-\cos^{2}{\theta}\right)=
+   2\cos^{2}{\theta}-1\therefore \cos^{2}{\theta}=\frac{1+\cos{\left(2x\right)}}{2}$$
+\hline
+
+$$ \sin{\left(\alpha\pm\beta\right)}=\sin{\alpha}\cos{\beta}\pm\cos{\alpha}\sin{\beta}$$ \\
+$$ \frac{1}{2}\left(\sin{\left(\alpha-\beta\right)}+\sin{\left(\alpha+\beta\right)}\right)=
+   \frac{1}{2}\left(\left(\sin{\alpha}\cos{\beta}-\cos{\alpha}\sin{\beta}\right)+
+   \left(\sin{\alpha}\cos{\beta}+\cos{\alpha}\sin{\beta}\right)\right)=
+   \frac{2}{2}\left(\sin{\alpha}\cos{\beta}\right)$$
+
+
+\pagebreak
+
+Work the following on \textbf{\underline{notebook paper}}. \textbf{\underline{No calculator.}}
+\begin{enumerate}
+  \item{$\int{\cos^{2}{(2x)}\sin^{2}{(2x)}}\,dx$} \\
+  
+    $\int{\cos^{2}{(2x)}\sin^{2}{(2x)}}\,dx=
+    \int{\left(\frac{1+cos{(4x)}}{2}\right)\left(\frac{1-\cos{(4x)}}{2}\right)\,dx=
+    \frac{1}{4}\int{1-cos^{2}{(4x)}}\,dx=
+    \frac{1}{4}\int{\sin^{2}{(4x)}}\,dx= $ \\
+    
+    $\frac{1}{4}\int{\frac{1-\cos{(8x)}}{2}}\,dx=
+    \frac{1}{8}\left(\int{}\,dx-\int{\cos{(8x)}}\,dx\right)=
+    \frac{1}{8}x-\frac{1}{64}\sin{(8x)}+C$ \\
+    
+  \item{$\int{\frac{2x-1}{x^{2}-6x+25}}\,dx$} \\
+  
+    $\int{\frac{2x-1}{x^{2}-6x+25}}\,dx=
+    \int{\frac{2x-6+5}{x^{2}-6x+25}}\,dx=
+    \int{\frac{2x-6}{x^{2}-6x+25}}\,dx+5\int{\frac{dx}{x^{2}-6x+25}}$ \\
+    
+    Let $u=x^{2}-6x+25\therefore du=(2x-6)dx$ \\
+    
+    $\int{\frac{2x-6}{x^{2}-6x+25}}\,dx+5\int{\frac{dx}{x^{2}-6x+25}}=
+    \int{\frac{du}{u}}+5\int{\frac{dx}{(x-3)^{2}+16}}=
+    \ln{|u|}+\frac{5}{4}\arctan{\left(\frac{x-3}{4}\right)}+C=$ \\
+    
+    $\ln{|x^{2}-6x+25|}+\frac{5}{4}\arctan{\left(\frac{x-3}{4}\right)}+C$ \\
+    
+  \item{$\int{x^{2}\sin{(3x)}}\,dx$} \\
+  
+    Let $u=x^{2}\therefore du=2xdx$ and let $v=-\frac{1}{3}\cos{(3x)}\therefore dv=\sin{(3x)}dx$ \\
+    
+    $\int{x^{2}\sin{(3x)}}\,dx=
+    \int{u}\,dv=
+    \frac{2}{3}\int{x\cos{(3x)}}\,dx-\frac{1}{3}x^{2}\cos{(3x)}$ \\
+    
+    Let $\alpha=x\therefore d\alpha=dx$ and let $\beta=\sin{3x}\therefore d\beta=3\cos{(3x)}dx$ \\
+    
+    $\frac{2}{3}\int{x\cos{(3x)}}\,dx-\frac{1}{3}x^{2}\cos{(3x)}=
+    \frac{2}{3}\int{\alpha}}\,d\beta-\frac{1}{3}x^{2}\cos{(3x)}=
+    \frac{2}{3}\left(x\sin{(3x)}-\int{\sin{(3x)}}\,dx\right)-\frac{1}{3}x^{2}\cos{(3x)}=$ \\
+    
+    $\frac{2}{3}\left(x\sin{(3x)}+\frac{1}{3}\cos{(3x)}\right)-\frac{1}{3}x^{2}\cos{(3x)}+C$ \\
+    
+  \item{$\int{\arcsin{(4x)}}\,dx$} \\
+  
+    Let $u=\arcsin{(4x)}\therefore du=\frac{4}{\sqrt{1-16x^{2}}}dx$ and let $v=x\therefore dv=dx$ \\
+    
+    $\int{\arcsin{(4x)}}\,dx=
+    \int{u}\,dv=
+    x\arcsin{(4x)}-4\int{\frac{x}{\sqrt{1-16x^{2}}}dx}$ \\
+    
+    Let $\alpha=1-16x^{2}\therefore d\alpha=-32xdx$ \\
+    
+    $x\arcsin{(4x)}-4\int{\frac{x}{\sqrt{1-16x^{2}}}dx}=
+    x\arcsin{(4x)}+\frac{1}{8}\int{\frac{d\alpha}{\sqrt{\alpha}}}=
+    x\arcsin{(4x)}+\frac{1}{4}\sqrt{\alpha}+C= $ \\
+    
+    $x\arcsin{(4x)}+\frac{1}{4}\sqrt{1-16x^{2}}+C$ \\
+    \pagebreak
+  \item{$\int{\sin^{2}{(5x)}}\,dx$} \\
+  
+    $\int{\sin^{2}{(5x)}}\,dx=
+    \int{\frac{1-\cos{10x}}{2}}\,dx=
+    \frac{1}{2}\left(\int{}\,dx-\int{\cos{(10x)}}\,dx\right)=
+    \frac{1}{2}x-\frac{1}{20}\sin{(10x)}+C$ \\
+  
+  \item{$\int{\frac{x^{3}+3x^{2}}{x^{2}+1}}\,dx$} \\
+  
+    $\int{\frac{x^{3}+3x^{2}}{x^{2}+1}}\,dx=
+    \int{\frac{x^{3}}{x^{2}+1}}\,dx+3\int{\frac{x^{2}}{x^{2}+1}}\,dx$ \\
+    
+    Let $u=x^{2}+1\therefore du=2xdx$ \\
+    
+    $\int{\frac{x^{3}}{x^{2}+1}}\,dx+3\int{\frac{x^{2}}{x^{2}+1}}\,dx=
+    \frac{1}{2}\int{\frac{u-1}{u}}\,du+3\int{\frac{(x^{2}+1)-1}{x^{2}+1}}\,dx=
+    \frac{1}{2}\left(\int{\frac{u}{u}}\,du-\int{\frac{du}{u}}\right)+3\left(\int{\frac{x^{2}+1}{x^{2}+1}}\,dx-\int{\frac{dx}{x^{2}+1}}\right)=$ \\
+    
+    $\frac{u}{2}-\frac{1}{2}\ln{|u|}+3\left(x-\arctan{x}\right)+C=
+    \frac{x^{2}+1}{2}-\frac{1}{2}\ln\left(\left|x^{2}+1\right|\right)+3\left(x-\arctan x\right)$ \\
+     
+  \item{$\int{\cos^{4}{(6x)}}\,dx$} \\
+  
+    $\int{\cos^{4}{(6x)}}\,dx=
+    \int{\left(\cos^{2}{(6x)}\right)^{2}}\,dx=
+    \int{\left(\cos^{2}{(6x)}\right)\left(1-\sin^{2}{(6x)}\right)}\,dx=$ \\
+    
+    $\int{\cos^{2}{(6x)}}\,dx-\int{\sin^{2}{(6x)}\cos^{2}{(6x)}}\,dx=
+    \int{\frac{1+\cos{(12x)}}{2}}\,dx-\int{\left(\frac{1-\cos{(12x)}}{2}\right)\left(\frac{1+\cos{(12x)}}{2}\right)}\,dx=$ \\
+    
+    $\frac{1}{2}\left(\int{}\,dx+\int{\cos{(12x)}}\,dx\right)}-\frac{1}{4}\left(\int{}\,dx-\int{\cos^{2}{(12x)}}\,dx\right)=$ \\
+    
+    $\frac{1}{2}\left(\int{}\,dx+\int{\cos{(12x)}}\,dx\right)}-\frac{1}{4}\left(\int{}\,dx-\frac{1}{2}\left(\int{}\,dx+\int{\cos{(24x)}\,dx}\right)\right)=$ \\
+    
+    $\frac{1}{2}\int{}\,dx+\frac{1}{2}\int{\cos{(12x)}}\,dx-\frac{1}{4}\int{}\,dx+\frac{1}{8}\int{}\,dx+\frac{1}{8}\int{\cos{(24x)}}\,dx=$ \\
+    
+    $\frac{3}{8}x+\frac{1}{24}\sin{(12x)}+\frac{1}{192}\sin{(24x)}+C$ \\
+    
+  \item{$\int{x^{2}\ln{x}}\,dx$} \\
+  
+    Let $u=\ln{x}\therefore du=\frac{dx}{x}$ and let $v=\frac{1}{3}x^{3}\therefore dv=x^{2}dx$ \\
+    
+    $\int{x^{2}\ln{x}}\,dx=
+    \int{u}\,dv=
+    \frac{1}{3}x^{3}\ln{x}-\frac{1}{3}\int{x^{2}}\,dx=
+    \frac{1}{3}x^{3}\ln{x}-\frac{1}{9}x^{3}+C$ \\
+    \pagebreak
+  \item{$\int{e^{2x}\sin{x}}\,dx$} \\
+  
+    Let $u=e^{2x}\therefore du=2e^{2x}$ and let $v=-\cos{x}\therefore dv=\sin{x}$ \\
+    
+    $\int{e^{2x}\sin{x}}\,dx=
+    \int{u}\,dv=
+    2\int{e^{2x}\cos{x}}\,dx-e^{2x}\cos{x}$ \\
+    
+    Let $\alpha=\sin{x}\therefore d\alpha=\cos{x}dx$ \\
+    
+    $2\int{e^{2x}\cos{x}}\,dx-e^{2x}\cos{x}=
+    2\int{u}\,d\alpha-e^{2x}\cos{x}=
+    2\left(e^{2x}\sin{x}-2\int{e^{2x}\sin{x}}\,dx\right)-e^{2x}\cos{x}$ \\
+    
+    Let $\beta=\int{e^{2x}\sin{x}}\,dx$ \\
+    
+    $2\left(e^{2x}\sin{x}-2\int{e^{2x}\sin{x}}\,dx\right)-e^{2x}\cos{x}=
+    2e^{2x}\sin{x}-4\int{e^{2x}\sin{x}}\,dx-e^{2x}\cos{x}$ \\
+    
+    $\beta=2e^{2x}\sin{x}-4\beta-e^{2x}\cos{x}\rightarrow
+    5\beta=2e^{2x}\sin{x}-e^{2x}\cos{x}\rightarrow
+    \beta=\frac{2}{5}e^{2x}\sin{x}-\frac{1}{5}e^{2x}\cos{x}$
+    
+  \item{$\int{\frac{dx}{\sqrt{12+4x-x^{2}}}}$} \\
+  
+    $\int{\frac{dx}{\sqrt{12+4x-x^{2}}}}=
+    \int{\frac{dx}{\sqrt{16-(x-2)^{2}}}}=
+    \arcsin{\left(\frac{x-2}{4}\right)}+C$ \\
+    
+  \item{$\int_{0}^{\frac{\pi}{2}}{\cos^{3}{x}}\,dx$} \\
+  
+    $\int_{0}^{\frac{\pi}{2}}{\cos^{3}{x}}\,dx=
+    \int_{0}^{\frac{\pi}{2}}{\cos{x}}\left(1-\sin^{2}{x}\right)\,dx=
+    \int_{0}^{\frac{\pi}{2}}{\cos{x}}\,dx-\int_{0}^{\frac{\pi}{2}}{\cos{x}\sin^{2}{x}}\,dx$ \\
+    
+    Let $u=\sin{x}\therefore du=\cos{x}dx$ \\
+    
+    $\int_{0}^{\frac{\pi}{2}}{\cos{x}}\,dx-\int_{0}^{\frac{\pi}{2}}{\cos{x}\sin^{2}{x}}\,dx=
+    \int_{0}^{\frac{\pi}{2}}{\cos{x}}\,dx-\int_{0}^{1}{u^{2}}\,du=
+    [\sin{x}]_{0}^{\frac{\pi}{2}}-\frac{1}{3}[u^{3}]_{0}^{1}=
+    [1-0]-\frac{1}{3}[1-0]=\frac{2}{3}$ \\
+    
+  \item{$\int_{0}^{\frac{\pi}{2}}{x\cos{x}}\,dx$} \\
+  
+    Let $u=x\therefore du=dx$ and let $v=\sin{x}\therefore du=\cos{x}dx$ \\
+    
+    $\int_{0}^{\frac{\pi}{2}}{x\cos{x}}\,dx=
+    \int_{0}^{\frac{\pi}{2}}{u}\,dv=
+    [x\sin{x}]_{0}^{\frac{\pi}{2}}-\int_{0}^{\frac{\pi}{2}}{\sin{x}}\,dx=
+    [\frac{\pi}{2}-0]+[\cos{x}]_{0}^{\frac{\pi}{2}}=
+    [\frac{\pi}{2}-0]+[0-1]=\frac{\pi}{2}-1$ \\
+    
+    \pagebreak
+    
+  Multiple Choice. All work must be shown. 
+  \begin{center}
+    \begin{tabular}{| c | c | c | c | c |}
+      \hline
+      $x$ & 2 & 5 & 7 & 8 \\
+      \hline
+      $f(x)$ & 10 & 30 & 40 & 20 \\
+      \hline
+    \end{tabular}
+  \end{center}
+  \item{The function $f$ is continuous on the closed interval $[2,8]$ and has values that are given in the table above. Using the subintervals $[2,5]$, $[5,7]$, and $[7,8]$, what is the trapezoidal approximation of $\int_{2}^{8}{f(x)}\,dx$?} \\
+    \begin{enumerate}
+      \item{110}
+      \item{130}
+      \item{160}
+      \item{190}
+      \item{210}
+    \end{enumerate}
+  
+    $\int_{2}^{8}{f(x)}\,dx\approx
+    \sum_{n=1}^{3}{f(x)\Delta x}=
+    \frac{1}{2}\left(3*40+2*70+1*60\right)=
+    \frac{1}{2}\left(120+140+60\right)=
+    \frac{320}{2}=160$ \\
+    
+    \hline
+  \item{What is the minimum value of $f(x)=x\ln{x}$?} 
+    \begin{enumerate}
+      \item{$-e$}
+      \item{$-1$}
+      \item{$-\frac{1}{e}$}
+      \item{$0$}
+      \item{$f(x)$ has no minimum value.} \\
+    \end{enumerate}
+  
+    Let us conduct an Intervals Test using the critical points of $f(x)$. \\
+    
+    $f'(x)=\ln{x}+\frac{x}{x}=\ln{x}+1=0\rightarrow \ln{x}=-1\rightarrow e^{\ln{x}}=x=e^{-1}$ \\
+    
+    \begin{center}
+      \begin{tabular}{| c | c | c |}
+        \hline
+        Intervals & $(-\infty, \frac{1}{e})$ & $(\frac{1}{e}, \infty)$ \\
+        \hline
+        $f'(x)$ & - & + \\
+        \hline
+        $f(x)$ & Decreasing & Increasing \\
+        \hline
+      \end{tabular}
+    \end{center}
+    
+    The minimum value of $f(x)$ occurs at $\frac{1}{e}$. \\
+    
+    $f(\frac{1}{e})=\frac{1}{e}\ln{(\frac{1}{e})}=\frac{1}{e}*-1=-\frac{1}{e}$ \\
+    
+    The minimum value of $f(x)=x\ln{x}$ is $-\frac{1}{e}$. \\
+    
+    \pagebreak
+  \item{At what value of $x$ does the graph of $y=\frac{1}{x^{2}}-\frac{1}{x^{3}}$ have a point of inflection?}
+    \begin{enumerate}
+      \item{$0$}
+      \item{$1$}
+      \item{$2$}
+      \item{$3$}
+      \item{At no value of $x$} \\
+    \end{enumerate}
+  
+    Solve for $\frac{d^{2}y}{dx^{2}}$. \\
+    
+    $\frac{dy}{dx}=\frac{3}{x^{4}}-\frac{2}{x^{3}}$ \\
+    
+    $\frac{d^{2}y}{dx^{2}}=\frac{6}{x^{4}}-\frac{12}{x^{5}}$ \\
+    
+    Equal $\frac{d^{2}y}{dx^{2}}$ to zero. \\
+    
+    $\frac{6}{x^{4}}-\frac{12}{x^{5}}=0$ \\
+    
+    $\frac{6}{x^{4}}=\frac{12}{x^{5}}$ \\
+    
+    $\frac{1}{x^{4}}=\frac{2}{x^{5}}$ \\
+    
+    $1 = \frac{2}{x}$ \\
+    
+    $x=2$ \\
+\end{enumerate}
+\end{document}

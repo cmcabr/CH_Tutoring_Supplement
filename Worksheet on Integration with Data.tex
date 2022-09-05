@@ -1,0 +1,212 @@
+\documentclass[10pt, letterpaper]{report}
+\usepackage[letterpaper]{geometry}
+  \geometry{top=1in, bottom=1in, left=1in, right=1in}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp, gensymb, mathtools , amssymb , amsthm, graphicx}
+  \graphicspath{ {/home/lowebang/Pictures/} }
+\usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \lhead{}
+  \chead{}
+  \rhead{Cabrera \thepage}
+  \lfoot{}
+  \cfoot{}
+  \rfoot{\LaTeX}
+  \renewcommand{\headrulewidth}{1pt}
+  \renewcommand{\footrulewidth}{1pt}
+  \setlength\headsep{0.333in}
+
+\title{Calculus BC - Worksheet on Integration with Data}
+\author{Craig Cabrera}
+\date{13 January 2022}
+
+\begin{document}
+\maketitle
+Work the following on \textbf{\underline{notebook paper}}. Give decimal answers correct to \textbf{\underline{three}} decimal places.
+\begin{enumerate}
+  \item{A tank contains 120 gallons of oil at time $t=0$ hours. Oil is being pumped into the tank at a rate $R(t)$, where $R(t)$ is measured in gallons per hour and $t$ is measured in hours. Selected values of $R(t)$ are given in the table below.
+  \begin{center}
+    \begin{tabular}{| c | c | c | c | c | c |}
+      \hline
+      $t$ (hours) & 0 & 3 & 5 & 9 & 12 \\
+      \hline
+      $R(t)$ (gallons per hour) & 8.9 & 6.8 & 6.4 & 5.9 & 5.7 \\
+      \hline
+    \end{tabular}
+  \end{center}}
+  \begin{enumerate}
+    \item{Estimate the number of gallons of oil in the tank at $t=12$ hours by using a trapezoidal approximation with four subintervals and values from the table. Show the computations that led to your answer.} \\
+
+      $\int_{0}^{12}{R(t)}\,dt\approx120+\sum_{n=1}^{4}{R(t)\Delta t}= $ \\
+
+      $120+\frac{1}{2}\left(3(8.9+6.8)+2(6.8+6.4)+4(6.4+5.9)+3(5.9+5.7)\right)=
+      120+78.75=198.75$ gallons. \\
+
+    \item{A model for the rate at which oil is being pumped into the tank is given by the function $G(t)=3+\frac{10}{1+\ln{(t+2)}}$, where $G(t)$ is measured in gallons per hour and $t$ is measured in hours. Use the model to find the number of gallons of oil in the tank at $t=12$ hours. } \\
+
+      $120+\int_{0}^{12}{G(t)}\,dt=
+      120+3\int_{0}^{12}{}\,dt+10\int_{0}^{12}{\frac{dt}{1+\ln{(t+2)}}}=
+      120+36+41.975=197.975$ gallons. \\
+
+  \end{enumerate}
+  \hline
+  \item{A hot cup of coffee is taken into a classroom and set on a desk to cool, The table shows the rate $R(t)$ at which temperature of the coffee is dropping at various times over an eight minute period, where $R(t)$ is measured in degrees Fahrenheit per minute and $t$ is measured in minutes. When $t=0$, the temperature of the coffee is 113\degree F.
+  \begin{center}
+    \begin{tabular}{| c | c | c | c | c |}
+      \hline
+      $t$ (minutes) & 0 & 3 & 5 & 8 \\
+      \hline
+      $R(t)$ (\degree F/min.) & 5.5 & 2.7 & 1.6 & 0.8 \\
+      \hline
+    \end{tabular}
+  \end{center}}
+  \begin{enumerate}
+    \item{Estimate the temperature of the coffee at $t=8$ minutes by using a left Riemann sum with three subintervals and values from the table. Show the computations that lead to your answer.} \\
+
+      $\int_{0}^{8}{R(t)}\,dt\approx113-\sum_{n=1}^{3}{R(t)\Delta t}=
+      3(5.5)+2(2.7)+3(1.6)=113-26.7=86.3$\degree F. \\
+
+    \item{Use values from the table to estimate the average rate of change of $R(t)$ over the eight minute period. Show the computations that led to your answer.} \\
+
+      $R_{avg}=\frac{R(8)-R(0)}{8-0}=\frac{0.8-5.5}{8}=-\frac{4.7}{8}=-0.588$\degree F/min. \\
+
+    \item{ A model for the rate at which temperature of the coffee is dropping is given by the function $y(t)=7e^{-0.3t}$, where $y(t)$ is measured in degrees Fahrenheit per minute and $t$ is measured in minutes. Use the model to find the temperature of the coffee at $t=8$ minutes, }
+
+      $\int_{0}^{8}{7e^{-0.3t}}\,dt=
+      113-[-\frac{7}{0.3e^{0.3t}}]_{0}^{8}=
+      113-\frac{7}{0.3}-\frac{7}{0.3e^{2.4}}=
+      113-21.217=91.783$\degree F \\
+
+    \item{Use the model given in (c) to find the average rate at which the temperature of the coffee is dropping over the eight minute period.} \\
+
+      $y_{avg}=\frac{\int_{0}^{8}{7e^{-0.3t}}\,dt}{8-0}=
+      -\frac{21.217}{8}=-2.652$\degree F/min. \\
+
+  \end{enumerate}
+  \pagebreak
+  \item{(Modification of 2001 AB 2/ BC 2) \\
+  The temperature, in degrees Celsius (\degree C), of the water in a pond is a differentiable function $W$ of time $t$. The table below shows the water temperature as recorded every 3 days over a 15-day period.
+  \begin{center}
+    \begin{tabular}{| c | c | c | c | c | c | c |}
+      \hline
+      $t$ (days) & 0 & 3 & 6 & 9 & 12 & 15 \\
+      \hline
+      $W(t)$ (\degree C) & 20 & 31 & 28 & 24 & 22 & 21 \\
+      \hline
+    \end{tabular}
+  \end{center}}
+  \begin{enumerate}
+    \item{Approximate the average temperature, in degrees Celsius, of the water over the time interval $0\leq t\leq 15$ days by using a trapezoidal approximation with subintervals of length $\Delta t=3$ days and values from the table. Show the computations that led to your answer.} \\
+
+      $\int_{0}^{15}{W(t)}\,dt=
+      \sum_{n=1}^{5}{3W(t)}=
+      \frac{3}{2}((20+31)+(31+28)+(28+24)+(24+22)+(22+21))=376.5$\degree C \\
+
+      $W_{avg}=\frac{\int_{0}^{15}{W(t)}\,d}{15-0}=\frac{376.5}{15}=25.1$\degree C/min.
+
+    \item{A student proposes the function $P$, given by $P(t)=20+10te^{-\frac{t}{3}}$, as a model for the temperature of the water in the pond at time $t$, where $t$ is measured in days and $P(t)$ is measured in degrees Celsius. Use the function $P$ to find the average value, in degrees Celsius, of $P(t)$ over the time interval $0\leq t\leq 15$ days.} \\
+
+      $\int_{0}^{15}{P(t)}\,dt=
+      20\int_{0}^{15}{}\,dt+10\int_{0}^{15}{\frac{t}{e^{\frac{t}{3}}}}\,dt=
+      [20t]_{0}^{15}+10[-3e^{-\frac{t}{3}}t-9e^{-\frac{t}{3}}]_{0}^{15}=
+      390-540e^{-5}=386.36$\degree C \\
+
+      $P_{avg}=\frac{\int_{0}^{15}{P(t)}\,dt}{15-0}=\frac{386.36}{15}=25.757$\degree C/min. \\
+
+  \end{enumerate}
+  \hline
+  \item{(Modification of 2004 Form B AB 3/ BC 3) \\
+  A test plane flies in a straight line with positive velocity $v(t)$, in miles per minute at time $t$ minutes, where $v$ is a differentiable function of $t$. Selected values of $v(t)$ for $0\leq v(t)\leq 40$ are shown in the table below.
+  \begin{center}
+    \begin{tabular}{| c | c | c | c | c | c | c | c | c | c |}
+      \hline
+      $t$ (min) & 0 & 5 & 10 & 15 & 20 & 25 & 30 & 35 & 40 \\
+      \hline
+      $v(t)$ (mpm) & 7.0 & 9.2 & 9.5 & 7.0 & 4.5 & 2.4 & 2.4 & 4.3 & 7.2 \\
+      \hline
+    \end{tabular}
+  \end{center}}
+  \begin{enumerate}
+    \item{Use a midpoint Riemann sum with four subintervals of equal length and values from the table to approximate $\int_{0}^{40}{v(t)}\,dt$. Show the computations that lead to your answer. Using correct units, explain the meaning of $\int_{0}^{40}{v(t)}\,dt$ in terms of the plane's flight.} \\
+
+      $\int_{0}^{40}{v(t)}\,dt\approx
+      \sum_{n=1}^{4}{10v(t)}=10(9.2+7.0+2.4+4.3)=229$ miles. \\
+
+      The test plane flew a horizontal distance of 229 miles in the span of 40 minutes. \\
+
+    \item{The function $f$, defined by $f(t)=6+\cos{\left(\frac{t}{10}\right)}+3\sin{\left(\frac{7t}{40}\right)}$, is used to model the velocity of the plane, in miles per minute, for $0\leq t\leq 40$. According to this model, what is the average velocity of the plane, in miles per minute over the time interval $0\leq v(t)\leq 40$?} \\
+
+      $\int_{0}^{40}{f(t)}\,dt=
+      6\int_{0}^{40}{}\,dt+\int_{0}^{40}{\cos{\frac{t}{10}}}\,dt+3\int_{0}^{40}{\sin{\frac{7t}{40}}}\,dt=
+      6[t]_{0}^{40}+10[\sin{\frac{t}{10}}]_{0}^{40}-\frac{120}{7}[\cos{\frac{7t}{40}}]_{0}^{40}=$ \\
+
+      $236.651$ miles \\
+
+      $f_{avg}=\frac{\int_{0}^{40}{f(t)}\,dt}{40-0}=\frac{236.651}{40}=5.916$ miles per minute, on average.
+  \end{enumerate}
+  \pagebreak
+  \item{(Modification of 2005 AB 3/ BC 3) \\
+  A metal wire of length 8 centimeters is heated at one end. The table below gives selected values of the temperature $T(x)$, in degrees Celsius, of the wire $x$ cm from the heated end.
+  \begin{center}
+    \begin{tabular}{| c | c | c | c | c | c |}
+      \hline
+      Distance $x$ (cm) & 0 & 1 & 5 & 6 & 8 \\
+      \hline
+      Temperature $T(x)$ (\degree C) & 100 & 93 & 70 & 62 & 55 \\
+      \hline
+    \end{tabular}
+  \end{center}}
+  \begin{enumerate}
+    \item{Estimate $T'(7)$. Show the work that leads to your answer. Indicate units of measure.} \\
+
+      $T'(7)=\frac{55-62}{8-6}=-\frac{7}{2}=-3.5$\degree C/cm. \\
+
+    \item{Write an integral expression in terms of $T(x)$ for the average temperature of the wire. Estimate the average temperature of the wire using a trapezoidal sum with the four subintervals indicated by the data in the table. Indicate units of measure.} \\
+
+      $\int_{0}^{8}{T(x)}\,dx\approx
+      \sum_{n=1}^{4}{T(x)\Delta x}=
+      \frac{1}{2}\left((100+93)+4(93+70)+(70+62)+2(62+55)\right)=
+      600.5$\degree C \\
+
+      $T_{avg}=\frac{\int_{0}^{8}{T(x)}\,dx}{8-0}\approx\frac{\sum_{n=1}^{4}{T(x)\Delta x}}{8}=
+      \frac{605.5}{8}=75.688$\degree C, on average.  \\
+
+    \item{Find $\int_{0}^{8}{T'(x)}\,dx$, and indicate units of measure. Explain the meaning of $\int_{0}^{8}{T'(x)}\,dx$ in terms of the temperature of the wire.} \\
+
+      $\int_{0}^{8}{T'(x)\,dx}=T(8)-T(0)=55-100=-45$ \degree C \\
+
+      The temperature difference of the heated end of the wire to the other end is 45\degree C. \\
+
+  \end{enumerate}
+  \hline
+  \item{(Modification of 2006 AB 4/ BC 4) \\
+  Rocket $A$ has positive velocity $v(t)$ after being launched upward from an initial height of 0 feet at time $t=0$ seconds. The velocity of the rocket is recorded for selected values of $t$ over the interval $0\leq t \leq 80$ seconds, as shown in the table below.
+  \begin{center}
+    \begin{tabular}{| c | c | c | c | c | c | c | c | c | c |}
+      \hline
+      $t$ (seconds) & 0 & 10 & 20 & 30 & 40 & 50 & 60 & 70 & 80 \\
+      \hline
+      $v(t)$ (ft per second) & 5 & 14 & 22 & 29 & 35 & 40 & 44 & 47 & 49 \\
+      \hline
+    \end{tabular}
+  \end{center}}
+  \begin{enumerate}
+    \item{Using correct units, explain the meaning of $\int_{10}^{70}{v(t)}\,dt$ in terms of the rocket's flight. Use a midpoint Riemann sum with 3 subintervals of equal length to approximate $\int_{10}^{70}{v(t)}\,dt$.} \\
+
+      $\int_{10}^{70}{v(t)}\,dt\approx\sum_{n=1}^{3}{20v(t)}=20(22)+20(35)+20(44)=2020$ ft. \\
+
+      Rocket $A$ has a vertical displacement of 2020 feet within the span of one minute. \\
+
+    \item{Rocket $B$ is launched upward with an acceleration of $a(t)=\frac{3}{\sqrt{t+1}}$ feet per second per second. At time $t=0$ seconds, the initial height of the rocket is 0 feet, and the initial velocity is 2 feet per second. Which of the two rockets is traveling faster at $t=80$ seconds? Explain your answer.} \\
+
+      $v_{y_{A}}(80)=49$ ft/sec. \\
+
+      $v_{y_{B}}(80)=v_{y_{B_{0}}}+a_{y_{B}}t=
+      2+3\int_{0}^{80}{\frac{dx}{\sqrt{t+1}}}=
+      2+6\sqrt{80+1}-6\sqrt{0+1}=50$ ft/sec. \\
+
+      Rocket $B$ is traveling faster than Rocket $A$ at $t=80$ seconds. 
+
+  \end{enumerate}
+\end{enumerate}
+\end{document}

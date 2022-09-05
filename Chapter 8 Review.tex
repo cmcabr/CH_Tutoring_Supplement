@@ -1,0 +1,161 @@
+% Document Metadata
+\documentclass[10pt,a5paper]{report}
+\usepackage[utf8]{inputenc}
+% Use for Arial Font \usepackage{helvet}
+%  \renewcommand{\familydefault}{\sfdefault}
+% Use for Times New Roman Font \usepackage{mathptmx}
+
+\usepackage[none]{hyphenat}
+\usepackage{tikz, textcomp, gensymb, graphicx, mathtools, amssymb, amsthm, hyperref, multicol}
+  \hypersetup{
+      colorlinks=true,
+      linkcolor=blue,
+      filecolor=magenta,
+      urlcolor=blue,
+      }
+  \graphicspath{ {/home/lowebang/Pictures/} }
+\usepackage[letterpaper]{geometry}
+  \geometry{top=1in, bottom=1in, left=0.5in, right=0.5in}
+\usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \lhead{Let $a, b,$ and $n$ be any constant, $a, b, n \in \mathbb{Z}$}
+  \chead{}
+  \rhead{\thepage}
+  \lfoot{AP Calculus BC Chapter 8 Review Form}
+  \cfoot{}
+  \rfoot{\LaTeX}
+  \renewcommand{\headrulewidth}{1pt}
+  \renewcommand{\footrulewidth}{1pt}
+  \setlength\headsep{0.333in}
+
+% Command to Circle String
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+% Command to Set Oval Around String
+\newcommand{\mymk}[1]{%
+  \tikz[baseline=(char.base)]\node[anchor=south west, draw,rectangle, rounded corners, inner sep=2pt, minimum size=7mm,
+  text height=2mm](char){\ensuremath{#1}} ;}
+  
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arccsc}{arccsc}
+
+\title{Calculus BC - Chapter 8 Review}
+\author{Craig Cabrera}
+\date{}
+
+\begin{document}
+\begin{center}
+  \textbf{\underline{Relevant Formulas and Notes:}}
+\end{center}
+
+\begin{multicols*}{2}
+	\underline{8.1: Basic Integration Formulas \& Review} \\
+	
+	$\int_{a}^{b}{f(x)}\,dx=F(b)-F(a)$ \\
+	
+	$f_{avg}=\frac{1}{b-a}{\int_{a}^{b}{f(x)}\,dx}$ \\
+	
+	$\int_{a}^{b}{f(g(x))g'(x)}\,dx=\int_{g(a)}^{g(b)}{f(u)}\,du$ \\
+
+	$\int{ax^{n}}\,dx=a\frac{x^{n+1}}{n+1}+C, n\neq 1$ \\
+
+	$\int{\frac{a}{x+n}}\,dx=a\ln{\left|x+n\right|}+C$ \\
+
+	$\int{\frac{dx}{ax+b}}=\frac{1}{a}\ln{\left|ax+b\right|}+C$ \\
+
+	$\int{ae^{nx}}\,dx=nae^{nx}+C$ \\
+
+	$\int{a\cos{(bx)}}\,dx=\frac{a}{b}\sin{(bx)}+C$ \\ 
+
+	$\int{a\sin{(bx)}}\,dx=-\frac{a}{b}\cos{(bx)}+C$ \\
+
+	$\int{a\tan{(bx)}}\,dx=-\frac{a}{b}\ln{\left|\cos{(bx)}\right|}+C$ \\
+
+	$\int{a\sec{(bx)}}=\frac{a}{b}\ln{\left|\sec{(bx)}+\tan{(bx)}\right|}+C$ \\
+
+	$\int{a\sec^{2}{(bx)}}\,dx=\frac{a}{b}\tan{(bx)}+C$ \\
+
+	$\int{a\sec{(bx)}\tan{(bx)}}\,dx=\frac{a}{b}\sec{x}+C$ \\
+
+	$\int{a\csc{(bx)}\cot{(bx)}}\,dx=-\frac{a}{b}\csc{(bx)}+C$ \\
+
+	$\int{a\csc^{2}{(bx)}}\,dx=-\frac{a}{b}\cot{(bx)}+C$ \\
+	
+	$\int{\frac{n}{\sqrt{a^{2}-u^{2}}}}\,dx=n\arcsin{\left(\frac{u}{a}\right)}+C$ \\
+	
+	$\int{\frac{n}{a^{2}+u^{2}}}\,dx=\frac{n}{a}\arctan{\left(\frac{u}{a}\right)}+C$ \\
+	
+	$\int{\frac{n}{u\sqrt{u^{2}-a^{2}}}}\,dx=\frac{n}{a}\arcsec{\left(\frac{u}{a}\right)}+C$ \\
+	
+	\underline{8.2: Integration by Parts} \\
+	
+	$\int{u}\,dv=uv-\int{v}\,du$ \\
+	
+	LIATE for $u$ value: 
+	\begin{enumerate}
+		\item{Logarithms}
+		\item{Inverse Trig Functions}
+		\item{Algebraic Functions}
+		\item{Trig Functions}
+		\item{Exponentials} \\
+	\end{enumerate}
+	
+	\underline{8.3: Trigonometric Integrals} \\
+	
+	$ \sin^{2}{\theta}+\cos^{2}{\theta}=x^{2}+y^{2}=1$ \\
+	
+	$ \frac{\sin^{2}{\theta}+\cos^{2}{\theta}}{\cos^{2}{\theta}}=\frac{1}{\cos^{2}{\theta}}\rightarrow
+	   \tan^{2}{\theta}+1=\sec^{2}{\theta}$ \\
+	   
+	$ \frac{\sin^{2}{\theta}+\cos^{2}{\theta}}{\sin^{2}{\theta}}=\frac{1}{\sin^{2}{\theta}}\rightarrow
+	   1+\cot^{2}{\theta}=\csc^{2}{\theta}$ \\
+	   
+	$ \cos{\left(\alpha\pm\beta\right)}=\cos{\alpha}\cos{\beta}\mp\sin{\alpha}\sin{\beta}\rightarrow$ \\
+	
+	$\cos{\left(2\theta\right)}=1-2\sin^{2}{\theta}=2\cos^{2}{\theta}-1$ \\\
+
+	$ \frac{1}{2}\left(\cos{\left(\alpha-\beta\right)}+\cos{\left(\alpha+\beta\right)}\right)=
+	   \cos{\alpha}\cos{\beta}$ \\
+	   
+	$ \frac{1}{2}\left(\cos{\left(\alpha-\beta\right)}-\cos{\left(\alpha+\beta\right)}\right)=
+	   \sin{\alpha}\sin{\beta}$ \\
+	   
+	$\sin^{2}{\theta}=\frac{1-\cos{\left(2\theta\right)}}{2},\,\cos^{2}{\theta}=\frac{1+\cos{\left(2\theta\right)}}{2}$ \\
+
+	$ \sin{\left(\alpha\pm\beta\right)}=\sin{\alpha}\cos{\beta}\pm\cos{\alpha}\sin{\beta}\rightarrow$ \\
+	
+	$ \frac{1}{2}\left(\sin{\left(\alpha-\beta\right)}+\sin{\left(\alpha+\beta\right)}\right)=
+	   \sin{\alpha}\cos{\beta}$ \\
+	   
+	\underline{8.4: Trigonometric Substitution} \\
+	
+	For integrals using $\sqrt{a^{2}-u^{2}}: \sin{\theta}=\frac{u}{a},\, \cos{\theta}=\frac{\sqrt{a^{2}-u^{2}}}{a}$ \\
+
+	For integrals using $\sqrt{a^{2}+u^{2}}: \tan{\theta}=\frac{u}{a},\, \sec{\theta}=\frac{\sqrt{a^{2}+u^{2}}}{a}$ \\ 
+
+	For integrals using $\sqrt{u^{2}-a^{2}}: \sec{\theta}=\frac{u}{a},\, \tan{\theta}=\frac{\sqrt{u^{2}-a^{2}}}{a}$ \\
+	
+	\underline{8.5: Integration by Partial Fractions} \\
+	
+	$\int{\frac{u}{(x+a)(x+b)}}\,dx=\int{\frac{A}{x+a}}\,dx+\int{\frac{B}{x+b}}\,dx$ \\
+	
+	$\int{\frac{u}{(x+a)^{2}(x+b)}}\,dx=\int{\frac{A}{x+a}}\,dx+\int{\frac{B}{(x+a)^{2}}}\,dx+\int{\frac{C}{x+b}}\,dx$ \\
+	
+	$\int{\frac{u}{(x+a)(x^{2}+b)}\,dx=\int{\frac{A}{x+a}}\,dx+\int{\frac{Bx+C}{x^{2}+b}}}\,dx$ \\
+	
+	Volume of solid rotated around $x$-axis: $V=\pi\int_{a}^{b}{f^{2}(x)}\,dx$ \\
+	
+	\underline{8.8: Improper Integrals} \\
+	
+	$\int_{a}^{\infty}{f(x)}\,dx=\lim_{b\to\infty}\int_{a}^{b}{f(x)}\,dx$ \\
+	
+	$\int_{-\infty}^{b}{f(x)}\,dx=\lim_{a\to-\infty}\int_{a}^{b}{f(x)}\,dx$ \\
+	
+	$\int_{-\infty}^{\infty}{f(x)}\,dx=\int_{-\infty}^{c}{f(x)}\,dx+\int_{c}^{\infty}{f(x)}\,dx$ \\
+	
+	\underline{Personal Notes Below:} \\
+\end{multicols*}
+
+\end{document}

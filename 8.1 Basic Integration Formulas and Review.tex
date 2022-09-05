@@ -1,0 +1,102 @@
+\documentclass[10pt, letterpaper]{report}
+\usepackage[letterpaper]{geometry}
+  \geometry{top=1in, bottom=1in, left=1in, right=1in}
+\usepackage[utf8]{inputenc}
+\usepackage[shortlabels]{enumitem}
+\usepackage{textcomp, gensymb, mathtools , amssymb , amsthm, graphicx}
+  \graphicspath{ {/home/lowebang/Pictures/} }
+\usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \lhead{}
+  \chead{}
+  \rhead{Cabrera \thepage}
+  \lfoot{}
+  \cfoot{}
+  \rfoot{\LaTeX}
+  \renewcommand{\headrulewidth}{1pt}
+  \renewcommand{\footrulewidth}{1pt}
+  \setlength\headsep{0.333in}
+
+\title{Calculus BC - 8.1 Basic Integration Formulas and Review}
+\author{Craig Cabrera}
+\date{30 January 2022}
+
+\begin{document}
+\maketitle
+\underline{Ex}. Evaluate the given integrals.
+\begin{enumerate}[(a)]
+  \item{$\int{\left(3x^{2}+\frac{5}{x^{4}}+2\sin{x}\right)}\,dx$} \\
+
+    $\int{\left(3x^{2}+\frac{5}{x^{4}}+2\sin{x}\right)}\,dx=
+    3\int{\left(x^{2}\right)}\,dx+\int{\left(\frac{dx}{x^{4}}\right)}+2\int{\sin{x}}\,dx=
+    x^{3}-\frac{5}{3x^{3}}-2\cos{x}+C$ \\
+
+  \item{$\int_{1}^{2}{x^{2}(x^{3}+1)^{2}}\,dx$} \\
+
+    Let $u=x^{3}+1\therefore du=3x^{2}dx$ \\
+
+    $\int_{1}^{2}{x^{2}(x^{3}+1)^{2}}\,dx=\frac{1}{3}\int_{2}^{9}{u^{2}}\,du=
+    [\frac{1}{9}u^{3}]_{2}^{9}=\frac{721}{9}$ \\
+
+  \item{$\int{e^{3x}}\,dx$} \\
+
+    Let $u=3x\therefore du=3dx$ \\
+
+    $\int{e^{3x}}\,dx=\frac{1}{3}\int{e^{u}}\,du=\frac{1}{3}e^{u}+C=\frac{1}{3}e^{3x}+C$ \\
+
+  \item{$\int_{0}^{\frac{\pi}{6}}{\sin{(3x)}}\,dx$} \\
+
+    Let $\theta=3x\therefore d\theta=3dx$ \\
+
+    $\int_{0}^{\frac{\pi}{6}}{\sin{(3x)}}\,dx=
+    \frac{1}{3}\int_{0}^{\frac{\pi}{2}}{\sin{\theta}}\,d\theta=
+    \frac{1}{3}[-\cos{x}]_{0}^{\frac{\pi}{2}}=\frac{1}{3}$ \\
+
+  \item{$\int_{0}^{\frac{\pi}{20}}{\sec^{2}{(5x)}}\,dx$} \\
+
+    Let $\theta=5x\therefore d\theta=5dx$ \\
+
+    $\int_{0}^{\frac{\pi}{20}}{\sec^{2}{(5x)}}\,dx=
+    \frac{1}{5}\int_{0}^{\frac{\pi}{4}}{sec^{2}{\theta}}\,d\theta=
+    \frac{1}{5}[\tan{x}]_{0}^{\frac{\pi}{4}}=\frac{1}{5}$ \\
+
+  \item{$\int{\frac{4}{x^{2}+9}}\,dx$} \\
+
+    $\int{\frac{4}{x^{2}+9}}\,dx=4\int{\frac{dx}{x^{2}+9}}=
+    \frac{4}{3}\arctan{\left(\frac{x}{3}\right)}+C$ \\
+
+  \item{$\int{\frac{4x}{x^{2}+9}}\,dx$} \\
+
+    Let $u=x^{2}+9\therefore du=2xdx$ \\
+
+    $\int{\frac{4x}{x^{2}+9}}\,dx=2\int{\frac{du}{u}}=2\ln{|u|}+C=
+    2\ln{|x^{2}+9|}+C$ \\
+
+  \item{$\int{\frac{4x^{2}}{x^{2}+9}}\,dx$} \\
+
+    $\int{\frac{4x^{2}}{x^{2}+9}}\,dx=4\int{\frac{x^{2}}{x^{2}+9}}\,dx=
+    4\int{\frac{(x^{2}+9)-9}{x^{2}+9}}\,dx=4\int{1-\frac{9}{x^{2}+9}}\,dx=$ \\
+
+    $4\int{}\,dx-36\int{\frac{du}{x^{2}+9}}=4x-12\arctan{\left(\frac{x}{3}\right)}+C$ \\
+
+  \item{$\int{\frac{dx}{\sqrt{8-2x-x^{2}}}}$} \\
+
+    $\int{\frac{dx}{\sqrt{8-2x-x^{2}}}}}=\int{\frac{dx}{\sqrt{9-(x+1)^{2}}}=
+    \arcsin{\left(\frac{x+1}{3}\right)}+C$ \\
+
+  \item{$\int{\frac{dx}{x^{2}-6x+34}}$} \\
+
+    $\int{\frac{dx}{x^{2}-6x+34}}=\int{\frac{dx}{(x-3)^{2}+25}}=
+    \frac{1}{5}\arctan{\left(\frac{x-3}{5}\right)}+C$ \\
+
+  \item{$\int{\frac{2x+7}{x^{2}+4x+13}}\,dx$} \\
+
+    Let $u=x^{2}+4x+13\therefore du=2x+4dx$ \\
+
+    $\int{\frac{2x+7}{x^{2}+4x+13}}\,dx=\int{\frac{du}{u}+3\int{\frac{du}{x^{2}+4x+13}}=
+    \int{\frac{du}{u}+3\int{\frac{du}{(x+2)^{2}+9}}=\ln{|u|}+\arctan{\left(\frac{x+2}{3}\right)}+C=$ \\
+    
+    $\ln{|x^{2}+4x+13|}+\arctan{\left(\frac{x+2}{3}\right)}+C$
+
+\end{enumerate}
+\end{document}

@@ -1,0 +1,236 @@
+\documentclass[10pt, letterpaper]{report}
+\usepackage[letterpaper]{geometry}
+  \geometry{top=1in, bottom=1in, left=1in, right=1in}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp, gensymb, mathtools , amssymb , amsthm, graphicx}
+  \graphicspath{ {/home/lowebang/Pictures/} }
+\usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \lhead{}
+  \chead{}
+  \rhead{Cabrera \thepage}
+  \lfoot{}
+  \cfoot{}
+  \rfoot{\LaTeX}
+  \renewcommand{\headrulewidth}{1pt}
+  \renewcommand{\footrulewidth}{1pt}
+  \setlength\headsep{0.333in}
+
+\title{Calculus BC - Worksheet on Integration by Parts}
+\author{Craig Cabrera}
+\date{29 January 2022}
+
+\begin{document}
+\maketitle
+\noindent Work the following on notebook paper. \textbf{\underline{No calculator.}}
+\noindent Evaluate.
+\begin{enumerate}
+  \item{$\int{xe^{2x}}\,dx$} \\
+
+    Let $\alpha=2x\rightarrow x=\frac{\alpha}{2}\therefore d\alpha=2dx$ \\
+
+    $\int{\frac{\alpha}{2}*\frac{1}{2}e^{\alpha}}\,d\alpha=\frac{1}{4}\int{\alpha e^{\alpha}}\,d\alpha$ \\
+
+    Let $u=\alpha\therefore du=d\alpha$ and let $v=e^{\alpha}\therefore dv=e^{\alpha}d\alpha$ \\
+
+    $\frac{1}{4}\int{\alpha e^{\alpha}}\,d\alpha=\frac{1}{4}\int{u}\,dv=
+    \frac{1}{4}\left(\alpha e^{\alpha}-e^{\alpha}\right)+C=
+    \frac{1}{4}(2xe^{2x}-e^{2x})+C=\frac{e^{2x}}{4}(2x-1)+C$ \\
+
+  \item{$\int{x\sec^{2}{x}}\,dx$} \\
+
+    Let $u=x\therefore du=dx$ and let $v=\tan{x}\therefore dv=\sec^{2}{x}dx$ \\
+
+    $\int{x\sec^{2}{x}}\,dx=\int{u}\,dv=x\tan{x}-\int{\tan{x}}\,dx=
+    x\tan{x}-\int{\frac{\sin{x}}{\cos{x}}}\,dx$ \\
+
+    Let $\alpha=\cos{x}\therefore d\alpha=-\sin{x}dx$ \\
+
+    $x\tan{x}-\int{\frac{\sin{x}}{\cos{x}}}\,dx=
+    x\tan{x}+\int{\frac{1}{\alpha}}\,dx=
+    x\tan{x}+\ln{|\alpha|}+C=x\tan{x}+\ln{|\cos{x}|}+C$ \\
+
+  \item{$\int{x^{2}\sin{x}}\,dx$ \\
+
+    Let $u=x^{2}\therefore du=2xdx$ and let $v=-\cos{x}\therefore dv=\sin{x}\,dx$ \\
+
+    $\int{x^{2}\sin{x}}\,dx=\int{u}\,dv=2\int{x\cos{x}}\,dx-x^{2}\cos{x}
+    $ \\
+
+    Let $\alpha=x\therefore d\alpha=dx$ and let $\beta=\sin{x}\therefore d\beta=\cos{x}dx$ \\
+
+    $2\int{x\cos{x}}\,dx-x^{2}\cos{x}=2\int{\alpha}\,d\beta-x^{2}\cos{x}=
+    2(x\sin{x}-\int{\sin{x}}\,dx)-x^{2}\cos{x}=$ \\
+
+    $2(x\sin{x}+\cos{x})-x^{2}\cos{x}+C$ \\
+
+  \item{$\int{x^{3}\ln{x}}\,dx$} \\
+
+    Let $u=\ln{x}\therefore du=\frac{dx}{x}$ and let $v=\frac{x^{4}}{4}\therefore dv=x^{3}dx$ \\
+
+    $\int{x^{3}\ln{x}}\,dx=\int{u}\,dv=
+    \frac{1}{4}x^{4}\ln{x}-\frac{1}{4}\int{x^{3}}\,dx=
+    \frac{1}{4}x^{4}\ln{x}-\frac{1}{16}x^{4}+C=
+    \frac{x^{4}}{4}\left(\ln{x}-\frac{1}{4}\right)+C$ \\
+
+  \item{$\int{\frac{x}{e^{3x}}}\,dx$} \\
+
+    Let $u=x\therefore du=dx$ and let $v=-\frac{1}{3e^{3x}}\therefore dv=\frac{1}{e^{3x}}dx$ \\
+
+    $\int{\frac{x}{e^{3x}}}\,dx=\int{u}\,dv=
+    \frac{1}{3}\int{\frac{1}{e^{3x}}}\,dx-\frac{x}{3e^{3x}}=
+    -\frac{1}{9e^{3x}}-\frac{x}{3e^{3x}}+C=
+    -\frac{1}{3e^{3x}}\left(\frac{1}{3}+x\right)+C$
+
+    \pagebreak
+  \item{$\int{\arctan{(2x)}}\,dx$} \\
+
+    Let $u=\arctan{2x}\therefore du=\frac{2}{4x^{2}+1}dx$ and let $v=x\therefore dv=dx$ \\
+
+    $\int{\arctan{2x}}\,dx=\int{u}\,dv=x\arctan{2x}-\int{\frac{2x}{4x^{2}+1}}\,dx$ \\
+
+    Let $\alpha=4x^{2}+1\therefore d\alpha=8xdx$ \\
+
+    $x\arctan{2x}-\int{\frac{2x}{4x^{2}+1}}\,dx=
+    x\arctan{2x}-\int{\frac{du}{4u}}=
+    x\arctan{2x}-\frac{1}{4}\int{\frac{du}{u}}=
+    x\arctan{2x}-\frac{1}{4}\ln{|\alpha|}+C=$ \\
+
+    $x\arctan{2x}-\frac{1}{4}\ln{|4x^{2}+1|}+C$ \\
+
+  \item{$\int{e^{4x}\sin{x}}\,dx$} \\
+
+    Let $u=e^{4x}\therefore du=4e^{4x}dx$ and let $v=-\cos{x}\therefore dv=\sin{x}dx$ \\
+
+    $\int{e^{4x}\sin{x}}\,dx=\int{u}\,dv=4\int{e^{4x}\cos{x}}\,dx-e^{4x}\cos{x}$ \\
+
+    Let $\beta=\sin{x}\therefore d\beta=\cos{x}dx$ \\
+
+    $4\int{e^{4x}\cos{x}}\,dx-e^{4x}\cos{x}=4\int{u}\,d\beta-e^{4x}\cos{x}=
+    4\left(e^{4x}\sin{x}-4\int{e^{4x}\sin{x}}\,dx\right)-e^{4x}\cos{x}$ \\
+
+    Let $\gamma=\int{e^{4x}\sin{x}}\,dx$ \\
+
+    $\gamma=4\left(e^{4x}\sin{x}-4\int{e^{4x}\sin{x}}\,dx\right)-e^{4x}\cos{x}=
+    4\left(e^{4x}\sin{x}-4\gamma\right)-e^{4x}\cos{x}=
+    4e^{4x}\sin{x}-16\gamma-e^{4x}\cos{x}$ \\
+
+    $17\gamma=4e^{4x}\sin{x}-e^{4x}\cos{x}$ \\
+
+    $\gamma=\frac{4e^{4x}\sin{x}}{17}-\frac{e^{4x}\cos{x}}{17}$ \\
+
+  \item{$\int_{0}^{1}{xe^{-5x}}\,dx$} \\
+
+    Let $u=x\therefore du=dx$ and let $v=-\frac{1}{5e^{5x}}\therefore dv=\frac{1}{e^{5x}}dx$ \\
+
+    $\int_{0}^{1}{xe^{-5x}}\,dx=\int_{0}^{1}{u}\,dv=
+    \int_{0}^{1}{\frac{1}{5e^{5x}}}\,dx-[\frac{x}{5e^{5x}}]_{0}^{1}=
+    -[\frac{1}{25e^{5x}}]_{0}^{1}-[\frac{x}{5e^{5x}}]_{0}^{1}=
+    \frac{1}{25}-\frac{1}{5e^{5}}-\frac{1}{25e^{5}}$ \\
+
+  \item{$\int_{\sqrt{e}}^{e}{x\ln{x}}\,dx$} \\
+
+    Let $u=\ln{x}\therefore du=\frac{dx}{x}$ and let $v=\frac{x^{2}}{2}\therefore dv=xdx$ \\
+
+    $\int_{\sqrt{e}}^{e}{x\ln{x}}\,dx=\int_{\sqrt{e}}^{e}{u}\,dv=
+    [\frac{1}{2}x^{2}\ln{x}]_{\sqrt{e}}^{e}-\frac{1}{2}\int_{\sqrt{e}}^{e}{\frac{x^{2}}{x}}\,dx=
+    [\frac{1}{2}x^{2}\ln{x}]_{\sqrt{e}}^{e}-\frac{1}{2}\int_{\sqrt{e}}^{e}{x}\,dx=$ \\
+
+    $[\frac{1}{2}x^{2}\ln{x}]_{\sqrt{e}}^{e}-\frac{1}{4}[x^{2}]_{\sqrt{e}}^{e}=
+    \left(\frac{e^{2}}{2}-\frac{e}{4}\right)-\frac{1}{4}\left(e^{2}-e\right)=
+    \frac{1}{4}e^{2}$ \\
+
+  \item{$\int{\arcsin{(3x)}}\,dx$} \\
+
+    Let $u=\arcsin{3x}\therefore du=\frac{3}{\sqrt{1-9x^2}}dx$ and let $v=x\therefore dv=dx$ \\
+
+    $\int{\arcsin{(3x)}}\,dx=\int{u}\,dv=x\arcsin{3x}-\int{\frac{3x}{\sqrt{1-9x^2}}dx}$ \\
+
+    Let $\alpha=1-9x^{2}\therefore d\alpha=-18xdx$ \\
+
+    $x\arcsin{3x}-\int{\frac{3x}{\sqrt{1-9x^2}}dx}=x\arcsin{3x}+\int{\frac{3}{18\sqrt{\alpha}}\,d\alpha}=
+    x\arcsin{3x}+\frac{1}{6}\int{\frac{1}{\sqrt{\alpha}}}\,d\alpha=
+    x\arcsin{3x}+\frac{\sqrt{1-9x^{2}}}{3}+C$ \\
+
+  \item{$\int{x^{3}e^{2x}}\,dx$} \\
+
+    Let $\alpha=2x\rightarrow x=\frac{\alpha}{2}\therefore d\alpha=2dx$ \\
+
+    $\int{\left(\frac{a}{2}\right)^{3}*\frac{1}{2}e^{\alpha}}\,d\alpha=
+    \frac{1}{16}\int{\alpha^{3}e^{\alpha}}\,d\alpha$ \\
+
+    Let $u=\alpha^{3}\therefore du=3\alpha^{2}d\alpha$ and let $v=e^{\alpha}\therefore dv=e^{\alpha}d\alpha$ \\
+
+    $\frac{1}{16}\int{\alpha^{3}e^{\alpha}}\,d\alpha=\frac{1}{16}\int{u}\,dv=
+    \frac{1}{16}\left(\alpha^{3}e^{\alpha}-3\int{\alpha^{2}e^{\alpha}}\,d\alpha\right)$ \\
+
+    Let $\beta=\alpha^{2}\therefore d\beta=2\alpha d\alpha$ \\
+
+    $\frac{1}{16}\left(\alpha^{3}e^{\alpha}-3\int{\alpha^{2}e^{\alpha}}\,d\alpha\right)=
+    \frac{1}{16}\left(\alpha^{3}e^{\alpha}-3\int{v}\,d\beta\right)=
+    \frac{1}{16}\left(\alpha^{3}e^{\alpha}-3\left(e^{\alpha}\alpha^{2}-2\int{\alpha e^{\alpha}}\right)\right)$ \\
+
+    Let $\gamma=\int{\alpha e^{\alpha}}$ (Refer to Question 1 for Solution) \\
+
+    $\frac{1}{16}\left(\alpha^{3}e^{\alpha}-3\left(e^{\alpha}\alpha^{2}-2\int{\alpha e^{\alpha}}\right)\right)=
+    \frac{1}{16}\left(\alpha^{3}e^{\alpha}-3\left(e^{\alpha}\alpha^{2}-2\left(\alpha e^{\alpha}-e^{\alpha}\right)\right)\right)=$ \\
+
+    $\frac{1}{16}\alpha^{3}e^{\alpha}-\frac{3}{16}\alpha^{2}e^{\alpha}+\frac{3}{8}\alpha e^{\alpha}-\frac{3}{8}e^{\alpha}+C=
+    \frac{1}{2}x^{3}e^{2x}-\frac{3}{4}x^{2}e^{2x}+\frac{3}{4}xe^{2x}-\frac{3}{8}e^{2x}+C=\frac{e^{2x}}{2}\left(x^3-\frac{3}{2}\left(x^2-x+\frac{1}{2}\right)\right)+C$ \\
+
+  \item{$\int{\ln{(x^{2}+1)}}\,dx$} \\
+
+    Let $u=\ln{(x^{2}+1)}\therefore du=\frac{2x}{x^{2}+1}dx$ and let $v=x\therefore dv=dx$ \\
+
+    $\int{\ln{(x^{2}+1)}}\,dx=\int{u}\,dv=x\ln{(x^{2}+1)}-2\int{\frac{x^{2}}{x^{2}+1}}\,dx=
+    x\ln{(x^{2}+1)}-2\int{\frac{x^{2}+1-1}{x^{2}+1}}\,dx=$ \\
+
+    $x\ln{(x^{2}+1)}-2\int{1-\frac{x^{2}}{x^{2}+1}}\,dx=
+    x\ln{(x^{2}+1)}-2\left(\int{}\,dx-\int{\frac{x^{2}}{x^{2}+1}}\,dx\right)=
+    x\ln{(x^{2}+1)}-2x+2\arctan{x}+C$ \\
+
+  \pagebreak
+  \item{(2003 AB 5) (No calc)} \\
+    A coffeepot has the shape of a cylinder with radius 5 inches, as shown in the figure. Let $h$ be the depth of the the coffee in the pot, measured in inches, where $h$ is a function of time $t$, measured in seconds. The volume $V$ of coffee in the pot is changing at a rate of $-5\pi\sqrt{h}$ cubic inches per second. (The volume $V$ of a cylinder with radius $r$ and height $h$ is $V=\pi r^{2}h$.)
+    \begin{itemize}
+      \item{$r=5$ in.}
+      \item{$h(t)=\frac{V}{\pi r^{2}}=\frac{V}{25\pi}$}
+      \item{$\frac{dV}{dt}=-5\pi\sqrt{h}$}
+    \end{itemize}
+    \begin{enumerate}
+      \item{Show that $\frac{dh}{dt}=-\frac{\sqrt{h}}{5}$.} \\
+
+        $\frac{dh}{dt}=\frac{1}{25\pi}\frac{dV}{dt}=-\frac{5\pi\sqrt{h}}{25\pi}=-\frac{\sqrt{h}}{5}$ as required. \\
+
+      \item{Given that $h=17$ at time $t=0$, solve the differential equation $\frac{dh}{dt}=-\frac{\sqrt{h}}{5}$ for $h$ as a function of $t$.} \\
+
+        $\frac{dh}{dt}=-\frac{\sqrt{h}}{5}$ \\
+
+        $dh=-\frac{\sqrt{h}}{5}dt$ \\
+
+        $\frac{dh}{\sqrt{h}}=-\frac{1}{5}dt$ \\
+
+        $\int{\frac{dh}{\sqrt{h}}}=-\frac{1}{5}\int\,dt$ \\
+
+        $2\sqrt{h}=-\frac{1}{5}t+C$ \\
+
+        $\sqrt{h}=-\frac{1}{10}t+C\rightarrow \sqrt{17}=-\frac{0}{10}+C\rightarrow C=\sqrt{17}$ \\
+
+        $h=\left(-\frac{1}{10}t+\sqrt{17}\right)^{2}$ \\
+
+        $17=\left(-\frac{0}{10}+\sqrt{17}\right)^{2}=(\sqrt{17})^{2}=17$ \\
+
+      \item{At what time $t$ is the coffeepot empty?} \\
+
+        $\sqrt{h}=-\frac{1}{10}t+\sqrt{17}$ \\
+
+        $\sqrt{h}-\sqrt{17}=-\frac{1}{10}t$ \\
+
+        $10\sqrt{17}-10\sqrt{h}=t$ \\
+
+        $10\sqrt{17}-10\sqrt{0}=10\sqrt{17}=t$ \\
+
+        The coffeepot is empty at time $t=10\sqrt{17}$ seconds.
+    \end{enumerate}
+\end{enumerate}
+\end{document}

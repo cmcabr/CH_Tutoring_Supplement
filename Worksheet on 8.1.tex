@@ -1,0 +1,207 @@
+\documentclass[10pt, letterpaper]{report}
+\usepackage[letterpaper]{geometry}
+  \geometry{top=1in, bottom=1in, left=1in, right=1in}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp, gensymb, mathtools , amssymb , amsthm, graphicx}
+  \graphicspath{ {/home/lowebang/Pictures/} }
+\usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \lhead{}
+  \chead{}
+  \rhead{Cabrera \thepage}
+  \lfoot{}
+  \cfoot{}
+  \rfoot{\LaTeX}
+  \renewcommand{\headrulewidth}{1pt}
+  \renewcommand{\footrulewidth}{1pt}
+  \setlength\headsep{0.333in}
+
+\title{Calculus BC - Worksheet on 8.1}
+\author{Craig Cabrera}
+\date{31 January 2022}
+
+\begin{document}
+\maketitle
+Work the following on \textbf{\underline{notebook paper}}. \textbf{\underline{No calculator.}}
+Evaluate the given integrals.
+\begin{enumerate}
+  \item{$\int{\left(9x+\frac{2}{x^{3}}+3\sec{x}\tan{x}-7\sec^{2}{x}\right)}\,dx$} \\
+
+    $\int{\left(9x+\frac{2}{x^{3}}+3\sec{x}\tan{x}-7\sec^{2}{x}\right)}\,dx=
+    9\int{x}\,dx+2\int{\frac{dx}{x^{3}}}+3\int{\sec{x}\tan{x}}\,dx-7\int{\sec^{2}{x}}\,dx=$ \\
+
+    $\frac{9}{2}x^{2}-\frac{1}{x^{2}}+3\sec{x}-7\tan{x}+C$ \\
+
+  \item{$\int{\frac{x-4}{\sqrt{x^{2}-8x+1}}}\,dx$} \\
+
+    Let $u=x^{2}-8x+1\therefore du=(2x-8)dx$ \\
+
+    $\int{\frac{x-4}{\sqrt{x^{2}-8x+1}}}\,dx=
+    \int{\frac{x-4}{\sqrt{u}}}\frac{du}{2x-8}=
+    \int{\frac{du}{\sqrt{u}}}\frac{x-4}{2x-8}=
+    \int{\frac{du}{2\sqrt{u}}}=
+    \frac{4}{3}u^{\frac{3}{2}}+C=
+    \frac{4}{3}\left(x^{2}-8x+1\right)^{\frac{3}{2}}+C$ \\
+
+  \item{$\int{x^{3}\cos{\left(5x^{4}\right)}}\,dx$} \\
+
+    Let $\theta=5x^{4}\therefore du=20x^{3}dx$ \\
+
+    $\int{x^{3}\cos{\left(5x^{4}\right)}}\,dx=
+    \frac{1}{20}\int{\cos{\theta}}\,d\theta=
+    \frac{1}{20}\sin{\theta}+C=
+    \frac{1}{20}\sin{(5x^{4})}+C$ \\
+
+  \item{$\int{\sin^{5}{(3x)}\cos{(3x)}}\,dx$} \\
+
+    Let $u=\sin{3x}\therefore du=3\cos{x}dx$ \\
+
+    $\int{\sin^{5}{(3x)}\cos{(3x)}}\,dx=\frac{1}{3}\int{u^{5}}\,du=\frac{1}{18}u^{6}+C=\frac{1}{18}\sin^{6}{x}+C$ \\
+
+  \item{$\int_{1}^{2}{x\left(x^{2}+1\right)^{3}}\,dx$} \\
+
+    Let $u=x^{2}+1\therefore du=2xdx$ \\
+
+    $\int_{1}^{2}{x\left(x^{2}+1\right)^{3}}\,dx=\frac{1}{2}\int_{2}^{5}{u^{3}}\,du=
+    \frac{1}{8}[u^{4}]_{2}^{5}=\frac{609}{8}=76.125$ \\
+
+  \item{$\int_{\frac{\pi}{12}}^{\frac{\pi}{9}}{\sin{(3x)}}\,dx$} \\
+
+    Let $\theta=3x\therefore d\theta=3dx$ \\
+
+    $\int_{\frac{\pi}{12}}^{\frac{\pi}{9}}{\sin{(3x)}}\,dx=
+    \frac{1}{3}\int_{\frac{\pi}{4}}^{\frac{\pi}{3}}{\sin{\theta}}\,d\theta=
+    -\frac{1}{3}[\cos{\theta}]_{\frac{\pi}{4}}^{\frac{\pi}{3}}=
+    -\frac{1}{3}[\frac{1}{2}-\frac{\sqrt{2}}{2}]=
+    \frac{\sqrt{2}-1}{6}\approx0.069$ \\
+
+  \item{$\int_{e}^{e^{2}}{\frac{(\ln{x})^{4}}{x}}\,dx$} \\
+
+    Let $u=\ln{x}\therefore du=\frac{dx}{x}$ \\
+
+    $\int_{e}^{e^{2}}{\frac{(\ln{x})^{4}}{x}}\,dx=\int_{1}^{2}{u^{4}}\,du=\frac{1}{5}[u^{5}]_{1}^{2}=\frac{32-1}{5}=6.2$ \\
+
+  \item{$\int_{0}^{3}{\frac{x^{2}-5}{x+2}}\,dx$} \\
+
+    Skip; need reference for solving. \\
+
+  \item{$\int_{-1}^{0}{e^{x}\cos{e^{x}}}\,dx$} \\
+
+    Let $\theta=e^{x}\therefore d\theta=e^{x}dx$ \\
+
+    $\int_{-1}^{0}{e^{x}\cos{e^{x}}}\,dx=
+    \int_{\frac{1}{e}}^{1}{\cos{\theta}}\,d\theta=
+    [\sin{\theta}]_{\frac{1}{e}}^{1}=
+    \sin{\frac{1}{e}}-\sin{1}\approx 0.482$ \\
+
+  \item{$\int{x^{3}7^{x^{4}}}\,dx$} \\
+
+    Let $u=7^{x^{4}}\therefore du=4\ln{7}*7^{x^{4}}*x^{3}dx$ \\
+
+    $\int{x^{3}7^{x^{4}}}\,dx=
+    \frac{1}{4\ln{7}}\int{}\,du=
+    \frac{u}{4\ln{7}}+C=\frac{7^{x^{4}}}{4\ln{7}}+C$ \\
+
+  \item{$\int{\frac{6}{\sqrt{10x-x^{2}}}}\,dx$} \\
+
+    $\int{\frac{6}{\sqrt{10x-x^{2}}}}\,dx=6\int{\frac{dx}{\sqrt{25-(x-5)^{2}}}}=
+    6\arcsin{\left(\frac{x-5}{5}\right)}+C$ \\
+
+  \item{$\int{\frac{1}{x^{2}-4x+9}}\,dx$} \\
+
+    $\int{\frac{1}{x^{2}-4x+9}}\,dx=
+    \int{\frac{1}{(x-2)^{2}+5}}\,dx=
+    \frac{1}{\sqrt{5}}\arctan{\left(\frac{x-2}{\sqrt{5}}\right)}+C$ \\
+
+  \item{$\int{\frac{2x+7}{x^{2}+4x+13}}\,dx$} \\
+
+    Let $u=x^{2}+4x+13\therefore du=2x+4dx$ \\
+
+    $\int{\frac{2x+7}{x^{2}+4x+13}}\,dx=\int{\frac{du}{u}}+3\int{\frac{du}{x^{2}+4x+13}}=
+    \int{\frac{du}{u}}+3\int{\frac{du}{(x+2)^{2}+9}}=\ln{|u|}+\arctan{\left(\frac{x+2}{3}\right)}+C=$ \\
+
+    $\ln{|x^{2}+4x+13|}+\arctan{\left(\frac{x+2}{3}\right)}+C$ \\
+
+  \item{$\int{\frac{x+3}{\sqrt{16-x^{2}}}}\,dx$} \\
+
+    $\int{\frac{x+3}{\sqrt{16-x^{2}}}}\,dx=
+    \int{\frac{x}{\sqrt{16-x^{2}}}}\,dx+3\int{\frac{dx}{\sqrt{16-x^{2}}}}$ \\
+
+    Let $u=16-x^{2}\therefore du=-2xdx$ \\
+
+    $\int{\frac{x}{\sqrt{16-x^{2}}}}\,dx+3\int{\frac{dx}{\sqrt{16-x^{2}}}}=
+    3\int{\frac{dx}{\sqrt{16-x^{2}}}}-\int{\frac{dx}{2\sqrt{u}}}=
+    3\arcsin{\frac{x}{4}}-\sqrt{u}+C=
+    3\arcsin{\frac{x}{4}}-\sqrt{16-x^{2}}+C$ \\
+
+    \pagebreak
+  Multiple Choice. All work must be shown.
+  \item{Which of the following represents the area of the shaded region in the figure on the page?} \\
+    \begin{enumerate}
+      \item{$\int_{c}^{d}{f(y)}\,dy$}
+      \item{$\int_{a}^{b}{d-f(x)}\,dx$}
+      \item{$f'(b)-f'(a)$}
+      \item{$(b-a)[f(b)-f(a)]$}
+      \item{$(d-c)[f(b)-f(a)]$}
+    \end{enumerate}
+
+    For every infintesimal length in which we calculate within an integral, the area is represented by the length $dx$, an infinite amount of which fill the interval $[b,a]$, and height of the integrand (in most cases, this would be $f(x)$). Because we are measuring the area from height $d$ to the curve of height $c=y$, we can then define the integrand of the function as $d-c=d-f(x)$. Therefore, the representative formula for the area of the shaded region is $\int_{a}^{b}{d-f(x)}\,dx$. \\
+
+    \hline
+  \item{If $x^{3}+3xy+2y^{3}=17$, then in terms of $x$ and $y$, $\frac{dy}{dx}=$} \\
+    \begin{enumerate}
+      \item{$-\frac{x^{2}+y}{x+2y^{2}}$}
+      \item{$-\frac{x^{2}+y}{x+y^{2}}$}
+      \item{$-\frac{x^{2}+y}{x+2y}$}
+      \item{$-\frac{x^{2}+y}{2y^{2}}$}
+      \item{$-\frac{x^{2}}{1+2y^{2}}$}
+    \end{enumerate}
+
+    $x^{3}+3xy+2y^{3}=17$ \\
+
+    $3x^{2}+3y+3x\frac{dy}{dx}+6y^{2}\frac{dy}{dx}=0$ \\
+
+    $3x^{2}+3y=-3x\frac{dy}{dx}-6y^{2}\frac{dy}{dx}$ \\
+
+    $-3x^{2}-3y=3x\frac{dy}{dx}+6y^{2}\frac{dy}{dx}$ \\
+
+    $-x^{2}-y=\frac{dy}{dx}(x+2y^{2})$ \\
+
+    $-\frac{x^{2}+y}{x+2y^{2}}=\frac{dy}{dx}$ \\
+
+    \hline
+  \item{$\int{\frac{3x^{2}}{\sqrt{x^{3}+1}}}\,dx=$} \\
+
+    Let $u=x^{3}+1\therefore du=3x^{2}dx$ \\
+
+    $\int{\frac{du}{\sqrt{u}}}=2\sqrt{u}+C=2\sqrt{x^{3}+1}+C$ \\
+
+    \pagebreak
+  \item{For what value of $x$ does the function $f(x)=(x-2)(x-3)^{2}$ have a relative maximum?} \\
+
+    To find the maximum of the function $f$, we must first conduct an Candidates Test using the critical points of $f$. Let us first solve for the critical points.   \\
+
+    $f(x)=(x-2)(x-3)^{2}=x^{3}-8x^{2}+21x-18=0$ at $x=2$ and $x=3$. ($2<x<3$) \\
+
+    $f'(x)=3x^{2}-16x+21=0$ \\
+
+    $x=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}=\frac{16\pm\sqrt{256-4*3*21}}{2*3}=\frac{16\pm2}{6}=3$ and $\frac{14}{3}$ \\
+
+    Because $\frac{14}{3}$ is the only value within range for a relative extrema, we can determine that this value is our only extrema. Let us conduct an Intervals Test to determine if this value is a relative maximum.
+
+    \begin{center}
+      \begin{tabular}{| c | c | c |}
+        \hline
+        Intervals & $(2, \frac{14}{3})$ & $(\frac{14}{3}, 3)$ \\
+        \hline
+        $f'(x)$ & Positive & Negative \\
+        \hline
+        $f(x)$ & Increasing & Decreasing \\
+        \hline
+      \end{tabular}
+    \end{center}
+
+    From the results in the Intervals Test, we can conclude that $f$ has a relative maximum at $x=\frac{14}{3}$.
+
+\end{enumerate}
+\end{document}

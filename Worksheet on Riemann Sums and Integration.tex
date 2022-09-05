@@ -1,0 +1,211 @@
+\documentclass[10pt, letterpaper]{report}
+\usepackage[letterpaper]{geometry}
+  \geometry{top=1in, bottom=1in, left=1in, right=1in}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp, gensymb, mathtools , amssymb , amsthm, graphicx}
+  \graphicspath{ {/home/lowebang/Pictures/} }
+\usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \lhead{}
+  \chead{}
+  \rhead{Cabrera \thepage}
+  \lfoot{}
+  \cfoot{}
+  \rfoot{\LaTeX}
+  \renewcommand{\headrulewidth}{1pt}
+  \renewcommand{\footrulewidth}{1pt}
+  \setlength\headsep{0.333in}
+
+\title{Calculus BC - Worksheet on Riemann Sums and Integration}
+\author{Craig Cabrera}
+\date{4 January 2022}
+
+\begin{document}
+\maketitle
+Work the following on \textbf{\underline{notebook paper}}.
+\par On problems 1-6, write the expression as a definite integral, given that $n$ is a positive integer. \\
+
+\par Definite Integral as the Limit of a Riemann Sum: \\
+
+\[ \lim_{n\to\infty}\sum_{i=1}^{n}f(a+i\Delta x)\Delta x=\lim_{n\to\infty}\sum_{i=1}^{n}f(x_{k})\Delta x=\int_{a}^{b}f(x)dx \] \\
+
+\par Tip for Converting Summation to Integral (no idea what to call this): \\
+
+\[ \lim_{n\to\infty}\sum_{i=1}^{cn}\frac{1}{n}f(a+\frac{i}{n})=
+\lim_{\frac{n}{c}\to\infty}\sum_{i=1}^{n}\frac{c}{n}f(a+\frac{ic}{n}) \]
+\par where c is some constant. \\
+
+\begin{enumerate}
+  \item{$\lim_{n\to\infty}\frac{1}{n}[(2+\frac{1}{n})^{4}+(2+\frac{2}{n})^{4}+...+(2+\frac{5n}{n})^{4}]$} \\
+
+    $=\lim_{n\to\infty}\frac{1}{n}\sum_{i=1}^{5n}{(2+\frac{i}{n})^{4}}=
+    \lim_{\frac{n}{5}\to\infty}\frac{5}{n}\sum_{i=1}^{n}(2+\frac{5i}{n})^{4}=
+    \int_{2}^{7}{x^{4}}\,dx=
+    [\frac{x^{5}}{5}]_{2}^{7}=
+    \frac{16775}{5}=3355$ \\
+
+  \item{$\lim_{n\to\infty}\frac{1}{n}[(\frac{1}{n})^{3}+(\frac{2}{n})^{3}+...(\frac{5n}{n})^{3}]$} \\
+
+    $=\lim_{n\to\infty}\frac{1}{n}\sum_{i=1}^{5n}(\frac{i}{n})^{3}=
+    \lim_{\frac{n}{5}\to\infty}\frac{5}{n}\sum_{i=1}^{n}(\frac{5i}{n})^{3}=
+    \int_{0}^{5}{x^{3}}\,dx=
+    [\frac{x^{4}}{4}]_{0}^{5}=\frac{625}{4}=156.25$ \\
+
+  \item{$\lim_{n\to\infty}\frac{1}{n}[\sqrt[3]{1+\frac{1}{n}}+\sqrt[3]{1+\frac{2}{n}}+...+\sqrt[3]{1+\frac{7n}{n}}]$} \\
+
+    $=\lim_{n\to\infty}\sum_{i=1}^{7n}\sqrt[3]{1+\frac{i}{n}}=
+    \lim_{\frac{n}{7}\to\infty}\frac{7}{n}\sum_{i=1}^{n}\sqrt[3]{1+\frac{7i}{n}}=
+    \int_{1}^{8}{\sqrt[3]{x}}=
+    [\frac{3}{4}x^{\frac{4}{3}}]_{1}^{8}=\frac{45}{4}=11.25$ \\
+
+  \item{$\lim_{n\to\infty}\frac{3}{n}\sum_{k=1}^{n}{(2+\frac{3k}{n})^{4}}$} \\
+
+    $=\int_{2}^{5}{x^4}\,dx=
+    [\frac{x^{5}}{5}]_{2}^{5}=
+    \frac{3093}{5}=618.6$ \\
+
+  \item{$\lim_{n\to\infty}\frac{4}{n}\sum_{k=1}^{n}{e^{-2+\frac{7k}{n}}}$} \\
+
+    $=\lim_{n\to\infty}\frac{4}{n}\sum_{k=1}^{n}{e^{\frac{7}{4}(-\frac{8}{7}+\frac{4k}{n})}}=
+    \int_{-\frac{8}{7}}^{\frac{20}{7}}{e^{\frac{7x}{4}}}\,dx=
+    [\frac{4}{7}e^{\frac{7x}{4}}]_{-\frac{8}{7}}^{\frac{20}{7}}=
+    \frac{4}{7}[e^{5}-e^{-2}]\approx84.730$ \\
+
+  \item{$\lim_{n\to\infty}\frac{3}{n}\sum_{k=1}^{n}{\sin{(1+\frac{6k}{n})}}$} \\
+
+    $=\lim_{n\to\infty}\frac{3}{n}\sum_{k=1}^{n}{\sin{(2(\frac{1}{2}+\frac{3k}{n}))}}=
+    \int_{0.5}^{3.5}{\sin{2x}}\,dx=
+    [-\frac{1}{2}\cos{2x}]_{0.5}^{3.5}=
+    -\frac{1}{2}[\cos{7}-\cos{1}]\approx-0.1068$ \\
+
+\hline
+  \item{The closed interval $[c,d]$ is partitioned into $n$ equal subintervals, each of width $\Delta x$, by the numbers $c=x_{0}, x_{1}, ... ,x_{n}$ where $x_{0}<x_{1}<x_{2}<...<x_{n-1}=d$. Write $\lim_{n\to\infty}\sum_{i=1}^{n}{(x_{k})^{2}}\Delta x$ as a definite integral.} \\
+
+    $\lim_{n\to\infty}\sum_{i=1}^{n}(x_{k})^{2}\Delta x=\int_{c}^{d}{x^{2}}\,dx=
+    \frac{1}{3}[d^{3}-c^{3}]$ \\
+\pagebreak
+  \par Evaluate. Do not leave negative exponents or complex fractions in your answers. \\
+  \item{$\int{12x^{3}+5x^{2}-4+\frac{6}{x^{3}}}\,dx$} \\
+
+    $12\int{x^3}\,dx+5\int{x^2}\,dx-4\int\,dx+6\int{x^{-3}}\,dx=
+    3x^4+\frac{5}{3}x^{3}-4x-\frac{3}{x^{2}}+C$ \\
+
+  \item{$\int_{-1}^{2}{(3x^{2}-2x+5)}\,dx$} \\
+
+    $3\int_{-1}^{2}{x^2}\,dx-2\int_{-1}^{2}{x}\,dx+5\int\,dx=
+    [x^{3}]_{-1}^{2}-[x^{2}]_{-1}^{2}+5[x]_{-1}^{2}=
+    [9]-[3]+5[3]=21$ \\
+
+  \item{$\int{x^{3}(x^{4}+1)^{2}}\,dx$} \\
+
+    Let $u=x^{4}+1\therefore du=4x^{3}dx\rightarrow dx=\frac{du}{4x^{3}}$ \\
+
+    $\frac{1}{4}\int{u^{2}}\,du=
+    \frac{1}{12}(x^{4}+1)^{3}+C$ \\
+
+  \item{$x\sqrt{x^{2}+5}\,dx$} \\
+
+    Let $u=x^{2}+5\therefore du=2xdx\rightarrow dx=\frac{du}{2x}$ \\
+
+    $\frac{1}{2}\int{\sqrt{u}}\,du=
+    \frac{1}{3}(x^{2}+5)^{\frac{3}{2}}+C$ \\
+
+  \item{$\int{x\sqrt{x+5}}\,dx$} \\
+
+    Let $u=x+5\rightarrow x=u-5\therefore du=dx$ \\
+
+    $\int{(u-5)\sqrt{u}}\,du=
+    \int{u^{\frac{3}{2}}}\,dx-5\int{\sqrt{u}}\,du=
+    \frac{2}{5}(x+5)^{\frac{5}{2}}-\frac{10}{3}(x+5)^{\frac{3}{2}}+C$ \\
+
+  \item{$\int{((3x+2)(x-1))}\,dx$} \\
+
+    $3\int{x^{2}}\,dx-\int{x}\,dx-2\int\,dx=
+    x^{3}-\frac{x^{2}}{2}-2x+C$ \\
+
+  \item{$\int_{0}^{2}{\frac{x}{\sqrt{1+2x^{2}}}}\,dx$} \\
+
+    Let $u=1+2x^{2}\therefore du=4xdx\rightarrow dx=\frac{du}{4x}$ \\
+
+    $\frac{1}{4}\int_{1}^{9}{\frac{1}{\sqrt{u}}}\,du=
+    [\frac{\sqrt{u}}{2}]_{1}^{9}=\frac{3-1}{2}=1$ \\
+
+  \item{$\int_{1}^{6}{\frac{x}{\sqrt[3]{x+2}}}\,dx$} \\
+
+    Let $u=x+2\rightarrow x=u-2\therefore du=dx$ \\
+
+    $\int_{3}^{8}{\frac{u-2}{\sqrt[3]{u}}}\,du=
+    \int_{3}^{8}{u^{\frac{2}{3}}}-2\int_{3}^{8}{u^{-\frac{1}{3}}}\,du=
+    [\frac{3}{5}u^{\frac{5}{3}}]_{3}^{8}-3[u^{\frac{2}{3}}]_{3}^{8}\approx
+    \frac{3}{5}[25.76]-3[1.92]=9.696$ \\
+
+  \item{$\int{x^{2}\sin{(x^{3})}}\,dx$} \\
+
+    Let $\theta=x^{3}\therefore d\theta=3x^{2}dx\rightarrow dx=\frac{d\theta}{3x^2}$ \\
+
+    $\frac{1}{3}\int{\sin{\theta}\,d\theta=
+    -\frac{1}{3}\cos{(x^{3})}}+C$ \\
+
+  \item{$\int{\sec{(3x)}\tan{(3x)}}\,dx$} \\
+
+    Let $\theta=3x\therefore d\theta=3dx\rightarrow dx=\frac{d\theta}{3}$ \\
+
+    $\frac{1}{3}\int{\sec{\theta}\tan{\theta}}\,d\theta=
+    \frac{1}{3}\sec{(3x)}+C$ \\
+
+  \item{$\int{\tan^{3}{(5x)}\sec^{2}{(5x)}}\,dx$} \\
+
+    Let $\theta=5x\therefore d\theta=5dx\rightarrow dx=\frac{d\theta}{5}$ \\
+
+    $\int{\tan^{3}{\theta}\sec^{2}{\theta}}\,d\theta$ \\
+
+    Also let $u=\tan{\theta}\therefore du=\sec^{2}{\theta}d\theta\rightarrow d\theta=\frac{du}{\sec^{2}{\theta}}$ \\
+
+    $\int{u^{3}}\,du=
+    \frac{1}{4}\tan^{4}{(5x)}+C$ \\
+
+  \item{$\int_{0}^{\frac{\pi}{2}}{\sin{(\frac{2x}{3})}}\,dx$} \\
+
+    Let $\theta=\frac{2x}{3}\therefore d\theta=\frac{2dx}{3}\rightarrow dx=\frac{3du}{2}$ \\
+
+    $\int_{0}^{\frac{\pi}{3}}{\sin{\theta}}\,d\theta=
+    [-\cos{\theta}]_{0}^{\frac{\pi}{3}}=
+    -[\frac{1}{2}-1]=\frac{1}{2}$ \\
+
+  \item{$\int_{\frac{\pi}{12}}^{\frac{\pi}{9}}{\sin^{3}{(3x)}\cos{(3x)}}\,dx$} \\
+
+    Let $\theta=3x\therefore d\theta=3dx\rightarrow dx=\frac{d\theta}{3}$ \\
+
+    $\frac{1}{3}\int_{\frac{\pi}{4}}^{\frac{\pi}{3}}{\sin^{3}{\theta}\cos{\theta}}\,d\theta$ \\
+
+    Also let $u=\sin{\theta}\therefore du=\cos{\theta}d\theta\rightarrow d\theta=\frac{du}{\cos{\theta}}$ \\
+
+    $\frac{1}{3}\int_{\frac{\sqrt{2}}{2}}^{\frac{\sqrt{3}}{2}}{u^{3}}\,du=
+    [\frac{1}{12}u^4]_{\frac{\sqrt{2}}{2}}^{\frac{\sqrt{3}}{2}}=
+    \frac{1}{12}[\frac{9-4}{16}]=\frac{5}{192}\approx0.026$ \\
+\pagebreak
+  \par Use Geometry to evaluate. \\
+  \item{$\int_{0}^{3}{\sqrt{9-x^{2}}}\,dx$} \\
+
+    Formula for a Circle: \[ x^{2}+y^{2}=r^{2}\rightarrow
+    y^{2}=r^{2}-x^{2}\rightarrow y=\sqrt{r^{2}+x^{2}}\]
+
+    Area of a Circle: \[ A=\pi r^2 \] \\
+
+    (We will use $\frac{1}{4}$ of the circle due to the layout of the graph \\
+
+    $y=\sqrt{9-x^{2}}\rightarrow
+    y^{2}=3^{2}-x^{2}\rightarrow
+    x^{2}+y^{2}=3^{2}$ \\
+
+    $A=\frac{9\pi}{4}=2.25\pi\approx7.069$ \\
+
+  \item{$\int_{0}^{8}{|2x-10|}\,dx$} \\
+
+    $\int_{0}^{8}{|2x-10|}\,dx=
+    \sum_{i=1}^{2}{f(x)}\Delta x=
+    \frac{bh}{2}+\frac{bh}{2}=
+    \frac{50}{2}+\frac{18}{2}=25+9=34$ \\
+
+\end{enumerate}
+\end{document}

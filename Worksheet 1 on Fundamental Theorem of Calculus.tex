@@ -1,0 +1,271 @@
+\documentclass[10pt, letterpaper]{report}
+\usepackage[letterpaper]{geometry}
+  \geometry{top=1in, bottom=1in, left=1in, right=1in}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp, gensymb, mathtools , amssymb , amsthm, graphicx}
+  \graphicspath{ {/home/lowebang/Pictures/} }
+\usepackage{multicol, fancyhdr}
+  \pagestyle{fancy}
+  \lhead{}
+  \chead{}
+  \rhead{Cabrera \thepage}
+  \lfoot{}
+  \cfoot{}
+  \rfoot{\LaTeX}
+  \renewcommand{\headrulewidth}{1pt}
+  \renewcommand{\footrulewidth}{1pt}
+  \setlength\headsep{0.333in}
+
+\title{Calculus BC - Worksheet 1 on Fundamental Theorem of Calculus}
+\author{Craig Cabrera}
+\date{6 January 2021}
+
+\begin{document}
+\maketitle
+Work the following on \textbf{\underline{notebook paper}}.
+
+	Work problems 1-2 by both methods. Do not use your calculator.
+	\begin{enumerate}
+		\item{$y'=2+\frac{1}{x^{2}}$ and $y(1)=6$. Find $y(3)$.} \\
+			\begin{itemize}
+        \item{$\int{2+\frac{1}{x^{2}}}\,dx=
+        2[x]-[\frac{1}{x}]+C$ \\
+
+        $y(1)=2-1+C=6\rightarrow 1+C=6\rightarrow C=5$ \\
+
+        $y(3)=6-\frac{1}{3}+5=\frac{32}{3}\approx 10.667$ \\}
+
+        \item{$\int_{1}^{3}{2+\frac{1}{x^{2}}}\,dx=
+        2[x]_{1}^{3}+[-\frac{1}{x}]_{1}^{3}=
+        2[2]-[-\frac{2}{3}]=
+        y(3)-y(1)=\frac{8}{3}\rightarrow
+        y(3)=\frac{14}{3}+y(1)=
+        \frac{14}{3}+6=
+        \frac{32}{3}\approx10.667$ \\}
+
+      \end{itemize}
+		\item{$f'(x)=\cos{(2x)}$ and $f(0)=3$. Find $f(\frac{\pi}{4})$.} \\
+      \begin{itemize}
+        \item{$\int{\cos{(2x)}}\,dx=
+        \frac{1}{2}\sin{(2x)}+C$ \\
+
+        $f(0)=\frac{1}{2}\sin{(2x)}+C=3\rightarrow C=3$ \\
+
+        $f(\frac{\pi}{4})=
+        \frac{1}{2}\sin{(\frac{\pi}{2})}+3=
+        \frac{1}{2}+3=\frac{7}{2}=3.5$ \\}
+
+        \item{$\int_{0}^{\frac{\pi}{4}}{\cos{(2x)}}\,dx=
+        [\frac{\sin{2x}}{2}]_{0}^{\frac{\pi}{4}}=
+        [\frac{\sin{\frac{\pi}{2}}}{2}-\frac{\sin{0}}{2}]=
+        f(\frac{\pi}{4})-f(0)=\frac{1}{2}\rightarrow
+        f(\frac{\pi}{4})=\frac{1}{2}+f(0)=\frac{7}{2}$ \\}
+      \end{itemize}
+\hline
+	\par Work problems 3-7 using the Fundamental Theorem of Calculus and your \underline{calculator}.
+		\item{$f'(x)=\cos{(x^{3})}$ and $f(0)=2$. Find $f(1)$.} \\
+
+      Test of Differentiability:
+      $\lim_{x \to 0}f'(x)=f'(0)=1,
+      \lim_{x \to 1}f'(x)=f'(1)\approx0.540 $ \\
+      $\therefore f(x)$ is continuous on $[0,1]$ and differentiable on $(0,1)$ (Fundamental Theorem of Calculus holds.) \\
+
+			$\int_{0}^{1}{\cos{(x^{3})}}\,dx=
+      f(1)-2=0.932\rightarrow f(1)=2+0.932=2.932$ \\
+
+		\item{$f'(x)=e^{-x^{2}}$ and $f(5)=1$. Find $f(2)$.} \\
+
+      Test of Differentiability:
+      $\lim_{x \to 2}f'(x)=f'(2)=0.018,
+       \lim_{x \to 5}f'(x)=f'(5)=1.389*10^{-11} $ \\
+       $\therefore f(x)$ is continuous on $[2,5]$ and differentiable on $(2,5)$ (Fundamental Theorem of Calculus holds.) \\
+
+			$\int_{2}^{5}{e^{-x^{2}}}\,dx=1-f(2)=
+      0.004\rightarrow 1=0.004+f(2)\rightarrow f(2)=0.996$ \\
+
+		\item{A particle moving along the $x$-axis has a position $x(t)$ at time $t$ with the velocity of the particle $v(t)=5\sin{(t^{2})}$. At time $t=6$, the particle's position is $(4,0)$. Find the position of the particle when $t=7$.} \\
+
+      Test of Differentiability:
+      $\lim_{t\to 6}v(t)=v(6)\approx-4.959,
+      \lim_{t\to 7}v(t)=v(7)\approx-4.769$ \\
+      $\therefore x(t)$ is continuous on $[6,7]$ and differentiable on $(6,7)$ (Fundamental Theorem of Calculus holds.) \\
+
+      $\int_{6}^{7}{v(t)}\,dt=
+      x(7)-x(6)=x(7)-(4,0)=-0.163\rightarrow
+      x(7)=x(6)-0.163=4-0.163=3.837$ \\
+
+		\item{Let $F(t)$ represent a bacteria population which is 4 million at time $t=0$. After $t$ hours, the population is growing at an instantaneous rate of $2^{t}$ million bacteria per hour. Find the total increase in the bacteria population during the first three hours, and find the population at $t=3$ hours. } \\
+
+      Test of Differentiability:
+      $\lim_{t\to 0}f(t)=2^{0}=1, \lim_{t\to 3}f(t)=2^{3}=8$ \\
+      $\therefore F(t)$ is continuous on $[0,3]$ and differentiable on $(0,3)$ (Fundamental Theorem of Calculus holds.) \\
+
+			$\int_{0}^{3}{2^t}\,dt=
+      [\frac{2^{t}}{\ln{2}}]_{0}^{3}=
+      [\frac{8-1}{\ln{2}}]\approx
+      \frac{7}{0.693}\approx10.099$ extra bacteria during the first three hours; \\
+
+      $4+10.099=14.099$ total population at $t=3$ hours.
+
+      The increase in bacteria population during the first three hours is 10,098,865, indicating a population of 14,098,865. \\
+
+		\item{A particle moves along a line so that at any time $t\geq 0$ its velocity is given by $v(t)=\frac{t}{1+t^{2}}$. At time $t=0$, the position of the particle is $s(0)=5$. Determine the position of the particle at $t=3$.} \\
+
+      Test of Differentiability:
+      $\lim_{t\to 0}v(t)=v(0)=0,
+      \lim_{t\to 3}v(t)=v(3)=0.3$ \\
+      $\therefore s(t)$ is continuous on $[0,3]$ and differentiable on $(0,3)$ (Fundamental Theorem of Calculus holds.) \\
+
+			$\int_{0}^{3}{\frac{t}{1+t^{2}}}\,dt$ \\
+
+      Let $u=1+t^2\rightarrow t=\sqrt{u-1}\therefore du=2tdt\rightarrow dt=\frac{du}{2t}$ \\
+
+      $\int_{1}^{10}{\frac{1}{2u}}\,du=
+      \frac{1}{2}[\ln{|u|}]_{1}^{10}\approx
+      \frac{2.303}{2}=1.151$ moved over $\Delta t=3$\\
+
+      The position of the particle at $t=3$ is 6.151. \\
+\hline
+    \par Use the Fundamental Theorem of Calculus and the given graph. \\
+    \item{The graph of $f'$ is shown on the first page.
+
+    $\int_{1}^{4}{f'(x)}\,dx=6.2$ and $f(1)=3$. Find $f(4)$.} \\
+
+      $f' (x)$ is continuous on $[1,4]\therefore f(x)$ is continuous on $[1,4]$ and differentiable on $(1,4)$ (Fundamental Theorem of Calculus holds.) \\
+
+      $\int_{1}^{4}{f'(x)}\,dx=
+      f(4)-f(1)=f(4)-3=6.2\rightarrow f(4)=9.2$ \\
+\pagebreak
+    \item{The graph of $f'$ is the semicircle shown on the first page.
+
+    Find $f(-4)$ given that $f(4)=7$.} \\
+
+      $f' (x)$ is continuous on $[-4,4]\therefore f(x)$ is continuous on $[-4,4]$ and differentiable on $(-4,4)$ (Fundamental Theorem of Calculus holds.) \\
+
+      Area for a Circle: \[ A=\pi r^2 \]
+
+      (We will use 1/2 of a circle due to the layout of the graph.) \\
+
+      $A=\frac{1}{2}(16\pi)=8\pi\approx 25.133$ \\
+
+      $\int_{-4}^{4}{f'(x)}\,dx=
+      f(4)-f(-4)=7-f(-4)=8\pi\rightarrow
+      f(-4)=7-8\pi\approx-18.133$ \\
+
+    \item{The graph of $f'$, consisting of two line segments and a semicircle, is shown on the first page. Given that $f(-2)=5$, find:} \\
+
+      $f' (x)$ is continuous on $[-2,8]\therefore f(x)$ is continuous on $[-2,8]$ and differentiable on $(-2,8)$ (Fundamental Theorem of Calculus holds.)
+
+      \begin{enumerate}
+        \item{$f(1)$} \\
+
+          $\int_{-2}^{1}{f'(x)}\,dx=
+          \frac{bh}{2}=
+          \frac{3*3}{2}=
+          f(1)-f(-2)=
+          4.5\rightarrow
+          f(1)=4.5+f(-2)=9.5$ \\
+
+        \item{$f(4)$} \\
+
+          $\int_{1}^{4}{f'(x)}\,dx=
+          \frac{bh}{2}=
+          \frac{3*-2}{2}=
+          f(4)-f(1)=
+          -3\rightarrow
+          f(4)=f(1)-3=6.5$ \\
+
+        \item{$f(8)$} \\
+
+          $\int_{4}^{8}{f'(x)}\,dx=
+          \frac{\pi*r^{2}}{2}=
+          \frac{4\pi}{2}=
+          f(8)-f(4)=
+          2\pi\approx6.283\rightarrow
+          f(8)=2\pi+f(4)=2\pi+6.5\approx12.783$ \\
+
+      \end{enumerate}
+    \item{Region A has an area of 1.5, and $\int_{0}^{6}{f(x)}\,dx=3.5$. Find:} \\
+
+      $f(x)$ is continuous on $[0,6]\therefore F(x)$ is continuous on $[0,6]$ and differentiable on $(0,6)$ (Fundamental Theorem of Calculus holds.) \\
+
+      \begin{enumerate}
+        \item{$\int_{2}^{6}{f(x)}\,dx$} \\
+
+          $\int_{2}^{6}{f(x)}\,dx=B=3.5+1.5=5$ \\
+
+        \item{$\int_{0}^{6}{|f(x)|}\,dx$} \\
+
+          $\int_{0}^{6}{|f(x)|}\,dx=
+          |A|+|B|=1.5+5=6.5$ \\
+      \end{enumerate}
+    \item{The graph on the second page shows the rate of change of the quantity of water in a water tower, in litres per day, during the month of April. If the tower has 12,000 litres of water in it on April 1, estimate the quantity of water in the tower on April 30.} \\
+
+      $r(t)$ is continuous on $[1,30]\therefore R(t)$ is continuous on $[1,30]$ and differentiable on $(1,30)$ (Fundamental Theorem of Calculus holds.) \\
+
+      Trapezoidal Rule: \[\int_{a}^{b}{f(x)}\,dx\approx\frac{b-a}{2}(f(a)-f(b)) \] \\
+
+      $\int_{1}^{30}{r(t)}\,dt\approx
+      \sum_{i=1}^{4}{r(t)}\Delta t=
+      \bigtriangleup_1+\bigtriangleup_2+\Diamond_1+\Diamond_2=
+      \frac{12*-50}{2}+\frac{6*100}{2}+2*\frac{6*(100+150)}{2}=1500$ litres/day \\
+
+      The quantity of water in the tower on April 30 is approximately 13,500 litres.
+    \item{A cup of coffee at 90\degree C is put into a 20\degree C room when $t=0$. The coffee's temperature is changing at a rate of $r(t)=-7e^{-0.3t}$\degree C per minute, with $t$ in minutes. Estimate the coffee's temperature when $t=10$.} \\
+
+      Test of Differentiability:
+      $\lim_{t\to 0}r(t)=r(0)=-7,
+      \lim_{t\to 10}r(t)=r(10)=-\frac{7}{e^{3}}\approx-0.349$ \\
+      $\therefore R(t)$ is continuous on $[0,10]$ and differentiable on $(0,10)$ (Fundamental Theorem of Calculus holds.) \\
+
+      $\int_{0}^{10}{r(t)}\,dt=
+      -7[\frac{1}{-0.3}e^{-0.3t}]_{0}^{10}\approx
+      [1.162-23.333]=-22.171$ degrees in 10 minutes \\
+
+      $90-22.171=67.828$\degree C \\
+
+      The coffee's temperature at $t=10$ minutes is approximately 67.828\degree C. \\
+\pagebreak
+    \item{Use the figure on the second page and the fact that $F(2)=3$ to sketch the graph of $F(x)$. Label the values of at least four points.} \\
+
+      $f(x)$ is continuous on $[0,8]\therefore F(x)$ is continuous on $[0,8]$ and differentiable on $(0,8)$ (Fundamental Theorem of Calculus holds.) \\
+
+      \begin{itemize}
+        \item{Properties of $F(x)$:}
+        \begin{itemize}
+          \item{$\int_{0}^{2}{F'(x)}\,dx=
+            F(2)-F(0)=2\rightarrow
+            F(0)=F(2)-2=3-2=1$.} \\
+
+          \item{$F(2)=3$} \\
+
+          \item{$\int_{2}^{6}{F'(x)}\,dx=
+            F(6)-F(2)=-7\rightarrow
+            F(6)=
+            -7+F(2)=
+            -7+3=-4$.} \\
+
+          \item{$\int_{8}^{6}{F'(x)}\,dx=
+            F(8)-F(6)=4\rightarrow
+            F(8)=4+F(6)=4-4=0$.} \\
+
+        \end{itemize}
+        \item{Properties of $F'(x)$:}
+        \begin{itemize}
+          \item{$F'(x)\geq 0$ at $0\leq x\leq 2\therefore F(x)$ is increasing at $0\leq x\leq 2$.} \\
+
+          \item{$F'(x)\leq 0$ at $2\leq x\leq 6\therefore F(x)$ is decreasing at $2\leq x\leq 6$.} \\
+
+          \item{$F'(x)\geq 0$ at $6\leq x\leq 8\therefore F(x)$ is increasing at $6\leq x\leq 8$.} \\
+        \end{itemize}
+        \item{Properties of $F''(x)$:}
+        \begin{itemize}
+          \item{$F'(x)$ increases on $0<x<1$ and $4.5<x<7\therefore F(x)$ is  concave up on $0<x<1$ and $4.5<x<7$.} \\
+
+          \item{$F'(x)$ decreases on $1<x<4.5$ and $7<x<8\therefore F(x)$ is  concave down on $1<x<4.5$ and $7<x<8$.} \\
+
+        \end{itemize}
+      \end{itemize}
+
+  \end{enumerate}
+\end{document}
