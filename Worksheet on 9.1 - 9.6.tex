@@ -1,0 +1,139 @@
+% Document Metadata
+\documentclass[10pt,letterpaper]{report}
+\usepackage[utf8]{inputenc}
+% Use for Arial Font \usepackage{helvet}
+%  \renewcommand{\familydefault}{\sfdefault}
+% Use for Times New Roman Font \usepackage{mathptmx}
+
+\usepackage[none]{hyphenat}
+\usepackage{tikz, textcomp, gensymb, graphicx, mathtools, amssymb, amsthm, hyperref, multicol}
+  \hypersetup{
+      colorlinks=true,
+      linkcolor=blue,
+      filecolor=magenta,
+      urlcolor=blue,
+      }
+  \graphicspath{ {/home/lowebang/Pictures/} }
+\usepackage[letterpaper]{geometry}
+  \geometry{top=1in, bottom=1in, left=1in, right=1in}
+\usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \lhead{}
+  \chead{}
+  \rhead{Cabrera \thepage}
+  \lfoot{}
+  \cfoot{}
+  \rfoot{\LaTeX}
+  \renewcommand{\headrulewidth}{1pt}
+  \renewcommand{\footrulewidth}{1pt}
+  \setlength\headsep{0.333in}
+
+% Command to Circle String
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+% Command to Set Oval Around String
+\newcommand{\mymk}[1]{%
+  \tikz[baseline=(char.base)]\node[anchor=south west, draw,rectangle, rounded corners, inner sep=2pt, minimum size=7mm,
+  text height=2mm](char){\ensuremath{#1}} ;}
+
+\title{Calculus BC -- Worksheet on 9.1 - 9.6 }
+\author{Craig Cabrera}
+\date{21 March 2022}
+
+\begin{document}
+\maketitle
+\begin{center}
+  \textbf{\underline{Relevant Formulas and Notes:}}
+\end{center}
+
+\noindent Ratio Test: \\
+
+\noindent Suppose we have the series $\sum_{n=0}^{\infty}{a_{n}}$. Consider: \\
+
+$$\lim_{n\to\infty}{\left|\frac{a_{n+1}}{a_{n}}\right|}$$ \\
+
+\noindent Then, the series is convergent if $\lim_{n\to\infty}{\left|\frac{a_{n+1}}{a_{n}}\right|} < 1$. It is divergent if the limit is greater than one, and must be proven with another method if the limit equals one. \\
+
+\noindent Root Test: \\
+
+\noindent Suppose we have the series $\sum_{n=0}^{\infty}{a_{n}}$. Consider:
+
+$$\lim_{n\to\infty}{\sqrt[n]{\left|a_{n}\right|}}=\lim_{n\to\infty}{\left|a_{n}\right|^{\frac{1}{n}}}$$ \\
+
+\noindent Then, the series is convergent if $\lim_{n\to\infty}{\left|a_{n}\right|^{\frac{1}{n}}} < 1$. It is divergent if the limit is greater than one, and must be proven with another method if the limit equals one. \\
+
+\pagebreak
+
+
+\noindent Work the following on \textbf{\underline{notebook paper}}.
+\noindent Use the Ratio Test to determine the convergence or divergence of the series.
+\begin{enumerate}
+  \item{$\sum_{n=0}^{\infty}{\frac{n!}{3^{n}}}$ \\}
+
+    Let $a_{n}=\frac{n!}{3^{n}}$ and $a_{n+1}=\frac{(n+1)!}{3^{n+1}}$ \\
+
+    $\lim_{n\to\infty}{\left|\frac{a_{n+1}}{a_{n}}\right|}=
+    \lim_{n\to\infty}{\left|\frac{\frac{(n+1)!}{3^{n+1}}}{\frac{n!}{3^{n}}}\right|}=
+    \lim_{n\to\infty}{\left|\frac{3^{n}(n+1)!}{3^{n+1}n!}\right|}=
+    \lim_{n\to\infty}{\left|\frac{n+1}{3}\right|}=\infty$ \\
+
+    $\therefore \sum_{n=0}^{\infty}{\frac{n!}{3^{n}}}$ diverges by the Ratio Test. \\
+
+  \item{$\sum_{n=1}^{\infty}{\frac{n}{4^{n}}}$ \\}
+
+    Let $a_{n}=\frac{n}{4^{n}}$ and $a_{n+1}=\frac{n+1}{4^{n+1}}$ \\
+
+    $\lim_{n\to\infty}{\left|\frac{a_{n+1}}{a_{n}}\right|}=
+    \lim_{n\to\infty}{\left|\frac{\frac{n+1}{4^{n+1}}}{\frac{n}{4^{n}}}\right|}=
+    \lim_{n\to\infty}{\left|\frac{4^{n}(n+1)}{n4^{n+1}}\right|}=
+    \lim_{n\to\infty}{\left|\frac{n+1}{4n}\right|}=
+    \lim_{n\to\infty}{\left|\frac{1+\frac{1}{n}}{4}\right|}=\frac{1}{4}$ \\
+
+    $\therefore \sum_{n=1}^{\infty}{\frac{n}{4^{n}}}$ converges by the Ratio Test. \\
+
+  \item{$\sum_{n=0}^{\infty}{\frac{(-1)^{n}2^{n}}{n!}}$ \\}
+
+    Let $a_{n}=\frac{(-1)^{n}2^{n}}{n!}$ and $a_{n+1}=\frac{(-1)^{n+1}2^{n+1}}{(n+1)!}$ \\
+
+    $\lim_{n\to\infty}{\left|\frac{a_{n+1}}{a_{n}}\right|}=
+    \lim_{n\to\infty}{\left|\frac{\frac{(-1)^{n+1}2^{n+1}}{(n+1)!}}{\frac{(-1)^{n}2^{n}}{n!}}\right|}=
+    \lim_{n\to\infty}{\left|\frac{(-1)^{n+1}2^{n+1}n!}{(-1)^{n}2^{n}(n+1)!}\right|}=
+    \lim_{n\to\infty}{\left|-\frac{2}{n+1}\right|}=0$ \\
+
+    $\therefore \sum_{n=0}^{\infty}{\frac{(-1)^{n}2^{n}}{n!}}$ converges by the Ratio Test. \\
+
+    \hline
+
+
+\noindent Use the Root Test to determine the convergence or divergence of the series. \\
+
+  \item{$\sum_{n=1}^{\infty}{\left(\frac{n}{2n+1}\right)^n}$ \\}
+
+    $\lim_{n\to\infty}{\sqrt[n]{\left|a_{n}\right|}}=
+    \lim_{n\to\infty}{\sqrt[n]{\left|\left(\frac{n}{2n+1}\right)^n\right|}}=
+    \lim_{n\to\infty}{\left|\frac{n}{2n+1}\right|}=
+    \lim_{n\to\infty}{\left|\frac{1}{2+\frac{1}{n}}\right|}=\frac{1}{2}$ \\
+
+    $\therefore \sum_{n=1}^{\infty}{\left(\frac{n}{2n+1}\right)^n}$ converges by the Root Test. \\
+
+  \item{$\sum_{n=2}^{\infty}{\frac{(-1)^{n}}{(\ln{n})^{n}}}$ \\}
+
+    $\lim_{n\to\infty}{\sqrt[n]{\left|a_{n}\right|}}=
+    \lim_{n\to\infty}{\sqrt[n]{\left|\frac{(-1)^{n}}{(\ln{n})^{n}}\right|}}=
+    \lim_{n\to\infty}{\left|-\frac{1}{\ln{n}}\right|}=0$ \\
+
+    $\therefore \sum_{n=2}^{\infty}{\frac{(-1)^{n}}{(\ln{n})^{n}}}$ converges by the Root Test. \\
+
+    \pagebreak
+
+\noindent Determine whether each of the given \textbf{\underline{series}} converges or diverges/ You must use each of the ten tests at least once. Show all work, and \textbf{\underline{justify}} your answers. \\
+
+  \item{$\sum_{n=1}^{\infty}{\frac{1}{n^{\frac{3}{2}}}}$ \\}
+
+    $ $ \\
+
+  \item{}
+
+\end{enumerate}
+\end{document}

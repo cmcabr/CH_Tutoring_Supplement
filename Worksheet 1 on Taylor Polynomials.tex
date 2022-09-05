@@ -1,0 +1,116 @@
+% Document Metadata
+\documentclass[10pt,letterpaper]{report}
+\usepackage[utf8]{inputenc}
+% Use for Arial Font \usepackage{helvet}
+%  \renewcommand{\familydefault}{\sfdefault}
+% Use for Times New Roman Font \usepackage{mathptmx}
+
+\usepackage[none]{hyphenat}
+\usepackage{tikz, textcomp, gensymb, graphicx, mathtools, amssymb, amsthm, hyperref, multicol}
+  \hypersetup{
+      colorlinks=true,
+      linkcolor=blue,
+      filecolor=magenta,
+      urlcolor=blue,
+      }
+  \graphicspath{ {/home/lowebang/Pictures/} }
+\usepackage[letterpaper]{geometry}
+  \geometry{top=1in, bottom=1in, left=1in, right=1in}
+\usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \lhead{}
+  \chead{}
+  \rhead{Cabrera \thepage}
+  \lfoot{}
+  \cfoot{}
+  \rfoot{\LaTeX}
+  \renewcommand{\headrulewidth}{1pt}
+  \renewcommand{\footrulewidth}{1pt}
+  \setlength\headsep{0.333in}
+
+% Command to Circle String
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+% Command to Set Oval Around String
+\newcommand{\mymk}[1]{%
+  \tikz[baseline=(char.base)]\node[anchor=south west, draw,rectangle, rounded corners, inner sep=2pt, minimum size=7mm,
+  text height=2mm](char){\ensuremath{#1}} ;}
+
+\title{Calculus BC -- Worksheet 1 on Taylor Polynomials }
+\author{Craig Cabrera}
+\date{24 March 2022}
+
+\begin{document}
+\maketitle
+\begin{center}
+  \textbf{\underline{Relevant Formulas and Notes:}}
+\end{center}
+
+\noindent Taylor Series: 
+
+$$P_{n}(x) = \sum_{n=0}^{n}{\frac{f^{(n)}(x)(x-c)^{n}}{n!}}$$ \\
+
+\noindent (A Maclaurin Series is a Taylor Series wherein $c=0$.) \\
+
+\noindent Common Maclaurin Series Formats: \\
+
+$$e^{u}=\sum_{n=0}^{\infty}{\frac{(u)^{n}}{n!}}$$ \\
+
+$$\cos{u} = \sum_{n=0}^{\infty}{\frac{(-1)^{n}(u)^{2n}}{(2n)!}}$$ \\
+
+$$\sin{u} = \sum_{n=0}^{\infty}{\frac{(-1)^{n}(u)^{2n+1}}{(2n+1)!}}$$ \\
+
+$$\frac{1}{1+u} = \sum_{n=0}^{\infty}{(-1)^{n}(u)^{n}}$$ \\
+
+$$\frac{1}{1-u} = \sum_{n=0}^{\infty}{(u)^{n}}$$ \\
+
+\pagebreak 
+
+\noindent Work the following on \textbf{\underline{notebook paper}}. Use your calculator only on problem 8(b), 9(b), and 10(a). Show all work. \\
+\begin{enumerate}
+  \item{Find a fourth-degree Maclaurin polynomial for $f(x)=e^{3x}$. \\}
+  
+    $P_{4}(x) = \sum_{n=0}^{4}{\frac{(3x)^{n}}{n!}} = 
+    1 + \frac{3x}{1!} + \frac{9x^{2}}{2!} + \frac{27x^{3}}{3!} + \frac{81x^{4}}{4!}=
+    1 + 3x + \frac{9}{2}x^{2} + \frac{9}{2}x^{3} + \frac{27}{8}x^{4}$ \\
+    
+  \item{Find a sixth-degree Maclaurin polynomial for $f(x)=\cos{x}$. \\}
+  
+    $P_{6}(x) = \sum_{n=0}^{6}{\frac{(-1)^{n}(x)^{2n}}{(2n)!}} = 
+    1 - \frac{x^{2}}{2!} + \frac{x^{4}}{4!} - \frac{x^{6}}{6!} + \frac{x^{8}}{8!} - \frac{x^{10}}{10!} + \frac{x^{12}}{12!} = 
+    1 - \frac{x^{2}}{2} + \frac{x^{4}}{24} - \frac{x^{6}}{720} + \frac{x^{8}}{40320} - \frac{x^{10}}{3628800} + \frac{x^{12}}{479001600}$ \\
+    
+  \item{Find a fifth-degree Maclaurin polynomial for $f(x)=\frac{1}{x+1}$. \\}
+  
+    $P_{5}(x) = \sum_{n=0}^{5}{(-1)^{n}(x)^{n}} = 
+    1 - x + x^{2} - x^{3} + x^{4} - x^{5}$ \\
+    
+  \item{Find a third-degree polynomial for $f(x)=\sin{x}$, centered at $x=\frac{\pi}{6}$. \\}
+  
+    $P_{3}(x) = \sum_{n=0}^{3}{\frac{f^{(n)}(x)(x-\frac{\pi}{6})^{n}}{n!}} = 
+    \frac{\frac{1}{2}(x-\frac{\pi}{6})^{0}}{0!} + \frac{\frac{\sqrt{3}}{2}(x-\frac{\pi}{6})^{1}}{1!} - \frac{\frac{1}{2}(x-\frac{\pi}{6})^{2}}{2!} - \frac{\frac{\sqrt{3}}{2}(x-\frac{\pi}{6})^{3}}{3!} = $ \\
+    
+    $\frac{1}{2} + \frac{\sqrt{3}(x-\frac{\pi}{6})}{2} - \frac{(x-\frac{\pi}{6})^{2}}{4} - \frac{\sqrt{3}(\frac{\pi}{6})^{3}}{12}$ \\
+    
+  \item{Find a fifth-degree Taylor polynomial for $f(x)=\frac{1}{1-x}$, centered at $x=2$. \\}
+  
+    $P_{5}(x) = \sum_{n=0}^{5}{\frac{f^{(n)}(x)(x-2)^{n}}{n!}} = 
+    \frac{1}{1-2} + \frac{x-2}{1!} + \frac{-2(x-2)^{2}}{2!} + \frac{6(x-2)^{3}}{3!} + \frac{-24(x-2)^{4}}{4!} + \frac{120(x-2)^{5}}{5!} = $ \\
+    
+    $-1+\left(x-2\right)-\left(x-2\right)^2+\left(x-2\right)^3-\left(x-2\right)^4 + (x-2)^{5}$ \\
+    
+  \item{Find a third-degree Taylor polynomial for $f(x) = e^{(x-4)}$, centered at $x=4$. \\}
+  
+    $P_{3}(x) = \sum_{n=0}^{3}{\frac{f^{(n)}(x)(x-2)^{n}}{n!}} = 
+    \frac{e^{0}(x-4)^{0}}{0!} + \frac{e^{0}(x-4)}{1!} + \frac{e^{0}(x-4)^{2}}{2!} + \frac{e^{0}(x-4)^{3}}{3!} = 
+    1 + (x-4) + \frac{1}{2}(x-4)^{2} + \frac{1}{6}(x-4)^{3}$ \\
+    
+  \item{Find a fifth-degree Taylor polynomial for $f(x)=\ln{\left(x-1\right)}$, centered at $x=2$. \\}
+  
+    $P_{5}(x) = \sum_{n=0}^{5}{\frac{f^{(n)}(x)(x-2)^{n}}{n!}} = 
+    \ln{1} + \frac{x-2}{1!} - \frac{(x-2)^{2}}{2!} + \frac{2(x-2)^{3}}{3!} - \frac{6(x-2)^{4}}{4!} + \frac{24(x-2)^{5}}{5!} = $ \\
+    
+    $\left(x-2\right)-\frac{1}{2}\left(x-2\right)^2+\frac{1}{3}\left(x-2\right)^3-\frac{1}{4}\left(x-2\right)^4+\frac{1}{5}\left(x-2\right)^5$ \\
+\end{enumerate}
+\end{document}

@@ -1,0 +1,251 @@
+% Document Metadata
+\documentclass[10pt,letterpaper]{report}
+\usepackage[utf8]{inputenc}
+% Use for Arial Font \usepackage{helvet}
+%  \renewcommand{\familydefault}{\sfdefault}
+% Use for Times New Roman Font \usepackage{mathptmx}
+
+\usepackage[none]{hyphenat}
+\usepackage{tikz, textcomp, gensymb, graphicx, mathtools, amssymb, amsthm, hyperref, multicol}
+  \hypersetup{
+      colorlinks=true,
+      linkcolor=blue,
+      filecolor=magenta,
+      urlcolor=blue,
+      }
+  \graphicspath{ {/home/lowebang/Pictures/} }
+\usepackage[letterpaper]{geometry}
+  \geometry{top=1in, bottom=1in, left=1in, right=1in}
+\usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \lhead{}
+  \chead{}
+  \rhead{Cabrera \thepage}
+  \lfoot{}
+  \cfoot{}
+  \rfoot{\LaTeX}
+  \renewcommand{\headrulewidth}{1pt}
+  \renewcommand{\footrulewidth}{1pt}
+  \setlength\headsep{0.333in}
+
+% Command to Circle String
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+% Command to Set Oval Around String
+\newcommand{\mymk}[1]{%
+  \tikz[baseline=(char.base)]\node[anchor=south west, draw,rectangle, rounded corners, inner sep=2pt, minimum size=7mm,
+  text height=2mm](char){\ensuremath{#1}} ;}
+
+\title{Calculus BC -- Worksheet on the Integral Test}
+\author{Craig Cabrera}
+\date{7 March 2022}
+
+\begin{document}
+\maketitle
+\begin{center}
+  \textbf{\underline{Relevant Formulas and Notes:}}
+\end{center}
+
+\noindent Integral Test: \\
+
+\noindent Suppose that, for all $x < 1$, the function $a(x)$ is continuous, positive, and decreasing. Consider the series and the integral \\
+
+$$\sum_{k=1}^{\infty}{a_{k}} \text{ and } \int_{1}^{\infty}{a(x)}\,dx,$$ \\
+
+\noindent where $a_{k}=a(k)$ for integers $k\geq 1$. 
+
+\begin{itemize}
+  \item{If either diverges, so does the other. \\}
+  \item{If either converges, so does the other. In this case, we have \\
+  
+  $\int_{1}^{\infty}{a(x)}\,dx < \sum_{n=1}^{\infty}{a_{k}} < a_{1} + \int_{1}^{\infty}{a(x)}\,dx$ \\
+  
+  and $ R_{n}=\sum_{k=n+1}^{\infty}{a_{k}}\leq \int_{n}^{\infty}{a(x)}\,dx$. \\}
+  \begin{itemize}
+    \item{PERSONAL NOTE: The summation is more than the initial integration in the above bullet because, since $a(x)$ is positive but decreasing, a summation approximation will result in an overestimate of the true value under the curve. }
+  \end{itemize}
+\end{itemize}
+
+
+\pagebreak 
+
+
+\noindent Work the following on \textbf{\underline{notebook paper}}. \\
+\noindent Use the Integral Test to determine whether each of the given \textbf{\underline{series}} converges or diverges. Justify your answers. 
+\begin{enumerate}
+  \item{$\sum_{n=1}^{\infty}{\frac{1}{\sqrt{n}}}$ \\}
+  
+    Conditions for Integral Test: 
+    \begin{itemize}
+      \item{$\frac{1}{\sqrt{x}}$ is continuous for all $x \geq 1$.}
+      \item{$\frac{1}{\sqrt{x}}$ is positive for all $x \geq 1$.}
+      \item{$\frac{d}{dx}\left(\frac{1}{\sqrt{x}}\right) = -\frac{1}{2x^{\frac{3}{2}}} \rightarrow f'(x)$ is negative for all $x \geq 1 \rightarrow f(x)$ is decreasing for all $x \geq 1$. \\}
+    \end{itemize}
+  
+    $\lim_{c\to\infty}\int_{1}^{c}{\frac{1}{\sqrt{x}}}\,dx = \lim_{c\to\infty}\left[2\sqrt{x}\right]_{1}^{c} = 2\sqrt{\infty}-2\sqrt{1}=\infty \therefore $ diverges by the Integral Test. \\
+    
+  \item{$\sum_{n=1}^{\infty}{\frac{1}{n\sqrt{n}}}$ \\}
+  
+    Conditions for Integral Test: 
+    \begin{itemize}
+      \item{$\frac{1}{x\sqrt{x}}$ is continuous for all $x \geq 1$.}
+      \item{$\frac{1}{x\sqrt{x}}$ is positive for all $x \geq 1$.}
+      \item{$\frac{d}{dx}\left(\frac{1}{x\sqrt{x}}\right) = -\frac{3}{2x^{\frac{5}{2}}} \rightarrow f'(x)$ is negative for all $x \geq 1 \rightarrow f(x)$ is decreasing for all $x \geq 1$. \\}
+    \end{itemize}
+  
+    $\lim_{c\to\infty}\int_{1}^{c}{\frac{1}{x\sqrt{x}}}\,dx = \lim_{c\to\infty} \left[-\frac{2}{\sqrt{x}}\right]_{1}^{c} = \frac{2}{\sqrt{1}} - \frac{2}{\sqrt{\infty}} = 2 \therefore$ converges by the Integral Test. \\
+    
+  \item{$\sum_{n=2}^{\infty}{\frac{\ln{n}}{n}}$ \\}
+  
+    Conditions for Integral Test: 
+    \begin{itemize}
+      \item{$\frac{\ln{x}}{x}$ is continuous for all $x \geq 1$.}
+      \item{$\frac{\ln{x}}{x}$ is positive for all $x \geq 1$.}
+      \item{$\frac{d}{dx}\left(\frac{\ln{x}}{x}\right) = \frac{1-\ln \left(x\right)}{x^2} \rightarrow f'(x)$ is negative for all $x \geq e \rightarrow f(x)$ is decreasing for all $x \geq e$. (This condition is on odd ground, but can still be applied to this function) \\}
+    \end{itemize}
+  
+    Let $u=\ln{x}\therefore du=\frac{dx}{x}$ \\
+  
+    $\lim_{c\to\infty}\int_{2}^{c}{\frac{\ln{x}}{x}}\,dx = \lim_{c\to\infty}\int_{\ln{2}}^{\ln{c}}{u}\,du = \lim_{c\to\infty}\left[\frac{1}{2}u^{2}\right]_{\ln{2}}^{\ln{c}} = \infty \therefore$ diverges by the Integral Test.  \\
+    
+    \pagebreak
+    
+  \item{$\sum_{n=1}^{\infty}{\frac{1}{2n+5}}$ \\}
+  
+    Conditions for Integral Test: 
+    \begin{itemize}
+      \item{$\frac{1}{2x+5}}$ is continuous for all $x \geq 1$.}
+      \item{$\frac{1}{2x+5}}$ is positive for all $x \geq 1$.}
+      \item{$\frac{d}{dx}\left(\frac{1}{2x+5}\right) = -\frac{2}{\left(2x+5\right)^2} \rightarrow f'(x)$ is negative for all $x \geq 1 \rightarrow f(x)$ is decreasing for all $x \geq 1$. \\}
+    \end{itemize}
+  
+    Let $u=2x+5\therefore du=2dx$ \\
+  
+    $\lim_{c\to\infty}\int_{1}^{c}{\frac{dx}{2x+5}} = \lim_{c\to\infty}\frac{1}{2}\int_{7}^{c}{\frac{du}{u}} = \lim_{c\to\infty}\frac{1}{2}[\ln{|u|}]_{7}^{c} = \frac{1}{2}\ln{\left|\frac{\infty}{7}\right|} = \infty \therefore $ diverges by the Integral Test.  \\
+    
+  \item{$\sum_{n=1}^{\infty}{\frac{1}{n^{2}+1}}$ \\}
+  
+    Conditions for Integral Test: 
+    \begin{itemize}
+      \item{$\frac{1}{x^{2}+1}$ is continuous for all $x \geq 1$.}
+      \item{$\frac{1}{x^{2}+1}$ is positive for all $x \geq 1$.}
+      \item{$\frac{d}{dx}\left(\frac{1}{x^{2}+1}\right) = -\frac{2x}{\left(x^2+1\right)^2} \rightarrow f'(x)$ is negative for all $x \geq 1 \rightarrow f(x)$ is decreasing for all $x \geq 1$. \\}
+    \end{itemize}
+  
+    $\lim_{c\to\infty}\int_{1}^{c}{\frac{dx}{x^{2}+1}} = \lim_{c\to\infty}[\arctan{x}]_{1}^{c} = \arctan{\infty} - \arctan{1} = \frac{\pi}{4} \therefore$ converges by the Integral Test. \\
+    
+  \item{$\sum_{n=1}^{\infty}{\frac{1}{n^{4}}}$ \\}
+  
+    Conditions for Integral Test: 
+    \begin{itemize}
+      \item{$\frac{1}{x^{4}}$ is continuous for all $x \geq 1$.}
+      \item{$\frac{1}{x^{4}}$ is positive for all $x \geq 1$.}
+      \item{$\frac{d}{dx}\left(\frac{1}{x^{4}}\right) = -\frac{4}{x^5} \rightarrow f'(x)$ is negative for all $x \geq 1 \rightarrow f(x)$ is decreasing for all $x \geq 1$. \\}
+    \end{itemize}
+  
+    $\lim_{c\to\infty}\int_{1}^{c}{\frac{1}{x^{4}}} = \lim_{c\to\infty}\left[-\frac{1}{3x^{3}}\right]_{1}^{c} = \frac{1}{3} - \frac{1}{3\infty^{3}} = \frac{1}{3} \therefore $ converges by the Integral Test. \\
+    
+  \pagebreak
+  
+  \item{Use the Integral Test to find an upper and lower bound on the limit of the series $\sum_{n=1}^{\infty}{\frac{1}{n^{2}+1}}$. \\}
+  
+    $a_{1} = \frac{1}{1^{2} + 1} = \frac{1}{2}$ \\
+    
+    $\lim_{c\to\infty}\int_{1}^{c}{\frac{dx}{x^{2}+1}} = \frac{\pi}{4}$ \\
+    
+    $\int_{1}^{\infty}{\frac{1}{n^{2}+1}}\,dx = \frac{1}{2} < \sum_{n=1}^{\infty}{\frac{1}{n^{2}+1}} < a_{1} + \int_{1}^{\infty}{\frac{1}{n^{2}+1}}\,dx = \frac{\pi + 2}{4}$ \\
+    
+    Lower Bound: $\frac{1}{2}$ \\
+    
+    Upper Bound: $\frac{\pi + 2}{4}$ \\
+    
+  \item{Use the Integral Test to find an upper and lower bound on the limit of the series $\sum_{n=1}^{\infty}{\frac{1}{n^{4}}}$. \\}
+  
+    $a_{1} = \frac{1}{1^{4}} = 1$ \\
+  
+    $\lim_{c\to\infty}\int_{1}^{c}{\frac{1}{x^{4}}} = \frac{1}{3}$ \\
+    
+    $\int_{1}^{\infty}{\frac{1}{n^{4}}}\,dx = 1 < \sum_{n=1}^{\infty}{\frac{1}{n^{4}}} < a_{1} + \int_{1}^{\infty}{\frac{1}{n^{4}}}\,dx = \frac{4}{3}$ \\
+    
+    Lower Bound: $\frac{1}{3}$ \\
+    
+    Upper Bound: $\frac{4}{3}$ \\
+    
+  \hline
+  
+  \noindent Multiple Choice \\
+  
+  \item{If $\lim_{b\to\infty}\int_{1}^{\infty}{\frac{dx}{x^{p}}}$ is finite, then which of the following must be true?}
+  \begin{enumerate}
+    \item{$\sum_{n=1}^{\infty}{\frac{1}{n^{p}}}$ converges \\}
+    \item{$\sum_{n=1}^{\infty}{\frac{1}{n^{p}}}$ diverges \\}
+    \item{$\sum_{n=1}^{\infty}{\frac{1}{n^{p-2}}}$ converges \\}
+    \item{$\sum_{n=1}^{\infty}{\frac{1}{n^{p-1}}}$ converges \\}
+    \item{$\sum_{n=1}^{\infty}{\frac{1}{n^{p+1}}}$ diverges \\}
+  \end{enumerate}
+    
+    Mix of Integral Test and $p$-series Test: If $\lim_{b\to\infty}\int_{1}^{\infty}{\frac{dx}{x^{p}}}$ is finite, then $p > 1$, and by extension any summation of $p_{\text{init}} \leq p_{\text{final}}$ will converge. \\
+    
+  \pagebreak
+    
+  \item{Let $f$ be a positive, continuous, and decreasing function such that $a_{n}=f(n)$. If $\sum_{n=1}^{\infty}{a_{n}}$ converges to $k$, which of the following must be true?}
+  \begin{enumerate}
+    \item{$\lim_{n\to\infty}a_{n} = k$ \\}
+    \item{$\int_{1}^{n}{f(x)}\,dx = k$ \\}
+    \item{$\int_{1}^{\infty}{f(x)}\,dx$ diverges \\}
+    \item{$\int_{1}^{\infty}{f(x)}\,dx$ converges \\}
+    \item{$\int_{1}^{\infty}{f(x)}\,dx = k$ \\}
+  \end{enumerate}
+  
+  Definition of the Integral Test. Because $\sum_{n=1}^{\infty}{a_{n}}$ converges, then $\int_{1}^{\infty}{f(x)}\,dx$ must also converge. A does not follow the Integral Test, $n$ is not defined in B, C is just wrong, and in E the integral would actually be less than the convergence value of the summation because the summation is an overestimation. \\
+  
+  \hline
+  
+  \item{If $\lim_{b\to\infty}\int_{1}^{b}{\frac{dx}{x^{p}}} = 3$, then which of the following must be true?}
+  \begin{enumerate}
+    \item{$\sum_{n=1}^{\infty}\frac{1}{n^{p}} = 3$ \\}
+    \item{$\sum_{n=1}^{\infty}\frac{1}{n^{p}} < 3$ \\}
+    \item{$\sum_{n=1}^{\infty}\frac{1}{n^{p}} > 3$ \\}
+    \item{$\sum_{n=1}^{\infty}\frac{1}{n^{p}}$ diverges. \\}
+    \item{No conclusion can be reached. \\}
+  \end{enumerate}
+  
+  $\lim_{b\to\infty}\int_{1}^{b}{\frac{dx}{x^{p}}} < \sum_{n=1}^{\infty}\frac{1}{n^{p}} \therefore \sum_{n=1}^{\infty}\frac{1}{n^{p}} > 3$ \\
+  
+  \pagebreak
+  
+  \item{(2010 BC 5 -- No calculator) \\
+        Consider the differential equation $\frac{dy}{dx}=1-y$. Let $y=f(x)$ be the particular solution to this differential equation with the initial condition $f(1)=0$. For this particular solution, $f(x) < 1$ for all values of $x$. }
+  \begin{enumerate}
+    \item{Use Euler's method, starting at $x=1$ with two steps of equal size, to approximate $f(0)$. Show the work that leads to your answer. \\}
+    
+      $f(0.5) = 0 + 1(-0.5) = -0.5$ \\
+      
+      $f(0) = -0.5 + 1.5(-0.5) = -1.25$ \\
+      
+    \item{Find $\lim_{x\to 1}\frac{f(x)}{x^{3}-1}$. Show the work that leads to your answer. \\}
+    
+      $\lim_{x\to 1}\frac{f(x)}{x^{3}-1} = \frac{f(1)}{1^{3}-1} = \frac{0}{0} \therefore$ L'Hospital's Rule Applies. \\
+      
+      $\lim_{x\to 1}\frac{f(x)}{x^{3}-1} = \lim_{x\to 1}\frac{f'(x)}{\frac{d}{dx}(x^{3}-1)} = \frac{f'(1)}{3(1)^{2}} = \frac{1}{3}$ \\
+      
+    \item{Find the particular solution $y=f(x)$ to the differential equation $\frac{dy}{dx}=1-y$ with the initial condition $f(1)=0$. \\}
+    
+      $\frac{dy}{1-y} = dx$ \\
+      
+      $-\ln{|1-y|} = x + C \rightarrow -\ln{(1-0)} = 1 + C \rightarrow C = -1$ \\
+      
+      $\ln{|1-y|} = -x-C = 1-x$ \\
+      
+      $1-y = e^{1-x}$ \\
+      
+      $-y = e^{1-x}-1$ \\
+      
+      $y=1-e^{1-x}$ \\
+      
+  \end{enumerate}
+  
+  \underline{Reflection:} I need to further study questions such as the second part, as I was not sure how to solve for the value of $f'(1)$ within the question, instead opting for confirming my answer with the third part ($\frac{d}{dx}(1-e^{1-x}) = e^{1-x}\therefore f'(1) = 1$). Other than this, I believe my work can be fixed with better simplification of work and justifying statements. 
+\end{enumerate}
+\end{document}

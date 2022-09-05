@@ -1,0 +1,203 @@
+% Document Metadata
+\documentclass[10pt,letterpaper]{report}
+\usepackage[utf8]{inputenc}
+% Use for Arial Font \usepackage{helvet}
+%  \renewcommand{\familydefault}{\sfdefault}
+% Use for Times New Roman Font \usepackage{mathptmx}
+
+\usepackage[none]{hyphenat}
+\usepackage{tikz, textcomp, gensymb, graphicx, mathtools, amssymb, amsthm, hyperref, multicol}
+  \hypersetup{
+      colorlinks=true,
+      linkcolor=blue,
+      filecolor=magenta,
+      urlcolor=blue,
+      }
+  \graphicspath{ {/home/lowebang/Pictures/} }
+\usepackage[letterpaper]{geometry}
+  \geometry{top=1in, bottom=1in, left=1in, right=1in}
+\usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \lhead{}
+  \chead{}
+  \rhead{Cabrera \thepage}
+  \lfoot{}
+  \cfoot{}
+  \rfoot{\LaTeX}
+  \renewcommand{\headrulewidth}{1pt}
+  \renewcommand{\footrulewidth}{1pt}
+  \setlength\headsep{0.333in}
+
+% Command to Circle String
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+% Command to Set Oval Around String
+\newcommand{\mymk}[1]{%
+  \tikz[baseline=(char.base)]\node[anchor=south west, draw,rectangle, rounded corners, inner sep=2pt, minimum size=7mm,
+  text height=2mm](char){\ensuremath{#1}} ;}
+
+\title{Calculus BC - Worksheet on 7.2 \\
+      \large Volume by Cross Sections}
+\author{Craig Cabrera}
+\date{27 February 2022}
+
+\begin{document}
+\maketitle
+\begin{center}
+  \textbf{\underline{Relevant Formulas and Notes:}}
+\end{center}
+
+$$V=\int_{a}^{b}{A(x)}\,dx, \, \, A(x)=(f(x)-g(x))(\text{Given Values of Other Properties})$$ \\
+
+$$V=\int_{a}^{b}{A(y)}\,dy, \, \, A(y)=(f(y)-g(y))(\text{Given Values of Other Properties})$$ \\
+
+Properties of Shapes:  \\
+
+Circles: \\
+
+$$r=\frac{d}{2}, \, \, A=\pi r^{2}$$ \\
+
+Squares (where $h$ is hypotenuse): \\
+
+$$s=\sqrt{\frac{h^{2}}{2}}=\frac{\sqrt{2}h}{2}, \, \, A=s^{2}$$ \\
+
+Equilateral Triangles: \\
+
+$$b=s, \, \, A=\frac{\sqrt{3}s^{2}}{4}=\frac{\sqrt{3}}{4}A_{\text{square}}$$ \\
+
+Semiellipses: \\
+
+$$ab=rh, \, \, A=\frac{1}{2}\pi ab$$ \\
+
+\pagebreak 
+
+
+\noindent Work the following on \textbf{\underline{notebook paper}}. For each problem, draw a figure, set up an integral, and then evaluate on your \underline{calculator}. Give decimal answers correct to three decimal places. \\
+
+\begin{enumerate}
+  \item{Find the volume of the solid whose base is bounded by the graphs of $y=x+1$ and $y=x^{2}-1$, with the indicated cross sections taken perpendicular to the $x$-axis. \\}
+  \begin{multicols}{2}
+    Intersections of Graphs (Bounds): $a=-1, b=2$ \\
+    
+    $f(x)-g(x)=x+1-(x^{2}-1)=x+2-x^{2}$ \\
+    
+    \vfill\null
+    
+    \columnbreak
+    
+    \begin{center}
+      \includegraphics[scale=0.21]{7.2_q1.png} \\
+    \end{center} \\
+    \columnbreak
+  \end{multicols}
+  \begin{enumerate}
+    \item{Squares \\}
+    
+      $V=\int_{a}^{b}{s^{2}}\,dx=\int_{-1}^{2}{\left(x+2-x^{2}\right)^{2}}\,dx=\int_{-1}^{2}{x^{4}-2x^{3}-3x^{2}+4x+4}\,dx=$ \\
+      
+      $[\frac{1}{5}x^{5}-\frac{1}{2}x^{4}-x^{3}+2x^{2}+4x]_{-1}^{2}=\frac{32+1}{5}-\frac{16-1}{2}-(8+1)+2(4-1)+4(2+1)=\frac{81}{10}=8.1$ \\
+      
+      Going further, let $I=\int_{a}^{b}{s^{2}}\,dx=\int_{-1}^{2}{\left(x+2-x^{2}\right)^{2}}\,dx=8.1$. \\
+      
+    \item{Rectangles of height 1 \\}
+    
+      $V=\int_{a}^{b}{bh}\,dx=\int_{-1}^{2}{(x+2-x^{2})(1)}\,dx=[\frac{1}{2}x^{2}+2x-\frac{1}{3}x^{3}]_{-1}^{2}=\frac{4-1}{2}+2(2+1)-\frac{8+1}{3}=\frac{9}{2}=4.5$ \\
+      
+      Going further, let $J=\int_{a}^{b}{bh}\,dx=\int_{-1}^{2}{(x+2-x^{2})}\,dx=4.5$. \\
+      
+    \item{Semiellipses of height 2 (The area of an ellipse is given by the formula $A=\pi ab$, where $a$ and $b$ are the distances from the center to the ellipse to the endpoints of the axes of the ellipse.) \\}
+    
+      $V=\frac{\pi}{2}\int_{a}^{b}{\frac{dh}{2}}\,dx=\frac{J\pi}{2}\approx7.069$ \\
+      
+    \item{Equilateral triangles \\}
+    
+    $V=\int_{a}^{b}{\frac{\sqrt{3}s^{2}}{4}}\,dx=\frac{\sqrt{3}I}{4}\approx3.507$ \\
+  \end{enumerate}
+  
+  \pagebreak
+  
+  \item{Find the volume of the solid whose base is bounded by the circle $x^{2}+y^{2}=4$ with the indicated cross sections taken perpendicular to the $x$-axis. \\}
+  \begin{multicols}{2}
+    $x^{2}+y^{2}=4\rightarrow y=\sqrt{4-x^{2}}$ \\
+    
+    Zeroes (Bounds): $a=-2, b=2$ \\
+    
+    Because our function results in a semicircle when solving for $y$, let each base be doubled. \\
+    
+    (Base = $2\sqrt{4-x^{2}}$) \\
+    
+    \vfill\null
+    
+    \columnbreak
+    
+    \begin{center}
+      \includegraphics[scale=0.22]{7.2_q2.png} \\
+    \end{center} \\
+    \columnbreak
+  \end{multicols}
+  \begin{enumerate}
+    \item{Squares \\}
+      
+      $V=\int_{a}^{b}{(2s)^{2}}\,dx=4\int_{-2}^{2}{4-x^{2}}\,dx=4[4x-\frac{1}{3}x^{3}]_{-2}^{2}=4(8+8)-4\left(\frac{8+8}{3}\right)=\frac{128}{3}\approx 42.667$ \\
+      
+      Going further, let $I=\int_{a}^{b}{(2s)^{2}}\,dx=\int_{-2}^{2}{(2\sqrt{4-x^{2}})^{2}}\,dx=42.667$ \\
+      
+    \item{Equilateral Triangles \\}
+    
+      $V=\int_{a}^{b}{\frac{\sqrt{3}(2s)^{2}}{4}}\,dx=\frac{\sqrt{3}I}{4}\approx 18.475$ \\
+      
+    \item{Semicircles \\} 
+    
+      $V=\int_{a}^{b}{\frac{1}{2}\pi r^{2}}\,dx=\frac{\pi}{2}\int_{-2}^{2}{\left(\frac{2\sqrt{4-x^{2}}}{2}\right)^{2}}\,dx=\frac{I\pi}{8}\approx 16.755$ \\
+      
+    \item{Isosceles right triangles with the hypotenuse as the base of the solid \\}
+    
+      $V=\int_{a}^{b}{\frac{1}{2}(2s)^{2}}\,dx=\frac{I}{2}\approx 21.333$ \\
+      
+  \end{enumerate}
+  
+  \pagebreak
+  
+  \item{The base of a solid is bounded by $y=x^{3}$, $y=0$, and $x=1$. Find the volume of the solid for each of the following cross sections taken perpendicular to the $y$-axis. \\}
+  \begin{multicols}{2}
+  
+    $y=x^{3}\rightarrow x=\sqrt[3]{y}$ \\
+    
+    $x=1\rightarrow y=x^{3}=1$ \\
+    
+    Bounds: $a=0$, $b=1$ \\
+    
+    $f(x)-g(x)=1-\sqrt[3]{y}$ \\
+    
+    \vfill\null
+    
+    \columnbreak
+    
+    \begin{center}
+      \includegraphics[scale=0.22]{7.2_q3.png} \\
+    \end{center} \\
+    \columnbreak
+  \end{multicols}
+  \begin{enumerate}
+    \item{Squares \\}
+    
+      $V=\int_{a}^{b}{s^{2}}\,dy=\int_{0}^{1}{\left(1-\sqrt[3]{y}\right)^{2}}\,dy=[y-\frac{3}{2}y^{\frac{4}{3}}+\frac{3}{5}y^{\frac{5}{3}}]_{0}^{1}=1-\frac{3}{2}+\frac{3}{5}=\frac{1}{10}=0.1$\\
+      
+      Going forward, let $I=\int_{a}^{b}{s^{2}}\,dy=\int_{0}^{1}{\left(1-\sqrt[3]{y}\right)^{2}}\,dy=0.1$. \\
+      
+    \item{Semicircles \\}
+    
+      $V=\int_{a}^{b}{\frac{1}{2}\pi r^{2}}\,dy=\frac{\pi}{2}\int_{0}^{1}{\left(\frac{1-\sqrt[3]{y}}{2}\right)^{2}}=\frac{I\pi}{8}=0.039$ \\
+      
+    \item{Equilateral Triangles \\}
+    
+      $V=\int_{a}^{b}{\frac{\sqrt{3}s^{2}}{4}}=\frac{\sqrt{3}I}{4}=0.043$ \\
+      
+    \item{Semiellipses whose heights are twice the length of their bases \\}
+    
+      $V=\int_{a}^{b}{\frac{1}{2}\pi ab}\,dy=\frac{\pi}{2}\int_{0}^{1}{\left(\frac{1-\sqrt[3]{y}}{2}\right)\left(2\left(1-\sqrt[3]{y}\right)\right)}\,dy=\frac{I\pi}{2}\approx 0.157$ \\
+      
+  \end{enumerate}
+\end{enumerate}
+\end{document}

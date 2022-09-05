@@ -1,0 +1,186 @@
+% Document Metadata
+\documentclass[10pt,letterpaper]{report}
+\usepackage[utf8]{inputenc}
+% Use for Arial Font \usepackage{helvet}
+%  \renewcommand{\familydefault}{\sfdefault}
+% Use for Times New Roman Font \usepackage{mathptmx}
+
+\usepackage[none]{hyphenat}
+\usepackage{tikz, textcomp, gensymb, graphicx, mathtools, amssymb, amsthm, hyperref}
+  \hypersetup{
+      colorlinks=true,
+      linkcolor=blue,
+      filecolor=magenta,
+      urlcolor=blue,
+      }
+  \graphicspath{ {/home/lowebang/Pictures/} }
+\usepackage[letterpaper]{geometry}
+  \geometry{top=1in, bottom=1in, left=1in, right=1in}
+\usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \lhead{}
+  \chead{}
+  \rhead{Cabrera \thepage}
+  \lfoot{}
+  \cfoot{}
+  \rfoot{\LaTeX}
+  \renewcommand{\headrulewidth}{1pt}
+  \renewcommand{\footrulewidth}{1pt}
+  \setlength\headsep{0.333in}
+
+% Command to Circle String
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+% Command to Set Oval Around String
+\newcommand{\mymk}[1]{%
+  \tikz[baseline=(char.base)]\node[anchor=south west, draw,rectangle, rounded corners, inner sep=2pt, minimum size=7mm,
+  text height=2mm](char){\ensuremath{#1}} ;}
+
+\title{Calculus BC -- Worksheet on 7.1}
+\author{Craig Cabrera}
+\date{24 February 2022}
+
+\begin{document}
+\maketitle
+\begin{center}
+  \textbf{\underline{Relevant Formulas and Notes:}}
+\end{center}
+
+\noindent Area of a Region Between Two Curves: 
+
+$$A=\int_{a}^{b}{\left(f(x)-g(x)\right)}\,dx$$ \\
+
+$$A=\int_{c}^{d}{\left(f(y)-g(y)\right)}\,dy$$ \\
+
+\noindent where $a$, $b$, $c$, and $d$ are the intersections of the functions to one another, $f(x)$ is the upper bound of the graph, $g(x)$ is the lower bound of the graph, $f(y)$ is the rightmost bound, and $g(y)$ is the leftmost bound. 
+
+\pagebreak 
+
+\noindent Work the following on \textbf{\underline{notebook paper}}. \\
+
+\noindent Find the area bounded by the given curves. \underline{Draw} and \underline{label} a figure for each problem, and show all work. \textbf{\underline{Do not use your calculator on problems 1-2.}} \\
+
+\begin{enumerate}
+
+  \item{$f(x)=x^{2}+2x+1$, $g(x)=3x+3$ \\}
+  
+    $x^{2}+2x+1=3x+3\rightarrow x^{2}-x-2=0\rightarrow x=\frac{-(-1)\pm\sqrt{(-1)^{2}-4(1)(-2)}}{2(1)}=\frac{1\pm3}{2}=-1, 2$ \\
+    
+    $\int_{-1}^{2}{\left(\left(3x+3\right)-\left(x^{2}+2x+1\right)\right)}\,dx=
+    \int_{-1}^{2}{\left(-x^{2}+x+2\right)}\,dx=
+    [-\frac{1}{3}x^{3}]_{-1}^{2}+[\frac{1}{2}x^{2}]_{-1}^{2}+[2x]_{-1}^{2}=$ \\
+    
+    $ -3+\frac{3}{2}+6=\frac{12-6+3}{2}=\frac{9}{2}$ \\
+    
+    \begin{center}
+      \includegraphics[scale=0.4]{7_1_q1.png} \\
+    \end{center}
+    
+    \pagebreak
+    
+  \item{$x=y^{2}$, $x=y+2$ \\}
+  
+    $y^{2}=y+2\rightarrow y^{2}-y-2=0\rightarrow y=\frac{-(-1)\pm\sqrt{(-1)^{2}-4(1)(-2)}}{2(1)}=\frac{1\pm3}{2}=-1, 2$ \\
+    
+    $\int_{-1}^{2}{\left(\left(y+2\right)-\left(y^{2}\right)\right)}\,dy=
+    \int_{-1}^{2}{\left(-y^{2}+y+2\right)}\,dy=
+    [-\frac{1}{3}y^{3}]_{-1}^{2}+[\frac{1}{2}y^{2}]_{-1}^{2}+[2y]_{-1}^{2}=$ \\
+    
+    $ -3+\frac{3}{2}+6=\frac{12-6+3}{2}=\frac{9}{2}$ \\
+    
+    \begin{center}
+      \includegraphics[scale=0.4]{7_1_q2.png} \\
+    \end{center}
+    
+    \pagebreak
+    
+  \noindent Find the area bounded by the given curves. \underline{Draw} and \underline{label} a figure for each problem, set up the integral(s) needed, and then evaluate on your calculator. \\
+    
+  \item{$f(x)=x^{4}$, $g(x)=3x+4$ \\}
+  
+    $x^{4}=3x+4\rightarrow x^{4}-3x-4=0\rightarrow x=-1, 1.743$ \\
+    
+    $\int_{-1}^{1.743}{\left(\left(3x+4\right)-\left(x^{4}\right)\right)}\,dx=
+    [\frac{3}{2}x^{2}]_{-1}^{1.743}+[4x]_{-1}^{1.743}-[\frac{1}{5}x^{5}]_{-1}^{1.743}\approx
+    3.057+10.972-3.417=10.612$ \\
+    
+    
+    \begin{center}
+      \includegraphics[scale=0.4]{7_1_q3.png} \\
+    \end{center}
+    
+    \pagebreak
+    
+  \item{$f(x)=x^{2}$, $g(x)=2^{x}$ \\}
+  
+    $x^{2}=2^{x}\rightarrow x=-0.767, 2, 4$ \\
+    
+    $\int_{-0.767}^{2}{\left(\left(2^{x}\right)-\left(x^{2}\right)\right)}\,dx+\int_{2}^{4}{\left(\left(x^{2}\right)-\left(2^{x}\right)\right)}\,dx=
+    [\frac{2^{x}}{\ln{2}}]_{-0.767}^{2}-[\frac{1}{3}x^{3}]_{-0.767}^{2}+[\frac{1}{3}x^{3}]_{2}^{4}-[\frac{2^{x}}{\ln{2}}]_{2}^{4}\approx 3.46$ \\
+    
+    \begin{center}
+      \includegraphics[scale=0.4]{7_1_q4.png} \\
+    \end{center}
+    
+    \pagebreak
+    
+  \item{$y=\ln{\left(x^{2}+1\right)}$, $y=\cos{x}$}
+  
+    $\ln{\left(x^{2}+1\right)}=\cos{x}\rightarrow x=\pm 0.916$ \\
+    
+    $\int_{-0.916}^{0.916}{\left(\left(\cos{x}\right)-\left(\ln{\left(x^{2}+1\right)}\right)\right)}\,dx\approx 1.168$ \\
+    
+    \begin{center}
+      \includegraphics[scale=0.3]{7_1_q5.png} \\
+    \end{center}
+    
+    \pagebreak
+    
+  \item{(No calculator) \\
+        Let $R$ be the region in the first quadrant bounded by the $x$-axis and the graphs of $y=\sqrt{x}$ and $y=6-x$ as shown in the figure on the right. }
+    \begin{enumerate}
+      \item{Find the area of $R$ by working in $x$'s. \\}
+      
+        $\sqrt{x}=6-x\rightarrow x=x^{2}-12x+36\rightarrow x^{2}-13x+36=0\rightarrow x=\frac{-(-13)\pm\sqrt{(-13)^{2}-4(1)(36)}}{2(1}=\frac{13\pm 5}{2}=4, 9$ \\
+        
+        Because $x=9$ is out of bounds, we will only use the intersection $x=4$. \\
+        
+        $\int_{0}^{4}{\sqrt{x}}\,dx+\int_{4}^{6}{6-x}\,dx=
+        [\frac{2}{3}x^{\frac{3}{2}}]_{0}^{4}+[6x-\frac{1}{2}x^{2}]_{4}^{6}=
+        \frac{16}{3}+(36-24)-(18-8)=
+        \frac{16}{3}+12-10=\frac{22}{3}$ \\
+        
+      \item{Find the area of $R$ by working in $y$'s. \\}
+      
+        $y=\sqrt{x}\rightarrow x=y^2$ \\
+        
+        $y=6-x\rightarrow -x=y-6\rightarrow x=6-y$ \\
+        
+        $y^{2}=6-y\rightarrow y^{2}+y-6=0\rightarrow y=-3, 2$ \\
+        
+        Because $y=-3$ is out of bounds, we will use the lower bound $y=0$. \\
+        
+        $\int_{0}^{2}{\left(\left(6-y\right)-\left(y^{2}\right)\right)}\,dy=
+        [6y-\frac{1}{2}y^{2}]_{0}^{2}-[\frac{1}{3}y^{3}]_{0}^{2}=
+        10-\frac{8}{3}=\frac{22}{3}$ \\
+        
+      \item{When you found your answers to (a) and (b), was it less work to work in terms of $x$ or in terms of $y$? \\}
+      
+        It was less work overall to work in terms of $x$, since the formulas were given in terms of $x$. However, it was easier to integrate in terms of $y$ because the solution was in simpler exponents. \\
+    \end{enumerate}
+    
+  \item{(Calculator) \\
+        Let $R$ be the region bounded by the graphs of $y=2^{x}$, $y=4^{x}$, and $y=\frac{1}{x}$, as shown in the figure on the right. Find the area of $R$. \\}
+        
+          $2^{x}=4^{x}\rightarrow x=0$ \\
+          
+          $2^{x}=\frac{1}{x}\rightarrow x=0.641$ \\
+          
+          $4^{x}=\frac{1}{x}\rightarrow x=0.5$ \\
+          
+          $\int_{0}^{0.5}{\left(4^{x}-2^{x}\right)}\,dx+\int_{0.5}^{0.641}{\frac{1}{x}-\left(2^{x}\right)}=
+          0.124+0.039=0.163$
+        
+\end{enumerate}
+\end{document}

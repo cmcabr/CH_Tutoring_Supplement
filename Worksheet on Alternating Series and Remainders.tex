@@ -1,0 +1,83 @@
+% Document Metadata
+\documentclass[10pt,letterpaper]{report}
+\usepackage[utf8]{inputenc}
+% Use for Arial Font \usepackage{helvet}
+%  \renewcommand{\familydefault}{\sfdefault}
+% Use for Times New Roman Font \usepackage{mathptmx}
+
+\usepackage[none]{hyphenat}
+\usepackage{tikz, textcomp, gensymb, graphicx, mathtools, amssymb, amsthm, hyperref, multicol}
+  \hypersetup{
+      colorlinks=true,
+      linkcolor=blue,
+      filecolor=magenta,
+      urlcolor=blue,
+      }
+  \graphicspath{ {/home/lowebang/Pictures/} }
+\usepackage[letterpaper]{geometry}
+  \geometry{top=1in, bottom=1in, left=1in, right=1in}
+\usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \lhead{}
+  \chead{}
+  \rhead{Cabrera \thepage}
+  \lfoot{}
+  \cfoot{}
+  \rfoot{\LaTeX}
+  \renewcommand{\headrulewidth}{1pt}
+  \renewcommand{\footrulewidth}{1pt}
+  \setlength\headsep{0.333in}
+
+% Command to Circle String
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+% Command to Set Oval Around String
+\newcommand{\mymk}[1]{%
+  \tikz[baseline=(char.base)]\node[anchor=south west, draw,rectangle, rounded corners, inner sep=2pt, minimum size=7mm,
+  text height=2mm](char){\ensuremath{#1}} ;}
+
+\title{Calculus BC -- Worksheet on Alternating Series and Remainders}
+\author{Craig Cabrera}
+\date{10 March 2022}
+
+\begin{document}
+\maketitle
+\begin{center}
+  \textbf{\underline{Relevant Formulas and Notes:}}
+\end{center}
+
+\pagebreak 
+
+
+Work the following on \textbf{\underline{notebook paper}}.
+\begin{enumerate}
+  \item{Approximate the sum, $S$, of the series $\sum_{n=0}^{\infty}{\frac{(-1)^{n}}{n!}}$ by using its first five terms, and explain why your estimate differs from the actual value by less than .009. Then use your results to find an interval in which $S$ must lie. \\}
+  
+    $S=\sum_{n=0}^{\infty}{\frac{(-1)^{n}}{n!}}\approx \sum_{n=0}^{4}{\frac{(-1)^{n}}{n!}}= 1 - 1 + \frac{1}{2} - \frac{1}{6} + \frac{1}{24} = \frac{3}{8}$ \\
+    
+    $|\text{error}| = |S-S_{4}| < |a_{5}|$ \\
+    
+    $|\text{error}| < |\frac{(-1)^5}{5!}| = |-\frac{1}{120}| \approx 0.00833 < 0.009 $ \\
+    
+    $\therefore |\text{error}| < 0.009 $ by the Alternatng Series Remainder. \\
+    
+    $S_{4} - \frac{1}{120} = 0.366 < S < S_{4} + \frac{1}{120} = 0.383 \therefore S $ lies in the interval $(0.366, 0.383)$ or $(\frac{11}{30}, \frac{23}{60})$ \\
+    
+  \item{}
+    
+  \item{Approximate the sum of the convegent series $\sum_{n=0}^{\infty}{\frac{(-1)^{n}}{2^{n}n!}}$ so that the error will be less than $\frac{1}{1000}?$ How many terms were needed? What are the properties of the terms of this series that guarantee that your approximation is within $\frac{1}{1000}$ of the exact value? Justify your answer. \\}
+  
+    $S = \sum_{n=0}^{\infty}{\frac{(-1)^{n}}{2^{n}n!}} \approx \sum_{n=0}^{4}{\frac{(-1)^{n}}{2^{n}n!}} = 1 - \frac{1}{2} + \frac{1}{8} - \frac{1}{48} + \frac{1}{384} \approx \frac{233}{384}$ \\
+    
+    $|\text{error}| = |S - S_{4}| < |\frac{(-1)^{5}}{32*120}| = |-\frac{1}{3840}| < \frac{1}{1000}$ \\
+    
+    $\therefore |\text{error}| < 1000$  by the Alternating Series Remainder. \\
+    
+  \item{$ $}
+    
+  \item{Approximate the sum of the convegent series $\sum_{n=0}^{\infty}{\frac{(-1)^{n+1}}{n^{3}}$ so that the error will be less than $\frac{1}{1200}?$ How many terms were needed? What are the properties of the terms of this series that guarantee that your approximation is within $\frac{1}{1200}$ of the exact value? Justify your answer. \\}
+    
+  
+\end{enumerate}
+\end{document}

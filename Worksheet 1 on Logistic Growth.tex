@@ -1,0 +1,474 @@
+% Document Metadata
+\documentclass[10pt,letterpaper]{report}
+\usepackage[utf8]{inputenc}
+% Use for Arial Font \usepackage{helvet}
+%  \renewcommand{\familydefault}{\sfdefault}
+% Use for Times New Roman Font \usepackage{mathptmx}
+
+\usepackage[none]{hyphenat}
+\usepackage{tikz, textcomp, gensymb, graphicx, mathtools, amssymb, amsthm, hyperref, multicol}
+  \hypersetup{
+      colorlinks=true,
+      linkcolor=blue,
+      filecolor=magenta,
+      urlcolor=blue,
+      }
+  \graphicspath{ {/home/lowebang/Pictures/} }
+\usepackage[letterpaper]{geometry}
+  \geometry{top=1in, bottom=1in, left=1in, right=1in}
+\usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \lhead{}
+  \chead{}
+  \rhead{Cabrera \thepage}
+  \lfoot{}
+  \cfoot{}
+  \rfoot{\LaTeX}
+  \renewcommand{\headrulewidth}{1pt}
+  \renewcommand{\footrulewidth}{1pt}
+  \setlength\headsep{0.333in}
+
+% Command to Circle String
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+% Command to Set Oval Around String
+\newcommand{\mymk}[1]{%
+  \tikz[baseline=(char.base)]\node[anchor=south west, draw,rectangle, rounded corners, inner sep=2pt, minimum size=7mm,
+  text height=2mm](char){\ensuremath{#1}} ;}
+
+\title{Calculus BC -- Worksheet 1 on Logistic Growth}
+\author{Craig Cabrera}
+\date{21 February 2022}
+
+\begin{document}
+\maketitle
+\begin{center}
+  \textbf{\underline{Relevant Formulas and Notes:}}
+\end{center}
+
+\noindent Logistic Growth Formula: 
+
+$$\frac{dP}{dt}=kP(L-P), \text{ where } P=y\text{-axis} \text{ and } L=\lim_{t\to\infty}P(t)$$ \\
+
+\noindent Range of Logistical Growth Formula:
+
+\noindent If $P(0)<L$:
+
+$$P(0)< t< L$$ \\
+
+\noindent If $P(0)>L$:
+
+$$L< t< P(0)$$ \\
+
+\noindent Greatest Value of a Differential: The first order differential has its greatest rate of change at $\frac{L}{2}$, which is also the inflection point of the solution curve. \\
+\pagebreak
+
+\noindent Proof of Inflection Point Location (from https://xaktly.com/LogisticDifferentialEquations.html): \\
+\noindent Let $L=1$ for the following example. Also let $a=e^{C}$ and $b=\frac{1}{A}\approx 1$. Then, \\
+
+1. Find the initial function $P$ (Fractional Decomposition):
+$$\frac{dP}{dt}=kP(1-P)\rightarrow \frac{dP}{P(1-P)}=kdt\rightarrow \int{\frac{dP}{P(1-P)}}=\int{k}\,dt=\int{\frac{A}{P}}\,dP+\int{\frac{B}{1-P}}\,dP$$ \\ 
+
+$$1=A(1-P)+BP\rightarrow 1=A(1-1)+B\rightarrow B=1; \, \, 1=A(1-0)+0B\rightarrow A=1$$ 
+
+$$\int{\frac{dP}{P}}+\int{\frac{dP}{1-P}}=\int{k}\,dt\rightarrow \ln{\left(\frac{P}{1-P}\right)}=kt+C\rightarrow \frac{P}{1-P}=ae^{kt}$$ 
+
+$$P=ae^{kt}-Pae^{kt}\rightarrow P(1+ae^{kt})=ae^{kt}\rightarrow P=\frac{ae^{kt}}{1+ae^{kt}}=\frac{1}{be^{-kt}+1}=\frac{1}{1+e^{-kt}}\approx\frac{L}{1+e^{-k\Delta t}}$$ \\
+
+2. Using our function, find the second derivative, now with $b$ equated to some constant of the exponential. 
+$$P(t)=\frac{L}{1+be^{-k\Delta t}}\rightarrow \frac{dP}{dt}=-L(1+be^{kt})^{-2}(-bke^{-kt})=bkL(e^{-kt})(1+ke^{-kt})^{2}$$ \\
+$$\frac{d^{2}P}{dt^{2}}=bkL\left[(-ke^{-kt})(1+be^{-kt})^{-2}+e^{-kt}(-2)(1+be^{-kt})^{-2}(-kbe^{-kt})\right]$$ \\
+$$=bkL\left[\frac{2bke^{-2kt}-ke^{-kt}(1+be^{-kt})}{(1+be^{-kt})^{3}}\right]$$ \\
+
+3. Simplify the numerator and equate it to zero to solve for the $x$-value of the point of inflection. 
+$$bkL(2bke^{-2kt}-ke^{-kt}(1+be^{-kt}))=bkL((2-1)bke^{-2kt}-ke^{-kt})=bk^{2}L(be^{-2kt}-e^{-kt})$$ \\
+
+$$be^{-2kt}-e^{-kt}\rightarrow be^{-2kt}=e^{-kt}\rightarrow \ln{be^{-2kt}}=\ln{e^{-kt}}$$ \\
+$$\ln{be^{-2kt}}=\ln{b}+\ln{e^{-2kt}}=\ln{b}-2kt; \ln{e^{-kt}}=-kt\therefore \ln{b}-2kt=-kt\rightarrow ln{b}=kt\rightarrow t=\frac{\ln{b}}{k}$$ \\
+
+4. Solve for the value of $y$ to find the value in range of a solution curve. 
+$$y=\frac{L}{1+be^{-kt}}=\frac{L}{1+be^{-\frac{k\ln{b}}{k}}}=\frac{L}{1+be^{-ln{b}}}=\frac{L}{1+\frac{b}{b}}=\frac{L}{2}$$ \\
+
+$\therefore$ Our point of inflection for a logistic curve is located at $\left(\frac{\ln{b}}{k}, \frac{L}{2}\right)$
+\pagebreak 
+
+
+Work the following on \textbf{\underline{notebook paper}}.
+\begin{enumerate}
+  \item{Suppose the population of bears in a national park grows according to the logistic differential equation $\frac{dP}{dt}=5P-0.002P^{2}$, where $P$ is the number of bears at time $t$ in years.}
+  \begin{enumerate}
+    \item{Given $P(0)=100$.}
+    \begin{enumerate}
+      \item{Find $\lim_{t\to\infty}P(t)$. \\}
+      
+        $\frac{dP}{dt}=5P-0.002P^{2}=\frac{P}{500}\left(2500-P\right)$ \\
+        
+        $L=2500\therefore \lim_{t\to\infty}P(t)=2500$ \\
+        
+      \item{What is the range of the solution curve? \\}
+      
+        $P(0)<L\therefore \text{range}: P(0)\leq P< L\rightarrow 100\leq P< 2500$ \\
+        
+      \item{For what values of $P$ is the solution curve increasing? Decreasing? Justify your answer. \\}
+      
+        Let us conduct an Intervals Test with the critical points of the differential $\frac{dP}{dt}$. \\
+        
+        $\frac{dP}{dt}=0\rightarrow \frac{P}{500}=0 \text{ and } \left(2500-P\right)=0\rightarrow P=0, 2500$ \\
+        
+        Because $P=0$ is out of range, we will use the lower bound $P=100$. Also, we will not consider $P>2500$, as this is also out of bounds. 
+        
+        \begin{center}
+          \begin{tabular}{| c | c |}
+            \hline
+            $P$ & $(100, 2500)$ \\
+            \hline
+            $\frac{dP}{dt}$ & Positive \\
+            \hline
+          \end{tabular}
+        \end{center} \\
+        
+        The solution curve is increasing on $100\leq P< 2500$ because $\frac{dP}{dt}$ is positive within this interval. \\
+        
+      \item{Find $\frac{d^{2}P}{dt^{2}}$ and use it to find the values of $P$ for which the solution curve is concave up and concave down. Justify your answer. \\}
+      
+        $\frac{d^{2}P}{dt^{2}}=5\frac{dP}{dt}-\frac{1}{500}2P\frac{dP}{dt}=\frac{1}{500}\frac{dP}{dt}\left(2500-2P\right)=\frac{1}{250}\frac{dP}{dt}\left(1250-P\right)$ \\
+        
+        Let us conduct an Intervals Test with the inflection points of the second order differential $\frac{d^{2}P}{dt^{2}}$. \\
+        
+        $\frac{d^{2}P}{dt^{2}}=0\therefore \frac{dP}{dt}=0 \text{ and } 1250-P=0\rightarrow P=0, 1250, 2500$. \\
+        
+        Because $P=0$ is out of range, we will use the lower bound $P=100$. Also, we will not consider $P>2500$, as this is also out of bounds. 
+        
+        \begin{center}
+          \begin{tabular}{| c | c | c |}
+            \hline
+            $P$ & $(100, 1250)$ & $(1250, 2500)$ \\
+            \hline
+            $\frac{d^{2}P}{dt^{2}}$ & Positive & Negative \\
+            \hline
+          \end{tabular}
+        \end{center} \\
+        
+        The solution curve is concave up on $100<P<1250$ because $\frac{d^{2}P}{dt^{2}}$ is positive within this interval, and it is concave down on $1250<P<2500$ because $\frac{d^{2}P}{dt^{2}}$ is negative within this interval. \\
+        
+      \item{Does the solution curve have an inflection point? Justify your answer. \\}
+      
+        On the Intervals Test in part IV, the second order differential $\frac{d^{2}P}{dt^{2}}$ changes from positive to negative at $P=1250$. Therefore, the solution curve has a point of inflection at $P=1250. $ \\
+      
+      \item{Use the information your found to sketch the graph of $P(t)$. (Page 5, Red Line)}
+        
+        \pagebreak
+        
+    \end{enumerate}
+    
+    \item{Given $P(0)=1500$.}
+    \begin{enumerate}
+      \item{Find $\lim_{t\to\infty}P(t)$. \\}
+      
+        $\frac{dP}{dt}=5P-0.002P^{2}=\frac{P}{500}\left(2500-P\right)$ \\
+        
+        $L=2500\therefore \lim_{t\to\infty}P(t)=2500$ \\
+        
+      \item{What is the range of the solution curve? \\}
+      
+        $P(0)<L\therefore \text{range}: P(0)\leq P< L\rightarrow 1500\leq P< 2500$ \\
+        
+      \item{For what values of $P$ is the solution curve increasing? Decreasing? Justify your answer. \\}
+      
+        Let us conduct an Intervals Test with the critical points of the differential $\frac{dP}{dt}$. \\
+        
+        $\frac{dP}{dt}=0\rightarrow \frac{P}{500}=0 \text{ and } \left(2500-P\right)=0\rightarrow P=0, 2500$ \\
+        
+        Because $P=0$ is out of range, we will use the lower bound $P=1500$. Also, we will not consider $P>2500$, as this is also out of bounds. 
+        
+        \begin{center}
+          \begin{tabular}{| c | c |}
+            \hline
+            $P$ & $(1500, 2500)$ \\
+            \hline
+            $\frac{dP}{dt}$ & Positive \\
+            \hline
+          \end{tabular}
+        \end{center} \\
+        
+        The solution curve is increasing on $1500\leq P< 2500$ because $\frac{dP}{dt}$ is positive within this interval. \\
+        
+      \item{Find $\frac{d^{2}P}{dt^{2}}$ and use it to find the values of $P$ for which the solution curve is concave up and concave down. Justify your answer. \\}
+      
+        $\frac{d^{2}P}{dt^{2}}=5\frac{dP}{dt}-\frac{1}{500}2P\frac{dP}{dt}=\frac{1}{500}\frac{dP}{dt}\left(2500-2P\right)=\frac{1}{250}\frac{dP}{dt}\left(1250-P\right)$ \\
+        
+        Let us conduct an Intervals Test with the inflection points of the second order differential $\frac{d^{2}P}{dt^{2}}$. \\
+        
+        $\frac{d^{2}P}{dt^{2}}=0\therefore \frac{dP}{dt}=0 \text{ and } 1250-P=0\rightarrow P=0, 1250, 2500$. \\
+        
+        Because $P=0$ and $P=1250$ are out of range, we will use the lower bound $P=1500$. Also, we will not consider $P>2500$, as this is also out of bounds. 
+        
+        \begin{center}
+          \begin{tabular}{| c | c |}
+            \hline
+            $P$ & $(1500, 2500)$ \\
+            \hline
+            $\frac{d^{2}P}{dt^{2}}$ & Negative \\
+            \hline
+          \end{tabular}
+        \end{center} \\
+        
+        The solution curve is concave down on $1500<P<2500$ because $\frac{d^{2}P}{dt^{2}}$ is negative within this interval. \\
+        
+      \item{Does the solution curve have an inflection point? Justify your answer. \\}
+      
+        There is no location where $\frac{d^{2}P}{dt^{2}}$ changes from positive to negative, or negative to positive, therefore the solution curve has no points of inflection. \\
+      
+      \item{Use the information your found to sketch the graph of $P(t)$. (Page 5, Blue Line)}
+        
+        \pagebreak
+        
+    \end{enumerate}
+    
+    \item{Given $P(0)=3000$.}
+    \begin{enumerate}
+      \item{Find $\lim_{t\to\infty}P(t)$. \\}
+      
+        $\frac{dP}{dt}=5P-0.002P^{2}=\frac{P}{500}\left(2500-P\right)$ \\
+        
+        $L=2500\therefore \lim_{t\to\infty}P(t)=2500$ \\
+        
+      \item{What is the range of the solution curve? \\}
+      
+        $P(0)>L\therefore \text{range}: L< P\leq P(0)\rightarrow 2500< P\leq 3000$ \\
+        
+      \item{For what values of $P$ is the solution curve increasing? Decreasing? Justify your answer. \\}
+      
+        Let us conduct an Intervals Test with the critical points of the differential $\frac{dP}{dt}$. \\
+        
+        $\frac{dP}{dt}=0\rightarrow \frac{P}{500}=0 \text{ and } \left(2500-P\right)=0\rightarrow P=0, 2500$ \\
+        
+        Because $P=0$ is out of range, we will use the lower bound $P=2500$. 
+        
+        \begin{center}
+          \begin{tabular}{| c | c |}
+            \hline
+            $P$ & $(2500, 3000)$ \\
+            \hline
+            $\frac{dP}{dt}$ & Negative \\
+            \hline
+          \end{tabular}
+        \end{center} \\
+        
+        The solution curve is decreasing on $2500< P\leq 3000$ because $\frac{dP}{dt}$ is negative within this interval. \\
+        
+      \item{Find $\frac{d^{2}P}{dt^{2}}$ and use it to find the values of $P$ for which the solution curve is concave up and concave down. Justify your answer. \\}
+      
+        $\frac{d^{2}P}{dt^{2}}=5\frac{dP}{dt}-\frac{1}{500}2P\frac{dP}{dt}=\frac{1}{500}\frac{dP}{dt}\left(2500-2P\right)=\frac{1}{250}\frac{dP}{dt}\left(1250-P\right)$ \\
+        
+        Let us conduct an Intervals Test with the inflection points of the second order differential $\frac{d^{2}P}{dt^{2}}$. \\
+        
+        $\frac{d^{2}P}{dt^{2}}=0\therefore \frac{dP}{dt}=0 \text{ and } 1250-P=0\rightarrow P=0, 1250, 2500$. \\
+        
+        Because $P=0$ and $P=1250$ are out of range, we will use the lower bound $P=2500$. 
+        
+        \begin{center}
+          \begin{tabular}{| c | c |}
+            \hline
+            $P$ & $(2500, 3000)$ \\
+            \hline
+            $\frac{d^{2}P}{dt^{2}}$ & Positive \\
+            \hline
+          \end{tabular}
+        \end{center} \\
+        
+        The solution curve is concave up on $2500<P<3000$ because $\frac{d^{2}P}{dt^{2}}$ is positive within this interval. \\
+        
+      \item{Does the solution curve have an inflection point? Justify your answer. \\}
+      
+        There is no location where $\frac{d^{2}P}{dt^{2}}$ changes from positive to negative, or negative to positive, therefore the solution curve has no points of inflection. \\
+      
+      \item{Use the information your found to sketch the graph of $P(t)$. (Page 5, Green Line)}
+        
+        
+    \end{enumerate}
+    
+    \item{How many bears are in the park when the population of bears is growing the fastest? \\}
+    
+      The question asks us to determine when the rate of change has the greatest rate of change, or in more exact terms, when the second order differential contains the greatest value. There is only one point of inflection existing on the solution curve, and since it changes from positive to negative, we can determine this is a relative maximum. The point of inflection occurs when $P=1250$, therefore there are 1250 bears in the park when the population of bears is growing the fastest. \\
+      
+      \pagebreak
+  \end{enumerate}
+  
+  \begin{center}
+    \includegraphics[scale=0.32]{logistic_growth_q1.png}
+  \end{center}
+  
+  Estimated Formulas: \\
+  Red Line: \\
+  $$P\left(t\right)=\frac{e^{5t}}{0.0096+0.0004e^{5t}}$$ \\
+  
+  Blue Line: \\
+  $$P\left(t\right)=\frac{e^{5t}}{0.00026759+0.0004e^{5t}}$$ \\
+  
+  Green Line: 
+  $$P\left(t\right)=\frac{15000e^{5t}}{6e^{5t}-1}$$ \\
+  
+  \pagebreak
+  \item{Suppose a rumor is spreading through a dance at a rate modeled by the logistic differential equation $\frac{dP}{dt}=P\left(3-\frac{P}{2000}\right)$. What is $\lim_{t\to\infty}P(t)$? What does this number represent in the context of this problem? \\}
+  
+  $\frac{dP}{dt}=P\left(3-\frac{P}{2000}\right)=\frac{P}{2000}\left(6000-P\right)$ \\
+  
+  $\lim_{t\to\infty}P(t)=L=6000$ \\
+  
+  In the context of this question, $\frac{dP}{dt}$ represents the rate of people spreading or hearing the rumor, with $P$ being the amount of people who have heard the rumor. Understanding this, we can determine $L$ to be the "carrying capacity", or the total amount of people to hear the rumor. This can be interpreted further as either the total amount of people at the dance, or the total amount of people who consent to hearing the rumor spreading. \\
+  
+  \hline
+  
+  \item{Suppose a population of wolves grows according to the logistic differential equation $\frac{dP}{dt}=3P-0.01P^{2}$, where $P$ is the number of wolves at time $t$ in years. Which of the following statements are true? }
+    \begin{enumerate}
+      \begin{enumerate}
+        \item{$\lim_{t\to\infty}P(t)=300$}
+        \item{The growth rate of the wolf population is greatest at $P=150$.}
+        \item{If $P>300$, the population of wolves is increasing.}
+      \end{enumerate}
+      \item{I only}
+      \item{II only}
+      \item{I and II only}
+      \item{II and III only}
+      \item{I, II, and III} \\
+    \end{enumerate}
+  
+    I. $\frac{dP}{dt}=3P-0.01P^{2}=\frac{P}{100}\left(300-P\right)\therefore \lim_{t\to\infty}P(t)=L=300$ (I holds true) \\
+    
+    II. $\frac{d^{2}P}{dt^{2}}=3\frac{dP}{dt}-0.02P\frac{dP}{dt}=\frac{1}{50}\frac{dP}{dt}\left(150-P\right)\therefore P=0, 150, 300$ \\
+    
+    \begin{center}
+      \begin{tabular}{| c | c | c |}
+        \hline
+        $P$ & $(0, 150)$ & $(150, 300)$ \\
+        \hline
+        $\frac{d^{2}P}{dt^{2}}$ & Positive & Negative \\
+        \hline
+      \end{tabular}
+    \end{center}
+    
+    Because $\frac{d^{2}P}{dt^{2}}$ changes from positive to negative at $P=150$, we can conclude that $P=150$ is our relative maximum for $\frac{dP}{dt}$. (II holds true) \\
+    
+    III. $\frac{dP}{dt}=0\therefore P=0, 300$ \\
+    
+    Because the solution curve increases towards $P=300$, we can assume that $P=300$ is the relative maximum of $P$. This would indicate that if $P>300$, the population of wolves would decrease since the differential becomes negative. (III does not hold true) \\
+    
+    \pagebreak
+    
+  \item{Suppose that a population develops according to the logistic equation $\frac{dP}{dt}=0.05P-0.0005P^{2}$, where $t$ is measured in weeks.}
+  \begin{enumerate}
+    \item{What is the carrying capacity? \\}
+    
+      $\frac{dP}{dt}=0.05P-0.0005P^{2}=\frac{1}{2000}\left(100-P\right)\therefore L=100$ \\
+      
+    \item{A slope field for this equation is shown on the page. \\
+    Where are the slopes close to 0? \\
+    
+    The slopes are closest to 0 near $P=0$ and $P=100$. \\
+    
+    Where are they largest? \\
+    
+    The slopes are largest near $P=50$. \\
+    
+    Which solutions are increasing? Which solutions are decreasing? \\
+    
+    All solutions for $0<P<100$ are increasing. All solutions for $100<P<150$ are decreasing. \\
+    
+    }
+    
+    \item{Use the slope field to sketch solutions for initial populations of 20, 60, and 120. \\
+    
+    What do these solutions have in common? \\
+    
+    Each of them tend to $P=100$ as $t$ tends to infinity. ($\lim_{t\to\infty}P(t)=100$)\\
+    
+    How do they differ? \\
+    
+    A different initial condition for each solution defines each curve's $P$-intercept. Each condition also alters the rate of growth or decay of each solution. Finally, only the solution with $P(0)=20$ contains the inflection point within its range. \\
+    
+    Which solutions have inflection points? \\
+    
+    Inflection Point = $\frac{L}{2}=\frac{100}{2}=50$. Only the solution curve with $P(0)=20$ has the inflection point because it is within range. \\
+    
+    At what population level do they occur? \\
+    
+    The inflection point can be determined by dividing the carrying capacity by two. $\frac{L}{2}=\frac{100}{2}=50$ \\
+    
+    }
+    
+    \begin{center}
+      \includegraphics[scale=0.3]{logistic_growth_q4.png}
+    \end{center}
+    
+    \pagebreak
+    
+  \end{enumerate}
+  \item{}
+  \begin{enumerate}
+    \item{On the slope field shown on the the page for $\frac{dP}{dt}=3P-3P^{2}$, sketch three solution curves showing different types of behavior for the population $P$. \\}
+  
+    \begin{center}
+      \includegraphics[scale=0.7]{logistic_growth_q5.png}
+    \end{center}
+    
+    \item{Describe the meaning of the shape of the solution curves for the population:\\
+    
+    Where is $P$ increasing? \\
+    
+    $P$ is increasing on the range $[0,1)$.\\
+    
+    Decreasing? \\
+    
+    $P$ is decreasing on the range $(1, 1.5)$ \\
+    
+    What happens in the long run? \\
+    
+    All possible solution curves will tend to $P=1$ ($\lim_{t\to\infty}P(t)=1$) \\
+    
+    Are there any inflection points? Where? \\
+    
+    Inflection points are found at the value $P=\frac{L}{2}=\frac{1}{2}$. \\
+    
+    What do they mean for the population? \\
+    
+    At the inflection point, the greatest rate of change for the population is found (the population is increasing the fastest here.) \\}
+  \end{enumerate}
+  
+  \pagebreak
+  
+  \item{(2011 Form B -- AB 2) (Calc) \\
+  A 12,000-liter tank of water is filled to capacity. At time $t=0$, water begins to drain out of the tank at a rate modeled by $r(t)$, measured in liters per hour, where $r$ is given by the piece-wise defied function \[ \begin{cases} 
+      \frac{600t}{t+3} \text{ for } 0\leq t\leq 5 \\
+      1000e^{-0.2t} \text{ for } t > 5 
+   \end{cases}
+\]}
+  \begin{enumerate}
+    \item{Is $r$ continuous at $t=5$? Show the work that leads to your answer. \\}
+    
+      $\lim_{t\to\5^{-}}r(t)=\frac{600(5)}{5+3}=\frac{3000}{8}=375$ \\
+      
+      $\lim_{t\to\5^{+}}r(t)=1000e^{-1}=367.879$ \\
+      
+      $\lim_{t\to\5^{-}}r(t)\neq \lim_{t\to\5^{+}}r(t)\therefore r$ is not continuous at $t=5$. \\
+      
+    \item{Find the average rate at which water is draining from the tank between time $t=0$ hours and $t=8$ hours. \\}
+    
+      $r_{avg}=\frac{1}{8-0}\int_{0}^{8}{r(t)}\,dt=
+      \frac{1}{8}\left(\int_{0}^{5}{\frac{600t}{t+3}}\,dt+\int_{5}^{8}{1000e^{-0.2t}}\,dt\right)=258.053$ litres per hour, on average \\
+      
+    \item{Find $r'(3)$. Using correct units, explain the meaning of that value in the context of this problem. \\} 
+    
+      $\frac{dr}{dt}=600\frac{d}{dt}\left(\frac{t}{t+3}\right)=600*\frac{(t+3)(1)-(t)(1)}{(t+3)^{2}}=600*\frac{3}{(t+3)^{2}}$ \\
+      
+      $r'(3)=600*\frac{3}{(t+3)^{2}}=600*\frac{3}{(3+3)^{2}}=\frac{600}{12}=50$ \\
+      
+      The rate that water is draining out of the tank at $t=3$ hours is increasing at a rate of 50 litres per hour squared. \\
+      
+    \item{Write, but do not solve, an equation involving an integral to find the time $A$ when the amount of water in the tank is 9000 liters. \\}
+    
+      $12000-\int_{0}^{A}{r(t)}\,dt=9000\rightarrow \int_{0}^{A}{r(t)}\,dt=3000$
+  \end{enumerate}
+\end{enumerate}
+\end{document}
